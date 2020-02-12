@@ -1,1 +1,1 @@
-Remote Repository Of git_tutorial
+나의 모든 것을 기록한다!!!
