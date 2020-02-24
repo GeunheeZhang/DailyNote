@@ -1,0 +1,253 @@
+----------------------------------------------------------------------
+[메모 - 2018.12.18]
+----------------------------------------------------------------------
+
+# 방글라데시 8차 파견 계획
+--------------------------------------------------
+1. 프로그램 설치 확인
+    :: 운영서버상에 개발된 프로그램이 제대로 설치되어있는지 확인
+	
+2. 프로그램 성능 시험
+    :: 운영서버상에서 통합 테스트 진행
+	
+3. IT 기자재 설치 확인
+    :: IT 기자재 설치 확인 및 정상 작동 여부 확인
+	
+4. 시험운영 계획 및 준비
+    :: 시험운영에 필요한 지원사항 협의 및 시험운영 준비
+	
+5. 서비스 시작 계획 및 준비
+    :: 서비스 시작에 필요한 지원사항 협의 및 서비스 시작 준비
+	
+6. 교육/훈련 계획 및 준비
+    :: DNC 사용자 교육/훈련에 필요한 지원사항 협의 및 교육/훈련 준비
+	
+7. 구현단계 감리 준비
+    :: 감리 시 필요한 산출물 추가 작성 및 기존 산출물 검토
+	
+8. IT 기자재 (PC, 프린터, 카메라 등 각 사무실에 설치하는...) 설치 계획 수립 및 준비
+--------------------------------------------------
+
+Dell Precision T3610
+
+
+하이원 추추파크
+동해보양온천컨벤션호텔
+
+
+Host(URL): vpn.bcc.gov.bd
+VPN Account Credential:  
+VPN client download link: https://bcloud.bcc.gov.bd/index.php/s/4LmDgYmavauX551
+--------------------------------------------------
+
+--------------------------------------------------
+Credential for DNC Application  Server 1: Backup
+For SSH/SFTP:
+Server IP: 103.48.18.198
+Port: 22
+User: root
+Pass:  D0Nar($%U2o1&18$bcc
+--------------------------------------------------
+
+--------------------------------------------------
+Credential for DNC Application  Server 2: 
+For SSH/SFTP:
+Server IP: 172.22.8.198 
+Port: 22
+User: root
+Pass:  D0Nar($%U2o1&18$bcc
+--------------------------------------------------
+
+--------------------------------------------------
+Credential for DNC Application  Server 3: 
+For SSH/SFTP:
+Server IP: 172.22.8.199
+Port: 22
+User: root
+Pass:  D0Nar($%U2o1&18$bcc
+--------------------------------------------------
+
+--------------------------------------------------
+ID: cust_narcotics1    
+Pass: Bcc@q1w2e3r4
+Associated IP for accessing through SVN: 103.48.18.198
+--------------------------------------------------
+
+--------------------------------------------------
+ID: cust_narcotics2    
+Pass: Bcc@q1w2e3r4
+Associated IP for accessing through SVN: 172.22.8.198
+--------------------------------------------------
+
+--------------------------------------------------
+ID: cust_narcotics3    
+Pass: Bcc@q1w2e3r4
+Associated IP for accessing through SVN: 172.22.8.199
+--------------------------------------------------
+
+--------------------------------------------------
+User 1:  cust_dnc1
+User 2: cust_dnc2
+Password: DNC01@cu$t#
+--------------------------------------------------
+
+
+파견 시 BCC와 개발팀의 긴밀한 협조로 문제 해결 예정임.
+
+
+1. 테스트 대상 및 개요
+
+2. 테스트 케이스 및 시나리오
+  1) 단위 기능 테스트 케이스 현황	 2
+  2) 통합 테스트 시나리오 현황	 2
+
+3. 단위 기능 테스트 결과
+  1) 단위 기능 테스트 결과	 3
+  2) 결함내역	 3
+  3) 특이사항	 3
+
+4. 통합 테스트 결과
+  1) 통합 테스트 결과	 4
+  2) 결함내역	 4
+  3) 특이사항	 4
+
+5. 테스트 종합 의견
+
+
+방글라데시 마약통제 행정역량강화 사업의 일환으로 
+
+P01_Unit_Test_Case_And_Result ::
+    Operation Management System : 92
+    Narcotics Case Management : 147
+    Narcotics Sample Analysis Management : 30
+    Narcotics License Management : 302
+    Other Agency’s Narcotics Statistics Management : 17
+    Hospital Management System : 55
+    Mobile Services : 21
+    Common Part : 15
+
+
+T01_Integrated_Test_Case_And_Result :: 
+    Operation Management System : 92 (001 - 092)
+    Narcotics Case Management : 147 (140 - 286)
+    Narcotics Sample Analysis Management : 30 (093 - 122)
+    Narcotics License Management : 303 (341 - 643)
+    Other Agency’s Narcotics Statistics Management : 17 (123 - 139)
+    Hospital Management System : 54 (287 - 340)
+    Mobile Services : 00 (000 - 000)
+    Common Part : 15 (644 - 658)
+
+
+CD_BioMIni Windows SDK_V3.8.0.zip
+First, extract the zip file, and install. (For the installation, you can see the page 8/320 of BioMiniSDK_for_windows_3.7.0_Reference_Manual.pdf)
+After installation, 
+Bio-Mini Web Agent will be installed in your PC.
+Execute the BioMini Web-Agent Control and click the Sample page on the left-bottom.
+Then, you can test with the sample finger print scanner.
+plug in device, and click Start Capture. Put your finger on the device, and Save Image.
+the finger data file will be saved in download folder automatically.
+It was testing.
+ 
+and for the SDK, you can refer it here
+C:\Program Files (x86)\Suprema\BioMini 
+
+
+
+  1. 시스템 개발 완료 확인 및 테스트
+  2. IT 기자재 설치 및 지원
+  3. 어플리케이션 설치 지원
+  4. 사용자 교육 및 IT 전문가 위탁교육 협의
+
+
+1. 이스타항공(ZE219) 김포 -> 제주 (편도) 01월 24일 15:50 (렌트카-17:00)
+2. 아시아나(OZ8966) 제주 -> 김포 (편도) 01월 25일 16:45 (렌트카-17:00)
+
+1588-3340
+
+
+/app/weblogic/domains/mydomain
+/app/weblogic/domains/mydomain/servers/AdminServer
+/app/weblogic/domains/mydomain/servers/Managed01
+
+/app/weblogic_bak/domains/mydomain
+/app/weblogic_bak/domains/mydomain/servers/AdminServer
+
+/app/weblogic/domains/mydomain/servers/domain_bak/config_prev
+
+
+이것은 또한 다음과 같은 이유로 발생할 수 있습니다.
+
+--------------------------------------------------------------------------------
+I) 시스템에 손상된 내장 LDAP 데이터 파일.
+
+1. 폴더에 대한 읽기 / 쓰기 / 만들기 권한이 있는지 확인하십시오. DOMAIN_HOME / servers / AdminServer / data / ldap / ldapfiles / EmbeddedLDAP.tran
+2. / cache 및 / tmp 폴더를 정리합니다. DOMAIN_HOME / servers / AdminServer / tmp 및 DOMAIN_HOME / servers / AdminServer / cache에 있습니다.
+3. 이전 DOMAIN_HOME / servers / server_name / data / ldap 폴더를 백업 한 다음 삭제하십시오. "yourdomain / servers / AdminServer / data / ldap"을 입력하십시오.
+4. 서버를 다시 시작하십시오.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+II) 프로세스 또는 .lok 파일 중 하나가 중단됩니다. 아래 단계를 사용하여 웹 서버를 종료하고 weblogic 서버를 시작해야합니다.
+
+다음 단계에 따라 정리를 수행하여 Weblogic이 제대로 시작되는지 확인하십시오.
+
+1. 여전히 걸려있는 웹 로직 프로세스를 종료하십시오.
+oracle 사용자로 서버에 로그인하고 'ps -ef | grep AdminServer '를 입력하십시오.
+아직 실행중인 Weblogic 프로세스가 있으면 kill -9를 실행하여 종료하십시오.
+2. 잠금 파일을 제거하십시오.
+oracle 사용자로 서버에 로그인하고 도메인 디렉토리 아래의 tmp 폴더로 cd하십시오. 예를 들어 'cd / app / OracleMiddleWare / user_projects / domains / bifoundation_domain / servers / AdminServer / tmp'를 실행하고 'ls AdminServer.lok'를 실행하여 잠금 파일이 남아 있는지 확인하십시오. 'rm AdminServer.lok'를 실행하여이 파일을 삭제하십시오.
+3. weblogic 서버를 다시 시작합니다.
+cd / app / OracleMiddleWare / user_projects / domains / bifoundation_domain / bin에 있습니다.
+./startWebLogic.sh
+Weblogic 서버가 성공적으로 시작되었는지 확인하고 OCSDM (NNC)을 사용하여 연결하십시오.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+III) LDAP 디렉토리 파일에 올바른 권한이없는 경우.
+
+WebLogic 서버 프로세스를 시작한 사용자 및 EmbeddedLDAP.log가 작성하려고 시도하는 디렉토리의 소유자 및 EmbeddedLDAP.tran 파일이 액세스하려고 시도하는 디렉토리의 사용 권한 문제점으로 인해 발생할 수 있습니다.
+
+폴더에 대해 읽기 / 쓰기 / 만들기 권한이 있는지 확인하십시오. DOMAIN_HOME / servers / AdminServer / data / ldap / ldapfiles / EmbeddedLDAP.tran
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Cause
+
+This could also happen for the following reasons:
+
+I) Corrupted embedded LDAP data file in the system.
+
+1. Make sure have read/write/create permissions on the folder: DOMAIN_HOME/servers/AdminServer/data/ldap/ldapfiles/EmbeddedLDAP.tran
+2. Clean up the /cache and /tmp folders, e.g. DOMAIN_HOME/servers/AdminServer/tmp and DOMAIN_HOME/servers/AdminServer/cache.
+3. Back up old DOMAIN_HOME/servers/server_name/data/ldap folder, then delete the it e.g. "yourdomain/servers/AdminServer/data/ldap".
+4. Restart the server.
+
+
+II) One of the processes or .lok files are hung. You need to kill it using the below steps and start the weblogic server.
+
+Please do a cleanup to make sure Weblogic starts up properly, using the following steps:
+
+1. Kill any Weblogic process still hanging on.
+Login to the server as oracle user and run 'ps -ef | grep AdminServer'.
+If there are any Weblogic processes still running, please kill them by running kill -9 .
+2. Remove lock files.
+Login to the server as oracle user and cd to tmp folder under the domain directory. Fo eg, 'cd /app/OracleMiddleWare/user_projects/domains/bifoundation_domain/servers/AdminServer/tmp' and check if there is any lock files left behind by by running 'ls AdminServer.lok'. Delete this file by running 'rm AdminServer.lok'
+3. Restart weblogic server.
+cd /app/OracleMiddleWare/user_projects/domains/bifoundation_domain/bin.
+./startWebLogic.sh
+Make sure that the Weblogic server has been successfully started and connect to it using OCSDM ( NNC ).
+
+
+III) If the LDAP directory files do not have the right permissions.
+
+It could be caused by a permissions problem with the user that started the WebLogic server process and the owner of the directory where the EmbeddedLDAP.log is attempting to be created and the directory where the EmbeddedLDAP.tran file is attempting to be accessed.
+
+Make sure have read/write/create permissions on the folder: DOMAIN_HOME/servers/AdminServer/data/ldap/ldapfiles/EmbeddedLDAP.tran
+
+Solution
+
+This issue got fixed by giving the right permissions to the LDAP directory.
+--------------------------------------------------------------------------------
+
+
+Training's Pictures

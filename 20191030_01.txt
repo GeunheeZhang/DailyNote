@@ -1,0 +1,499 @@
+
+isobaric-700_850hPa -> stflow_700_850
+isobaric-500_850hPa -> stflow_500_850
+isobaric-400_850hPa -> stflow_400_850
+isobaric-300_850hPa -> stflow_300_850
+isobaric-250_850hPa -> stflow_250_850
+isobaric-200_700hPa -> stflow_200_700
+
+shear_200_500
+shear_200_850
+shear_500_850
+
+shearxy_250
+
+# 새로 필요한 "Wind" 파일들..
+current-wind-isobaric-200_500hPa-gfs-1.0.json
+current-wind-isobaric-200_850hPa-gfs-1.0.json
+current-wind-isobaric-250hPa-gfs-1.0.json
+
+# 새로 추가된 파일들..
+current-shear-isobaric-200_500hPa-gfs-1.0.json
+current-shear-isobaric-200_850hPa-gfs-1.0.json
+current-shear-isobaric-500_850hPa-gfs-1.0.json
+current-shearxy-isobaric-250hPa-gfs-1.0.json
+
+
+lbl.0132 = 위도범위
+lbl.0132 = Latitude Range
+
+LAT_RANGE
+latRange
+
+gdaps_typn_hd_mslp_5N20N_000_2019100100.png
+
+
+menu.left.0108 = 년별 시계열
+menu.left.010801 = 태풍활동지수
+menu.left.010802 = 누적폭풍에너지
+menu.left.010803 = 평균강도
+menu.left.010804 = 일생최대강도
+menu.left.010805 = 생존기간
+menu.left.010806 = 발생빈도
+
+태풍활동지수(PDI) = PDI
+누적폭풍에너지(ACE) = ACE
+평균강도(INT) = Lifetime Mean Intensity
+일생최대강도(LMI) = Lifetime Maximum Intensity
+생존기간(DAY) = Day
+발생빈도(FRE) = Frequency
+
+죄인
+오자크
+러시아 인형처럼
+매드맨
+굿 플레이스
+하우스 오브 카드
+원 헌드레드
+아웃 랜드
+슈츠
+마인드 헌터
+다크
+피키 블라인더스
+셜록
+
+[2019-11-04 장근희] 새로운 콘텐츠 추가 
+
+예보시간 중복 표출 (예보시간 : 000)
+일별 시계열
+    - 호버뮬러다이어그램 해면기압(MSLP)
+    - 호버뮬러다이어그램 지위고도(HGT)
+    - 호버뮬러다이어그램 시간-경도 단면도
+
+dda0
+7e1e9c
+
+태풍센터 Cloud Server 확인 사항
+	1. AWS 시계열 감시 지점 정보 및 AWS 자료 가져오지 못하는듯함.
+
+
+입출력자료 페이지 접속시 바로 접속되도록 변경 필요.
+	- 분석현황
+	- GTS전문
+	- 분석전문
+	- 재분석
+	- 단계별 분석산출물
+
+--------------------------------------------------
+SENSOR_TYPE :: 
+	AMSR2 37GHz
+	AMSR2 89GHz
+	COMS IR
+	COMS SWIR
+	COMS_IR1
+	COMS_SWIR
+	[GCOMW1_AMSR2-37]
+	[GCOMW1_AMSR2-89]
+	GMI 37GHz
+	GMI 89GHz
+	[GPM_GMI-37]
+	[GPM_GMI-85]
+--------------------------------------------------
+
+HIMAWARI-8 BAND13 :: 
+	ID : himaB13
+	SENSOR_TYPE : HIMA8_CH13
+	PARAM : sensorTypeHimaB13
+HIMAWARI-8 BAND07 :: 
+	ID : himaB07
+	SENSOR_TYPE : HIMA8_CH07
+	PARAM : sensorTypeHimaB07
+
+GK2A BAND13 :: 
+	ID : gk2aB13
+	SENSOR_TYPE : GK2A_IR105
+	PARAM : sensorTypeGk2aB13
+GK2A BAND07 :: 
+	ID : gk2aB07
+	SENSOR_TYPE : GK2A_SW038
+	PARAM : sensorTypeGk2aB07
+
+GCOM-W1/AMSR2 37GHz :: 
+	ID : gcom37
+	SENSOR_TYPE : GCOMW1_AMSR2-37
+	PARAM : sensorTypeGcom37
+GCOM-W1/AMSR2 89GHz :: 
+	ID : gcom89
+	SENSOR_TYPE : GCOMW1_AMSR2-89
+	PARAM : sensorTypeGcom89
+GPM/GMI 37GHz :: 
+	ID : gpm37
+	SENSOR_TYPE : GPM_GMI-37
+	PARAM : sensorTypeGpm37
+GPM/GMI 85GHz :: 
+	ID : gpm85
+	SENSOR_TYPE : GPM_GMI-85
+	PARAM : sensorTypeGpm85
+
+btnSearch4
+
+// 자동태풍중심 분석결과(Archer1) 조회
+$('#btnSearch4').click(function(){
+    gua.msg.debug("자동태풍중심 분석결과(Archer1) 조회");
+    searchList4();
+});
+
+archerType
+
+<li>
+    <button type="button" class="sdt" onclick="clickTypMenu('sdt')"><spring:message code="typhoon.sdtanalysis"/></button>
+    <button type="button" class="sdtRe" onclick="clickTypMenu('sdtRe')"><spring:message code="typhoon.sdtreanalysis"/></button>
+    <button type="button" class="board" onclick="clickTypMenu('board')"><spring:message code="typhoon.overallanalysis"/></button>
+    <button type="button" class="vSection" onclick="clickTypMenu('vSection')"><spring:message code="typhoon.section"/></button>
+</li>
+
+
+}else if(sel == "vSection"){
+    selectMenu = "vSection";
+
+    /*if(typId == ""){
+        openTypList({}, function (d, fd) {});
+        return;
+    }*/
+
+    if(openArray['vSection'] == null){
+
+        var _layer = getActiveLayerObj();
+        if(_layer){
+            var _data = _layer.get('data');
+
+            if(_data.ltype != "noaa18" && _data.ltype != "noaa19" && _data.ltype != "metopa" && _data.ltype != "metopb" && _data.ltype != "nppatms"){
+                return;
+            }else{
+                if(_data.mtype != "temp" && _data.mtype != "humi"){
+                    return;
+                }
+            }
+            openArray['vSection'] = gua.window.openPopup("/etc/typVSection.do", 1050, 650);
+        }
+
+
+        //openArray['vSection'] = gua.window.openPopup("/etc/typVSection.do", 1050, 650);
+    }else{
+        typ_removeAction();
+        typ_addAction("Rect");
+        typ_addEvent('rect');
+    }
+}
+
+<entry key="typhoon.msg.notl1bir"><![CDATA[GK2A 또는 Himawari8 위성의 L1B 적외 영상을 선택하여 주세요.]]></entry>
+
+COMS_IR1
+COMS_SWIR
+
+HIMA8_CH13
+HIMA8_CH07
+
+GK2A_IR105
+GK2A_SW038
+
+GCOMW1_AMSR2-37
+GCOMW1_AMSR2-89
+
+GPM_GMI-37
+GPM_GMI-85
+
+GK2A BAND13 => GK2A_IR105
+GK2A BAND07 => GK2A_SW038
+
+himaB13 => gk2aB13
+himaB07 => gk2aB07
+
+<span>
+    <input type="checkbox" name="archerType" id="kadthimaB13" checked="checked"> <font style="color:#fa2c2c">HIMAWARI-8 BAND13</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadthimaB07" checked="checked"> <font style="color:#febe0a">HIMAWARI-8 BAND07</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgcom37" checked="checked"> <font style="color:#2467f0">GCOM-W1/AMSR2 37GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgcom89" checked="checked"> <font style="color:#eb7676">GCOM-W1/AMSR2 89GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgpm37" checked="checked"> <font style="color:#50ca47">GPM/GMI 37GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgpm85" checked="checked"> <font style="color:#fe2cb8">GPM/GMI 85GHz</font>
+    &nbsp;&nbsp;
+</span>
+
+<input type="text" size="5" class="nmsc" id="iptDrctSpd" style="width:110px" readonly="readonly"/>
+
+// 전송 버튼 클릭
+$('#btnSdtTrans').click(function(){
+    sdtL3Type = "SDT_Report";
+    saveSdt();
+});
+
+// 저장 버튼 클릭
+$('#btnSdtSave').click(function(){
+    sdtL3Type = "SDT_Report_SaveOnly";
+    saveSdt_rmwOnly();
+});
+
+[2019-11-18 장근희] 자동태풍중심 분석결과(Archer1) 기능 추가
+
+
+<select class="nmsc" id="selMotion" style="width:50px"></select>
+
+<input type="text" size="5" class="nmsc" id="iptDrctSpd" style="width:110px" readonly="readonly"/>
+
+SDT 분석결과 GRID
+<table id="gridList1"></table>
+
+
+var temp = getDirection(data['direction']) + "(" + data['direction'] + ") " + data['speed'] +" kt";
+
+//현재 태풍중심 이동 속도/방향 산출 함수
+function getCurDirectSpeed(){}
+
+//이동 속도/방향 산출 함수
+function getDirectSpeed(lon1, lat1, lon2, lat2){}
+
+1.852
+
+<span>
+    <input type="checkbox" name="archerType" id="gk2aB13" checked="checked"> <font style="color:#fa2c2c">GK2A BAND13</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="gk2aB07" checked="checked"> <font style="color:#febe0a">GK2A BAND07</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="gcom37" checked="checked"> <font style="color:#2467f0">GCOM-W1/AMSR2 37GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="gcom89" checked="checked"> <font style="color:#eb7676">GCOM-W1/AMSR2 89GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="gpm37" checked="checked"> <font style="color:#50ca47">GPM/GMI 37GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="gpm85" checked="checked"> <font style="color:#fe2cb8">GPM/GMI 85GHz</font>
+    &nbsp;&nbsp;
+</span>
+
+
+function searchList4() {}
+
+
+<span>
+    <input type="checkbox" name="archerType" id="kadthimaB13" checked="checked"> <font style="color:#fa2c2c">HIMAWARI-8 BAND13</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadthimaB07" checked="checked"> <font style="color:#febe0a">HIMAWARI-8 BAND07</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgcom37" checked="checked"> <font style="color:#2467f0">GCOM-W1/AMSR2 37GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgcom89" checked="checked"> <font style="color:#eb7676">GCOM-W1/AMSR2 89GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgpm37" checked="checked"> <font style="color:#50ca47">GPM/GMI 37GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgpm85" checked="checked"> <font style="color:#fe2cb8">GPM/GMI 85GHz</font>
+    &nbsp;&nbsp;
+</span>
+
+<button type="button" title="검색" class="nmsc_ico" id="btnSearchKADTARCHER"><spring:message code="search"/></button>
+
+<span>
+    <input type="checkbox" name="archerType" id="kadtgk2aB13" checked="checked"> <font style="color:#fa2c2c">GK2A BAND13</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgk2aB07" checked="checked"> <font style="color:#febe0a">GK2A BAND07</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgcom37" checked="checked"> <font style="color:#2467f0">GCOM-W1/AMSR2 37GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgcom89" checked="checked"> <font style="color:#eb7676">GCOM-W1/AMSR2 89GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgpm37" checked="checked"> <font style="color:#50ca47">GPM/GMI 37GHz</font>
+    &nbsp;&nbsp;
+    <input type="checkbox" name="archerType" id="kadtgpm85" checked="checked"> <font style="color:#fe2cb8">GPM/GMI 85GHz</font>
+    &nbsp;&nbsp;
+</span>
+
+//KADT Archer 분석결과 검색
+$('#btnSearchKADTARCHER').click(function(){
+    gua.msg.debug("자동태풍중심 분석결과(ARCHER2) 검색");
+    searchListKADTARCHER();
+});
+
+gua.req.addParam("sensorTypeKadtgk2aB13", sensorTypeKadtgk2aB13);
+gua.req.addParam("sensorTypeKadtgk2aB07", sensorTypeKadtgk2aB07);
+gua.req.addParam("sensorTypeKadtgcom37", sensorTypeKadtgcom37);
+gua.req.addParam("sensorTypeKadtgcom89", sensorTypeKadtgcom89);
+gua.req.addParam("sensorTypeKadtgpm37", sensorTypeKadtgpm37);
+gua.req.addParam("sensorTypeKadtgpm85", sensorTypeKadtgpm85);
+
+[2019-11-21 장근희] 자동태풍중심 분석결과(Archer2) 기능 추가
+
+[2019-11-22 장근희] 자동태풍중심 분석결과(Archer2) 기능 추가
+
+
+// 전송 버튼 클릭
+$('#btnSdtTrans').click(function(){
+	if($('#typStatus').val() == "end"){
+        gua.msg.alert("종료된 태풍은 수정할 수 없습니다");
+        return;
+    }
+    sdtL3Type = "SDT_Report";
+    saveSdt();
+});
+
+// 저장 버튼 클릭
+$('#btnSdtSave').click(function(){
+	if($('#typStatus').val() == "end"){
+        gua.msg.alert("종료된 태풍은 수정할 수 없습니다");
+        return;
+    }
+    sdtL3Type = "SDT_Report_SaveOnly";
+    saveSdt_rmwOnly();
+});
+
+// "태풍종료" 버튼 클릭
+$('#btnTypEnd').click(function(){
+
+    if(searchDatas1.length == 0){
+        return;
+    }
+
+    var analyDate = searchDatas1[0].analyDate;
+    var typYear = analyDate.substr(0,4);
+    var typId = $('#typId').val();
+
+    gua.msg.debug("typYear : " + typYear);
+    gua.msg.debug("typId : " + typId);
+    gua.msg.debug("typStatus : " + $('#typStatus').val());
+    gua.msg.debug("analyDate : " + analyDate);
+    gua.msg.debug("len : " + searchDatas1.length);
+
+    if($('#typStatus').val() == "end"){
+        gua.msg.alert("typhoon.msg.end");
+        return;
+    }
+
+    if(gua.msg.confirm("typhoon.msg.wantend")){
+        gua.req.clearParam();
+        gua.req.addParam("typYear", typYear);
+        gua.req.addParam("typId", typId);
+        gua.req.addParam("analyDate", analyDate);
+
+        gua.req.send("/sdt/saveTypEnd.do", function(data, err) {
+            if (err) return;
+
+            //종료시 typStatus 값 ing -> end 변경
+            $('#typStatus').val("end");
+            setTypStatus();
+
+            // 2017-12-06 수정 : 쉘스크립트 대체
+            callShellScript5();
+
+            gua.msg.alert("typhoon.msg.ended");
+
+        });
+    }
+});
+
+State = 상태
+Status = 신분, 지위, 상황
+
+<select class="nmsc" id="selMotion" style="width:50px">
+
+//Motion 변경
+$('#selMotion').change(function(){
+    if($('#iptDrctSpd').val() == ""){
+        return;
+    }
+    getCurDirectSpeed();
+});
+
+//현재 태풍중심 이동 속도/방향 산출 함수
+function getCurDirectSpeed(){}
+
+analyDate
+
+[2019-11-22 장근희] 기능 추가 및 오류 수정
+
+DT수 결정(BAND)
+
+종합감시 콘텐츠 자동 업데이트
+지구본감시 콘텐츠 자동 업데이트
+종합감시 표출자료 시간 동기화
+
+
+6, 16, 17
+
+Kenny Story Inn Seogwipo
+예약 번호 : 464569180
+
+
+============================================================
+위성영상 등록시스템 및 분석시스템 구축(WEB)
+FUN-008
+사용자 관리 기능
+	1. 사용자 로그인·권한 관리
+	2. 사용자 접속 이력 관리
+	3. 사용자 관리
+============================================================
+
+============================================================
+위성영상 등록시스템 및 분석시스템 구축(WEB)
+FUN-009
+판독 영상 산출물(판독 영상, 보고서) 검색 및 도시화
+	1. 판독 영상 자료 검색, 리스트 표출 후 데이터
+	2. 보고서 검색, 리스트 표출 후 데이터 열람 기능 구현한다.
+============================================================
+
+TB_SIAS_SYS_INFO	시스템 정보	
+TB_SIAS_USER	사용자	
+TB_SIAS_AUTH	권한	
+TB_SIAS_USER_AUTH	사용자별 권한 	
+TB_SIAS_USER_HISTORY	사용자별 이력	
+TB_SIAS_EDIT_IMAGE	편집위성영상	
+TB_SIAS_REPORT	보고서	
+
+화면 : 
+	AN-DP-040 - 로그인
+	AN-DP-041 - 시스템/권한 관리
+	AN-DP-042 - 시스템/권한 등록
+	AN-DP-043 - 시스템/권한 수정
+	AN-DP-044 - 사용자이력
+	AN-DP-045 - 사용자관리
+	AN-DP-046 - 사용자 등록
+	AN-DP-047 - 사용자 수정
+	AN-DP-048 - 편집 영상 조회
+	AN-DP-049 - 판독 보고서 조회
+
+프로그램 :
+	AN-PI-040 - 사용자 로그인
+	AN-PI-041 - 시스템/권한 조회
+	AN-PI-042 - 시스템/권한 등록
+	AN-PI-043 - 시스템/권한 수정
+	AN-PI-044 - 시스템/권한 삭제
+	AN-PI-045 - 사용자 이력 조회
+	AN-PI-046 - 사용자 조회
+	AN-PI-047 - 사용자 등록
+	AN-PI-048 - 사용자 수정
+	AN-PI-049 - 사용자 삭제
+	AN-PI-050 - 편집 영상 검색
+	AN-PI-051 - 판독 보고서 검색
+
+단위테스트 : 
+	UT-040
+	UT-041
+	UT-042
+	UT-043
+	UT-044
+	UT-045
+	UT-046
+	UT-047
+	UT-048
+	UT-049
+	UT-050
+	UT-051
+
+
+⏏생성 ⏏읽기 ⏏수정 ⏏삭제
+
+
+A0005 1001 JTWC 태풍정보 자료 wp
+A0005 1002 JMA 태풍정보 자료 jma_ty_img
+

@@ -1,0 +1,110 @@
+
+안녕하세요. 아래 사항 확인 부탁드립니다.
+--------------------------------------------------------------------------------
+1. ODA_A 관리콘솔에서 sqlplus 명령어가 실행되지 않습니다. (command not found)
+2. ODA_A 관리콘솔을 실행시키면 Oracle이 시작 혹은 재시작 되는듯 합니다.
+3. ODA_B 문제들...
+--------------------------------------------------------------------------------
+
+- ODA_A : https://172.21.32.26
+- ODA_B : https://172.21.32.27
+
+ODA_A 랜선을 제 PC에 연결하면 호스트네임 ODA_B_BCC에 연결이 되고..
+ODA_B 랜선을 제 PC에 연결하면 호스트네임 ODA_A_BCC에 연결이 됩니다.
+
+먼저 ODA_A, ODA_B 중 어느쪽에 붙으셔야되는지 말씀해주시면 연결해드리겠습니다.
+
+1.  ODA-A
+전 현재 VPN 정보를 통해 접속합니다.
+
+VPN Account Credential: 
+
+VPN client download link :  https://bcloud.bcc.gov.bd/index.php/s/4LmDgYmavauX551
+
+Host : vpn.bcc.gov.bd
+
+ID: cust_narcotics2    Pass : Bcc@q1w2e3r4
+
+Credential for DNC Application  Server 2:
+
+For SSH/SFTP:
+
+Server IP: 172.22.8.198
+
+Port: 22
+
+User: root
+
+Pass:  D0Nar($%U2o1&18$bcc
+
+ 
+
+로 접속하셔서 다시 ODA로 접속하셔야 됩니다.
+
+접속은 ssh로 하셔야 되며, 불행히도 콘솔 접속은 불가합니다.
+ 
+ 
+
+ODA 정보
+
+ODA_A : 172.22.101.51
+
+root / KO11##ica
+
+ 
+
+여기로 로그온 해서
+
+su - oracle
+
+그럼 vpn 통해서 접속해서 확인하면 정상입니다.
+
+
+[oracle@ODA-A ~]$ id
+uid=1001(oracle) gid=1001(oinstall) groups=1001(oinstall),1002(dbaoper),1003(dba),1006(asmdba)
+[oracle@ODA-A ~]$ lsnrctl stat listener_koica
+
+LSNRCTL for Linux: Version 11.2.0.4.0 - Production on 16-JAN-2019 11:09:04
+
+Copyright (c) 1991, 2013, Oracle.  All rights reserved.
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=ODA-KOICA)(PORT=1521)))
+STATUS of the LISTENER
+------------------------
+Alias                     listener_koica
+Version                   TNSLSNR for Linux: Version 11.2.0.4.0 - Production
+Start Date                16-JAN-2019 10:49:30
+Uptime                    0 days 0 hr. 19 min. 33 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /u01/app/oracle/product/11.2.0.4/dbhome_1/network/admin/listener.ora
+Listener Log File         /u01/app/oracle/product/11.2.0.4/dbhome_1/log/diag/tnslsnr/ODA-A/listener_koica/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=172.22.101.51)(PORT=1521)))
+Services Summary...
+Service "KOICA" has 1 instance(s).
+  Instance "KOICA", status UNKNOWN, has 1 handler(s) for this service...
+The command completed successfully
+[oracle@ODA-A ~]$ sqlplus kcs/kcs1234#@koica
+
+SQL*Plus: Release 11.2.0.4.0 Production on Wed Jan 16 11:09:12 2019
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+With the Real Application Clusters option
+
+SQL> select host_name, instance_name, status from v$instance;
+
+HOST_NAME
+----------------------------------------------------------------
+INSTANCE_NAME	 STATUS
+---------------- ------------
+ODA-A
+KOICA		 OPEN
+
+
+

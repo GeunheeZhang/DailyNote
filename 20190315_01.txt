@@ -1,0 +1,120 @@
+210.92.92.18
+root / !gi*3522@&
+tos / $태풍현업시스템19#
+/n0010/webapps/ROOT_TYP/TYPHOON/JAR
+
+
+가상 개발환경 
+IP : 192.168.0.51
+root / admin!tosdev@
+tos / tos123
+
+
+네트워크 드라이브
+\\192.168.0.198\nmsc_nas
+\\192.168.0.198\shared
+\\192.168.0.199\gisoft
+User : gisoft
+Password : gi7113522
+
+
+http://192.168.0.51:8080/TYPHOON/index.jsp
+
+상세정보
+http://192.168.0.51:8080/TYPHOON/ko/weather/typhoon_02.jsp
+통보문
+http://192.168.0.51:8080/TYPHOON/ko/weather/typhoon_01.jsp
+5일예보(태풍센터)
+http://192.168.0.51:8080/TYPHOON/statistics/statistics_02_7.jsp
+
+
+* RTKO63 전문(pdf, png, 전문)
+  /n0010/webapps/ROOT_TYP/TYPHOON/TAPS/${yyyy}
+  
+* RTKO64 전문(pdf, png, 전문)
+  /n0010/webapps/ROOT_TYP/TYPHOON/TAPSTD/${yyyy}
+  
+* RTKO66 전문(pdf, txt, png)
+  /n0010/webapps/ROOT_TYP/TYPHOON/DAOU/RTKO66  
+  
+* 태풍정보(통보) XML  
+  /n0010/webapps/ROOT_KMA/repositary/xml/typ
+
+
+  Mahfuz Islam Bhuiyan
+
+
+/data/TOS_SSW/apache-tomcat-7.0.73
+/data/TOS_SSW/apache-tomcat7_geoserver
+/data/tomcat7
+
+
+- Batch JAR
+/n0010/webapps/ROOT_TYP/TYPHOON/JAR
+
+- RTKO66
+/n0010/webapps/ROOT_TYP/TYPHOON/DAOU/RTKO66/
+
+
+○ 자료 입출력 종합 모니터링 창 개발
+ - 위성자료를 포함한 관측자료 입전 여부를 확인할 수 있도록 함 
+
+ - 수치모델 등 객관자료 입전 여부를 확인할 수 있도록 함
+
+ - 날씨누리, COMIS 등 표출자료 활성 현황을 파악할 수 있도록 함
+
+
+○ 태풍 진로 및 강도예측관련 수치모델과 실황간의 실시간 검증체계 구축
+ - 태풍진로 및 강도예측 수치모델 검증 대상 및 방법을 설계함 
+
+ - 실시간 검증체계를 구축하고 결과를 DB화하여 저장함
+
+
+○ 통계 기능 강화 및 콘텐츠 가시화 개선
+ - 통계콘텐츠 정비 계획(추가 콘텐츠 발굴 포함)을 제안함
+
+ - 국가태풍센터와 합의된 콘텐츠 개발 및 검증을 수행함 
+
+ - 외국의 태풍정보 DB체계 구축
+
+
+○ 태풍감시기능 강화
+ - 표출 중인 ‘종합감시’ 콘텐츠 자동 업데이트 기능 구현
+
+ - 표출 중인 ‘지구본감시’ 콘텐츠 자동 업데이트 기능 구현
+
+ -‘종합감시’표출자료 시간 동기화
+
+
+
+
+ 종합감시 화면에서 선택한 콘텐츠의 영상을 자동 재생 중 일정 시간 간격(10분, 30분, 60분)으로 해당 콘텐츠의 새로운 영상이 있는지 유무를 확인하여 새로운 영상이 있을 경우 최신 영상을 재생하도록 기능을 구현한다.
+
+ 위성(COMS, 히마와리 등) 영상들의 입전 여부 자료를 데이터베이스화하여 실시간으로 위성자료 입전현황을 확인할 수 있는 기능을 구현한다.
+
+ 수치모델 등 객관자료들의 입전 여부를 데이터베이스화하여 실시간으로 수치모델 자료의 입전현황을 확인 할 수 있는 기능을 구현한다.
+
+
+체이슨호텔 더 리드
+
+체이슨호텔 더 스마일 - 3성급
+데이즈 호텔 제주 서귀포 오션 - 3성급
+
+밸류호텔 서귀포 JS - 4성급
+라마다 앙코르 서귀포 호텔 - 4성급
+라마다 앙코르 이스트 호텔 - 4성급
+
+
+JMA, KMA, CMA, JTWC, GDAPS, HWRF, JGSM, TEPS, KEPS, GFS, ECMWF, NOGAPS, GFS_EPS
+
+Lenovo ThinkPad Pro Dock 도킹 (40AH0135EU)
+Lenovo ThinkPad Ultra Dock 도킹 (40AJ0135EU)
+Lenovo ThinkPad USB-C Dock (40A90090EU)
+
+/n0010/webapps/ROOT_TYP/TYPHOON/WEB-INF/weatherportal.properties 
+
+
+
+
+
+

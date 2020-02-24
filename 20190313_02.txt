@@ -1,0 +1,69 @@
+210.92.92.18
+root / !gi*3522@&
+tos / $태풍현업시스템19#
+/n0010/webapps/ROOT_TYP/TYPHOON/JAR
+
+
+가상 개발환경 
+IP : 192.168.0.51
+root / admin!tosdev@
+tos / tos123
+
+
+네트워크 드라이브
+\\192.168.0.198\nmsc_nas
+\\192.168.0.198\shared
+\\192.168.0.199\gisoft
+User : gisoft
+Password : gi7113522
+
+
+상세정보
+http://localhost:8080/TYPHOON/ko/weather/typhoon_02.jsp
+통보문
+http://localhost:8080/TYPHOON/ko/weather/typhoon_01.jsp
+5일예보(태풍센터)
+http://localhost:8080/TYPHOON/statistics/statistics_02_7.jsp
+
+
+* RTKO63 전문(pdf, png, 전문)
+  /n0010/webapps/ROOT_TYP/TYPHOON/TAPS/${yyyy}
+  
+* RTKO64 전문(pdf, png, 전문)
+  /n0010/webapps/ROOT_TYP/TYPHOON/TAPSTD/${yyyy}
+  
+* RTKO66 전문(pdf, txt, png)
+  /n0010/webapps/ROOT_TYP/TYPHOON/DAOU/RTKO66  
+  
+* 태풍정보(통보) XML  
+  /n0010/webapps/ROOT_KMA/repositary/xml/typ
+  
+  
+'레고 무비'가 성공을 거둔 것은 새로운 해결책을 발견했기 때문이다. 그들은 힘든 선택에서 벗어나 상반되는 아이디어와 기회에 주목했다. 2014년 크누스토르프는 CNN에 출연해 이렇게 말했다.
+"CEO는 항상 한 가지 단순한 가정에 집착하죠. 그건 정답이 하나라는 생각입니다. (그러나) 모든 답을 하나의 가정 안에 욱여넣는 대신 다양한 답을 동시에 고려할 수 있다면 더 현명한 해결책에 도달할 수 있습니다. 거기서 타협의 방안과 기회를 발견하게 됩니다."(30쪽)
+ 
+로저 마틴, 제니퍼 리엘의 '최고의 리더는 반드시 답을 찾는다' 중에서(더퀘스트)
+ 
+​(예병일의 경제노트)
+ 
+'통합적 사고'(integrative thinking).
+베스트셀러 작가이자 컨설턴트, 전 토론토대 로트먼경영대학원 원장인 로저 마틴이 강조하는 개념입니다.
+ 
+인간은 네 손가락과 마주 보는 엄지손가락 사이의 긴장을 활용해 물건을 쥐거나 조작하는데, 이처럼 마주 보는 생각들 사이의 긴장을 통해 까다로운 문제에 대한 해결책을 만들어낼 수 있다는 주장입니다. 마틴은 이 '통합적 사고'가 뛰어난 리더와 추종자를 구분해주는 기준이라고 말합니다.
+ 
+"(이들 리더는) 서로 마주 보는 두 가지 아이디어를 동시에 고려하는 성향과 역량을 공통으로 가지고 있습니다. 그들은 한 가지 아이디어에 집착하거나 나머지 하나를 배제하지 않고, 상반되는 아이디어를 조합하는 방식으로 더 나은 해결책을 창조합니다."
+ 
+무너져가던 레고 기업을 다시 회생시킨 예르겐 비 크누스토르프 CEO는 이렇게 말하기도 했습니다.
+"CEO는 항상 한 가지 단순한 가정에 집착하죠. 그건 정답이 하나라는 생각입니다. 
+(그러나) 모든 답을 하나의 가정 안에 욱여넣는 대신 다양한 답을 동시에 고려할 수 있다면 더 현명한 해결책에 도달할 수 있습니다. 거기서 타협의 방안과 기회를 발견하게 됩니다."
+ 
+'통합적 사고'는 물론 쉬운 일이 아닙니다. 구체적인 방법론으로 들어가면 기업별로, 또 분야별로 실제 해법이 다양할 수밖에 없습니다. 그 구체적인 방법은 결국 자신이 처한 상황에 맞게 각자가 구해야하겠지요.
+ 
+그렇다 하더라도, 이 '통합적 사고'(integrative thinking)의 중요성을 인식하고, 
+한 가지 아이디어에 집착하거나 나머지 하나를 배제하지 않고, 상반되는 아이디어를 조합하면 더 나은 해결책을 창조해낼 수 있다는 지혜를 받아들이기만 해도
+'새로운 가능성'이 열릴 수 있습니다.
+ 
+기업경영에서는 물론이고, 특히 요즘처럼 "정답은 하나 뿐"이라는 독단적인 생각이 지배하고 있는 정치에서 정말 필요한 마인드가 바로 이 '통합적 사고'(integrative thinking)입니다.
+
+
+@echo off taskkill /f /im explorer.exe attrib %userprofile%\appdata\local\iconcache.db -s -r -h del /q %userprofile%\appdata\local\iconcache.db start explorer.exe exit

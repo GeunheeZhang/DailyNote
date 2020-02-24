@@ -1,0 +1,692 @@
+    /**
+     * RTKO63예보 중 예보정보 모두 추가(미래 예보값)
+     *
+     * @param  String[] rtko63Array : rtko63파일내용 , StringBuilder sb : 현재상황정보와 예보정보 모두 추가
+     * @return 태풍번호,태풍국문명,태풍영문명 리턴
+     * @exception 
+     */
+    private static void getRtko63ToForcastStr(final String[] rtko63Array, final String typYear, final String typSeq ,StringBuilder sb){
+      
+      // 태풍 예보값
+      for(int i = 0 ; i<10 ; i++){ 
+          int k = i*12; 
+          String rem = rtko63Array[142];
+          String lastFtTp = rem.indexOf("열대저압부") > -1 ? "TD" : (rem.indexOf("온대저기압") > -1 ? "LOW" : "");  //풍속이 0 인 경우에는 열대저압부인지, 온대저기압인지 내용으로 판별
+          
+          String ftTM   = rtko63Array[22 + k];    //예상위치1:일시(년월일시분)
+          String ftLAT  = rtko63Array[23 + k];    //예상위치1:위도(deg)
+          String ftLON  = rtko63Array[24 + k];    //예상위치1:경도(deg)
+          String ftLOC  = rtko63Array[25 + k];    //예상위치1:내용
+          String ftDIR  = rtko63Array[32 + k];    //예상위치1:진행방향(16방위)
+          String ftSP   = rtko63Array[33 + k];    //예상위치1:속도(km/h)
+          String ftPS   = rtko63Array[26 + k];    //예상위치1:중심기압(hPa)
+          String ft15   = rtko63Array[29 + k].length()<1 ? "0" : rtko63Array[29 + k];   //예상위치1:15m/s 반경(km)
+          String ftWS   = rtko63Array[27 + k].length()<1 ? "0" : rtko63Array[27 + k];   //예상위치1:최대풍속(m/s)
+          String ftTP   = rtko63Array[29 + k].length()<1 ? lastFtTp :"0" ;            
+          String ft25   = "0";
+          String ft25ED = "0";
+          String ft25ER = "0";
+          String ft15ED = rtko63Array[30 + k];    //예상위치1:15m/s 예외방향(16방위)
+          String ft15ER = rtko63Array[31 + k];    //예상위치1:15m/s 예외반경(km)
+          String ftRAD    = rtko63Array[28 + k];    //예상위치1:확률반경(km)
+          String ftRYear  = "";           //연관객체 발생년도
+          String ftRSeq = "";           //연관객체 발생번호
+          String ftRTp  = "";           //연관객체 타입(TD,TY)
+          
+          LOGGER.info("RTKO63 FORCAST ==>> " + String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", ftTM, ftLAT, ftLON, ftLOC, ftDIR, ftSP, ftPS, ftWS, ftTP, ft25, ft25ED, ft25ER, ft15, ft15ED, ft15ER, ftRAD, ftRYear, ftRSeq, ftRTp));
+          
+          sb.append(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", ftTM, ftLAT, ftLON, ftLOC, ftDIR, ftSP, ftPS, ftWS, ftTP, ft25, ft25ED, ft25ER, ft15, ft15ED, ft15ER, ftRAD, ftRYear, ftRSeq, ftRTp));
+      
+     }
+    }
+
+
+Failed to load resource: the server responded with a status of 400 ()
+
+    depression.year = parseInt(infoArr[0]);
+    depression.no = parseInt(infoArr[1]);
+    depression.tmFc = ospFile[ospFile.length-1].substr(7,12); //발표시각은 파일명(kst)
+    depression.tmEnd = infoArr[3]; //TD예보종료여부(Y/N)
+
+
+      // TD 정보
+      var info = {  
+        ref : depression,
+        tm : tempArr[0],              //일시(년월일시분)
+        tmDate : tempArr[0].toDate(), //시간객체(kst)
+        utcTmDate : typhoonUtils.addHours(tempArr[0].toDate(),-9),  //utc tm date
+        lat : tempArr[1],             //위도(deg)
+        lon : tempArr[2],             //경도(deg)
+        loc : tempArr[3],             //위치설명
+        dir : dirName,                //방향
+        sp : tempArr[5].toNumber(),   //진행속도(km/h)
+        ps : tempArr[6].toNumber(),   //중심기압(hPa)
+        ws : tempArr[7].toNumber(),   //중심풍속(m/s)  
+        tp : tempArr[8],              //TD, TS, LOW            
+        rad25 : tempArr[9],           //25m/s 반경(km)
+        ed25 : tempArr[10],           //25m/s 예외방향(16방위)
+        er25 : tempArr[11],           //25m/s 예외반경(km)
+        rad15 : tempArr[12],          //15m/s 반경(강풍반경)(km)
+        ed15 : tempArr[13],           //예외반경 방위
+        er15 : tempArr[14],           //예외반경 (km)
+        rad : tempArr[15],            //70%확률반경 (km)
+        rYear : tempArr[16],          //연관개체 발생년도
+        rSeq : tempArr[17],           //연관개체 번호 
+        rTp : tempArr[18],            //연관개체 타입(TD/TY)  
+        rTyphoonName : rTyphoonName,  //연관태풍인 경우 태풍명
+        rDesc : "",                   //이전 중심점이 연관개체인 경우 메세지
+        tmTp : undefined              //예보값인지, 현재, 과거 값인지 여부(F0,C,P0)
+      };
+
+
+/sdt/sdtAnalysis.do
+
+analyDate
+fullTime
+
+
+- SDT분석창 호출 함수 ::
+analysis.js - 3105 Line
+----------------------------------------------------------------------
+clickTypMenu()
+            gua.window.addParam("typId", typId);
+            gua.window.addParam("typName", typName);
+            gua.window.addParam("typYear", typYear);
+            gua.window.addParam("typListSeq", typListSeq);
+            gua.window.addParam("typStatus", typStatus);
+
+            var fullTime = getActiveMapDate();
+            var rasingTime = dateTimeFormat(fullTime);
+            gua.window.addParam("analyDate", rasingTime);
+            gua.window.addParam("fullTime", fullTime);
+
+
+
+<span class="date"><spring:message code="typhoon.analydate"/> : <label id="utcTime">${analyDate}</label> UTC</span>
+
+
+//저장 버튼 클릭
+$('#btnSdtSave').click(function(){
+    sdtL3Type = "SDT_Report_SaveOnly";
+    saveSdt_rmwOnly();
+});
+
+
+gua.req.addParam("analyDate", saveDate);
+
+
+관측시간 : 2019.05.08 13:40
+분석시간 : 2019-05-08 14:00:00
+
+<!-- SDT분석 버튼 그룹 -->
+<div class="btnWrap">
+    <button type="button" class="nmsc imp" id="btnSdtTrans"><spring:message code="typhoon.transmit"/></button><!-- 전송 버튼 -->
+    <button type="button" class="nmsc imp" id="btnSdtSave"><spring:message code="typhoon.save"/></button><!-- 저장 버튼 -->
+    <button type="button" class="nmsc nor" id="btnTypRouteReCreation"><spring:message code="typhoon.recreate.typroute"/></button><!-- 태풍경로 재생성 버튼 -->
+    <button type="button" class="nmsc def" id="btnTypEnd"><spring:message code="typhoon.end"/></button><!-- 태풍종료 버튼 -->
+    <button type="button" class="nmsc def" id="btnRangeDrawPath1"><spring:message code="typhoon.draw.route"/></button><!-- 결과표출 버튼 -->
+    <button type="button" class="nmsc def" id="removePath1"><spring:message code="typhoon.remove.route"/></button><!--  결과삭제 버튼 -->
+    <button type="button" class="nmsc def" id="excelDown1"><spring:message code="typhoon.save.excel"/></button><!-- 엑셀저장 버튼 -->
+    <button type="button" class="nmsc def" onclick="closePop()"><spring:message code="typhoon.close"/></button><!-- 닫기 버튼 -->
+</div>
+
+
+1. SDT 분석
+    전송 => utcTime
+    저장 => utcTime
+    태풍경로 재생성 => utcTime
+    태풍종료 => searchDatas1[0].analyDate
+    결과표출 => X
+    결과삭제 => X
+    엑셀저장 => typYear
+
+2. 위성 경로영상
+    경로영상 다운로드 => utcTime
+
+3. 위성 경로동영상
+    경로동영상 다운로드 => X
+    전체시간 경로영상 다운로드 => X
+
+4. 적외 강풍반경
+    영상다운로드(컬러) => X
+    영상다운로드(흑백) => X
+    검색 => X
+    재산출 => utcTime
+
+5. 적외강풍반경 검증
+    자료다운로드 => X
+
+6. 마이크로파 강풍반경
+    검색 => X
+
+7. 마이크로파 태풍영상
+    검색 => X
+
+8. GTS전문생성
+    전송 => X
+
+
+
+--------------------------------------------------
+FUN-008
+사용자 관리 기능
+사용자 관리 페이지 구현
+----------------------------------------
+① 사용자 로그인·권한 관리
+ - 사용자의 로그인 및 데이터 등록, 수정, 삭제, 열람 권한 관리
+② 사용자 접속 이력 관리
+  - 사용자 명·ID·IP, 로그인 시각(ccyy-mm-dd hh:mm:ss)
+    ※ 6개월 이상 보관
+③ 사용자 관리
+  - 사용자 인사·조직 정보 관리(CRUD)
+    ※ CRUD: Create·Read·Update·Delete
+--------------------------------------------------
+
+--------------------------------------------------
+FUN-009
+판독 영상 산출물(판독 영상, 보고서) 검색 및 도시화
+검색 페이지 구현
+----------------------------------------
+① 판독 영상 자료 검색 및 도시
+② 보고서 검색 및 열람
+--------------------------------------------------
+
+
+9월12 ~14일
+  온양 관광호텔
+  온양 제일 호텔
+  스플라스 리솜
+  파라다이스스파도고
+  아산스파비스
+
+
+사용자 로그인-권한 관리
+사용자 접속 이력 관리
+판독 영상 자료 검색
+보고서 검색
+
+
+레노버 YOGA 730-13IWL 81JR000RKR
+레노버 YOGA 730-13IWL 81JR000QKR
+레노버 YOGA 730-13IWL 81JR0030KR
+
+ASUS 젠북 플립 13 UX362FA-EL087
+ASUS 젠북 플립 13 UX362FA-EL087T
+ASUS 젠북 플립 13 UX362FA-EL216T
+
+HP 스펙터 x360 13-ap0085TU
+HP 스펙터 x360 13-ap0086TU
+
+
+<!--  태품 목록 관리-->
+<%@ include file="../typhoon/typList.jspf" %>
+
+<select id="selTypName" onchange="this.nextElementSibling.value=this.value"></select>
+<input type="text" id="selTypNameTxt" name="format" value="" />
+
+<button type="button" class="nmsc def" id="btnTypEnd"><spring:message code="typhoon.end"/></button><!-- 태풍종료 버튼 -->
+
+
+typhoon.js - Line 456
+
+/** 탭 컨트롤, 상단 버튼(기본화면, 위성영상, 최근접예상, 위험영역)
+ * @constructor
+ * @extends {ol.control.Control}
+ * @param {Object=} opt_options Control options.
+ */
+
+var old_idx = 0;
+
+mapManager.TapControl = function(opt_options) {  
+
+ContentManager.Typhoon.prototype.refreshIcons = function(isActive){ 
+
+ContentManager.Depression.prototype.refreshIcons = function(isActive){
+
+
+imageBasicPath : D:/vol01/DATA/IMG/TYPN/GK2A/
+gua.js:1951 Color Image Path : D:/vol01/DATA/IMG/TYPN/GK2A/201609/28/gk2a_ami_ty1618CHABA_trmwc_ta000ge_201609282100.png
+gua.js:1951 Gray Image Path : D:/vol01/DATA/IMG/TYPN/GK2A/201609/28/gk2a_ami_ty1618CHABA_trmwg_ta000ge_201609282100.png
+gua.js:1951 Color Image Path Empty : D:/vol01/DATA/IMG/TYPN/GK2A/201609/28/gk2a_ami_ty1618CHABA_trmwc_ta000ge_201609282100_empty.png
+gua.js:1951 Gray Image Path Empty : D:/vol01/DATA/IMG/TYPN/GK2A/201609/28/gk2a_ami_ty1618CHABA_trmwg_ta000ge_201609282100_empty.png
+
+
+shel-daily.log
+
+
+typAnalysis.js
+5525 Line
+function changeManualDraw(flag){
+
+5666 Line
+function gailDblClick(e){
+
+5721 Line
+function stormDblClick(e){
+
+
+"http://192.168.0.51:8080/TYPHOON/satellite/satelliteImageListForItem.jsp?tms%5B%5D=201906260300&tms%5B%5D=201906260900&tms%5B%5D=201906262100&tms%5B%5D=201906270300&tms%5B%5D=201906270900&tms%5B%5D=201906271500&tms%5B%5D=201906271800&tms%5B%5D=201906272100&tms%5B%5D=201906280300&tms%5B%5D=201906280900".
+
+mapManager.setSateliteSources
+mapManager.toggleSatellite
+
+
+typhoon.js
+Line 464
+mapManager.TapControl = function(opt_options) {
+
+typhoonContent.js
+Line 2983
+ContentManager.Typhoon.prototype.refreshIcons = function(isActive){
+
+
+strFormat == {"fileName":"http://%s/TYPHOON/typdata/satdata/%s","tm":"%s","centerIndex":"%s"}
+D:\ETAPS_WEB\workspace\ROOT_TYP\ROOT_TYP\TYPHOON\typdata\satdata
+TyphoonConfig.TYP_DOMAIN = typ.kma.go.kr
+tms.length = 2
+root == D:\ETAPS_WEB\workspace\ROOT_TYP\ROOT_TYP\TYPHOON\typdata\satdata
+fileName == coms_le1b_ir1_ch1_typn_201907161745.png
+satImage.exists() = false
+D:\ETAPS_WEB\workspace\ROOT_TYP\ROOT_TYP\TYPHOON\typdata\satdata\coms_le1b_ir1_ch1_typn_201907161745.png
+D:\ETAPS_WEB\workspace\ROOT_TYP\ROOT_TYP\TYPHOON\typdata\satdata\coms_le1b_ir1_ch1_typn_201907161745.png
+root == D:\ETAPS_WEB\workspace\ROOT_TYP\ROOT_TYP\TYPHOON\typdata\satdata
+fileName == coms_le1b_ir1_ch1_typn_201907162345.png
+satImage.exists() = false
+D:\ETAPS_WEB\workspace\ROOT_TYP\ROOT_TYP\TYPHOON\typdata\satdata\coms_le1b_ir1_ch1_typn_201907162345.png
+D:\ETAPS_WEB\workspace\ROOT_TYP\ROOT_TYP\TYPHOON\typdata\satdata\coms_le1b_ir1_ch1_typn_201907162345.png
+sb.toString() == 
+
+
+typAnalysis.js
+6993 Line
+function makeTransFile(){
+
+
+from 2019-08-21 김승철 책임 ::
+sdt 창 종료 후 메인화면에서 새 탭을 열고 새로운 영상을 조회/표출한 후 sdt분석 보튼을 클릭하면 '태풍분석 View를 선택해 주세요' 라는 메시지가 나옵니다. 
+경우에 따라 그 전의 view 탭을 종료하고 새로 띄웠던 탭에서 다시 sdt 버튼을 누르면 될때도 있으나, 브라우저를 종료했다 다시 실행해야 할 때도 있습니다. 
+확인 바랍니다.
+
+
+RTKO63_201906281000]03_ko.png
+
+src="/repositary/image/typ/img/RTKO64_201907171600]05_ko.png"
+src="/repositary/image/typ/img/RTKO64_201907171600]05_ko.png"
+
+레드캡 제주 
+www.redcap-jeju.com
+
+
+typhoon.js
+  - var mapManager
+  - 52 Line
+
+TyphoonHelper.java
+  - queryExistsSatImage()
+  - 162 Line
+
+
+$("#selectItems").hide();
+
+
+sdt 창 종료 후 메인화면에서 새 탭을 열고 새로운 영상을 조회/표출한 후 sdt분석 버튼을 클릭하면 '태풍분석 View를 선택해 주세요' 라는 메시지가 나옵니다. 
+경우에 따라 그 전의 view 탭을 종료하고 새로 띄웠던 탭에서 다시 sdt 버튼을 누르면 될때도 있으나, 브라우저를 종료했다 다시 실행해야 할 때도 있습니다. 
+확인 바랍니다.
+
+
+typAnalysis.js
+798 Line
+  $("#selTSelect").change(function(){
+      changeTSelect();
+
+      $("#selCiNum").val( $("#iptTNum").val() );
+      changeCiNum();
+  });
+
+5066 Line
+  //T 선택에 따른 NUM 세팅
+  function changeTSelect(){
+      var sel = $('#selTSelect').val();
+      if(sel == "DT"){
+          $('#iptTNum').val($('#selDtNum').val());
+      }else if(sel == "MET"){
+          $('#iptTNum').val($('#iptMetNum').val());
+      }else if(sel == "PT"){
+          $('#iptTNum').val($('#selPtNum').val());
+      }
+  }
+
+  //DT, MET, PT 선택에 따른 CI 적용
+  function setCiNum(type, val){
+      if($("#selTSelect").val() == type){
+          $("#iptTNum").val(val);
+          $("#selCiNum").val($("#iptTNum").val());
+          changeCiNum();
+      }
+  }
+
+  //CI 선택에 따른 MSLP, MWS 세팅
+  function changeCiNum(){
+      //m/s = knot * 0.5144444 적용(소수점 한자리 올림)
+      var arrCi = new Array('1.0','1.5','2.0','2.5','3.0','3.5','4.0','4.5','5.0','5.5','6.0','6.5','7.0','7.5','8.0');
+      var arrMslp = new Array('1005.0','1002.0','998.0','993.0','987.0','981.0','973.0','965.0','956.0','947.0','937.0','926.0','914.0','901.0','888.0');
+      var arrMws = new Array('11.3','14.9','18.5','22.1','25.7','29.3','32.9','36.5','40.1','43.7','47.8','51.4','55.0','59.2','62.8');
+
+      var mslp = "";
+      var mws = "";
+
+      for(var i=0;i<arrCi.length;i++){
+          if(arrCi[i] == $("#selCiNum").val()){
+              mslp = arrMslp[i];
+              mws = arrMws[i];
+          }
+      }
+
+      $('#iptMslp').val(mslp);
+      $('#iptMws').val(mws);
+  }
+
+
+typAnalysis.js
+767 Line
+  // 강도지수 - MET 지수 콤보박스 변경
+  $("#selMetTendency").change(function(){
+      var metT = parseFloat($("#selMetTendency").val());
+      var parseFloatCiNum24 = parseFloat(ciNum24);
+
+      var metSum = 0;
+      if(isNaN(parseFloatCiNum24)) {
+          metSum = (metT).toFixed(1);
+      } else {
+          metSum = (metT + parseFloatCiNum24).toFixed(1);
+      }
+
+      $("#iptMetNum").val(metSum);
+      setCiNum('MET', $("#iptMetNum").val());
+  });
+
+
+//조회 데이터
+var searchDatas1 = [];//SDT
+var searchDatas2 = [];//ADT
+
+//분석일시의 24시간 전 데이터
+var ciNum24 = "";
+var ciNum24AnalyDate = "";
+
+
+typAnalysis.js
+1622 Line
+  var $grid1 = $("#gridList1");
+
+
+typAnalysis.js
+798 Line
+  // 강도지수 - T 지수 콤보박스 변경
+  $("#selTSelect").change(function(){
+      changeTSelect();
+
+      // [2019-08-29 장근희] CI 지수 선택을 위한 기능 추가
+      //$("#selCiNum").val( $("#iptTNum").val() );
+
+      // [2019-08-29 장근희] "T지수"가 올바른 값인지 확인
+      checkIndexT();
+
+
+      // [2019-08-29 장근희] "CI지수" 결정 및 선택
+      setIndexCI();
+
+
+      // "CI지수" 관련 중심기압, 최대풍속 입력
+      changeCINumber();
+  });
+
+  5136 Line
+  function checkIndexT(){
+
+
+/**
+ * [2019-08-29 장근희] "T지수"가 올바른 값인지 확인
+ */
+function checkIndexT(){
+    var j;
+    var v;
+    var analyDate = gua.date($('#utcTime').text(), 'YYYY-MM-DD HH').toString();
+    var typId = $('#typId').val();
+
+    // MET지수
+    var indexMet = parseFloat($("#iptMetNum").val());
+
+    // T지수
+    var indexT = parseFloat($("#iptTNum").val());
+
+    // v 지수 결정
+    v = (indexT < 4) ? 0.5 : 1;
+
+    gua.msg.debug("-------------------------------------------------------");
+    gua.msg.debug("checkIndexT() 시작");
+    gua.msg.debug("분석일시 (utcTime) :: " + analyDate);
+    gua.msg.debug("태풍번호 (typId) :: " + typId);
+    gua.msg.debug("MET 지수 :: " + indexMet);
+    gua.msg.debug("T 지수 :: " + indexT);
+    gua.msg.debug("-------------------------------------------------------");
+
+    // T지수가 0보다 크거나 같고 8보다 작거나 같다면..
+    if(indexT >= 0 && indexT <= 8){
+
+        // T지수와 MET지수의 차이가 1 이상이라면 오류 메시지 출력
+        if(indexMet >= 0 && indexMet <= 8){
+            if(Math.abs(indexT - indexMet) > 1){
+                gua.msg.alert("T-Index is out of MET-number range.");
+                return;
+            }
+        }
+
+        // 현재 분석시간 이전 6, 12, 18, 24 시간 전 분석값과 비교
+        $.ajax({
+            url: '/sdt/getIndexTOld.do?',
+            type: 'POST',
+            data: "typId=" + typId + "&analyDate=" + analyDate,
+            dataType: 'json',
+            success: function(data){
+
+                var length = data.length;
+
+                if(length == 0){
+                    gua.msg.alert("typhoon.msg.nodata");
+                    return;
+                }
+
+                // 이전 분석시간(-6, -12, -18, -24)의 T 지수
+                for(var i = 0; i < length; i++) {
+                    var typName = data[i].typName;
+                    var typId = data[i].typId;
+                    var analyDate = data[i].analyDate;
+                    var indexTOld = data[i].tNum;
+
+                    gua.msg.debug("-------------------------------------------------------");
+                    gua.msg.debug("typName :: " + typName);
+                    gua.msg.debug("typId :: " + typId);
+                    gua.msg.debug("analyDate :: " + analyDate);
+                    gua.msg.debug("indexTOld :: " + indexTOld);
+                    gua.msg.debug("indexT :: " + indexT);
+                    gua.msg.debug("-------------------------------------------------------");
+
+                    /**
+                     * 이전 T지수가 0.0과 8.0사이 이면서..
+                     * 이전 T지수와 현재 T지수와의 차이가 1 이상이라면..
+                     * 범위를 벗어났다고 판단.
+                     */
+                    if(indexTOld >= 0 && indexTOld <= 8){
+                        if(Math.abs(indexT - indexTOld) > v){
+                            gua.msg.alert("T-Index is out of change range.");
+                            return;
+                        }
+                    }
+
+                    v += 0.5;
+
+                } // for(var i = 0; i < length; i++)
+            }
+        });
+
+        gua.req.clearParam();
+        gua.req.addParam("typId", typId);
+        gua.req.addParam("analyDate", analyDate);
+
+        gua.req.send("/sdt/getIndexTOld.do", function(data, err) {
+            if (err) return;
+
+            var length = data.length;
+
+            if(length == 0){
+                gua.msg.alert("typhoon.msg.nodata");
+                return;
+            }
+
+            // 이전 분석시간(-6, -12, -18, -24)의 T 지수
+            for(var i = 0; i < length; i++) {
+                var typName = data[i].typName;
+                var typId = data[i].typId;
+                var analyDate = data[i].analyDate;
+                var indexTOld = data[i].tNum;
+
+                gua.msg.debug("-------------------------------------------------------");
+                gua.msg.debug("typName :: " + typName);
+                gua.msg.debug("typId :: " + typId);
+                gua.msg.debug("analyDate :: " + analyDate);
+                gua.msg.debug("indexTOld :: " + indexTOld);
+                gua.msg.debug("indexT :: " + indexT);
+                gua.msg.debug("-------------------------------------------------------");
+
+                /**
+                 * 이전 T지수가 0.0과 8.0사이 이면서..
+                 * 이전 T지수와 현재 T지수와의 차이가 1 이상이라면..
+                 * 범위를 벗어났다고 판단.
+                 */
+                if(indexTOld >= 0 && indexTOld <= 8){
+                    if(Math.abs(indexT - indexTOld) > v){
+                        gua.msg.alert("T-Index is out of change range.");
+                        return;
+                    }
+                }
+
+                v += 0.5;
+
+            } // for(var i = 0; i < length; i++)
+        });
+
+    }
+
+    // [2019-08-29 장근희] T지수 결정 및 입력
+    setIndexT();
+
+}
+
+
+
+
+    SELECT 
+        a.typ_name AS TYP_NAME
+        , a.typ_id AS TYP_ID
+        , TO_CHAR(b.analy_date, 'YYYY-MM-DD HH24') AS ANALY_DATE
+        , DECODE(b.t_select, 'DT', b.dt_num, 'MET', b.met_num, 'PT', b.pt_num) AS T_NUM
+    FROM 
+        TYP_LIST a
+        , TYP_SDT b
+    WHERE 
+        a.TYP_LIST_SEQ = b.TYP_LIST_SEQ
+        AND a.TYP_ID = '1618'
+        AND a.TYP_TYPE = '2'
+        AND b.ANALY_DATE = (TO_DATE('2016-09-29 00', 'YYYY-MM-DD HH24') - 24/24)
+    ORDER BY b.ANALY_DATE ASC
+
+
+    Lenovo Thinkpad Thunderbolt 3 Dock (40AN0135EU)
+    40AC0135EU
+
+
+    gua.c.CONTEXT_ROOT + 
+
+
+1. 과거자료중 현재보다 높은 T지수와 그 분석시간을 조회
+    - /MDA/sdt/getIndexTOldMax.do
+    - data[0].tNum
+    - data[0].analyDate
+
+2. 과거자료중 현재부터 24시간 전의 T지수를 조회
+    - /MDA/sdt/getIndexTOldDay.do
+    - data[0].tNum
+
+3. 과거자료중 바로 이전의 T지수와 CI지수를 조회
+    - /MDA/sdt/getIndexTOld0.do
+    - data[0].tNum
+    - data[0].ciNum
+
+4. 3가지 자료 통합..
+    - /MDA/sdt/getIndexOldInfos.do
+    - data[0].tNum
+    - data[0].ciNum
+    - data[0].analyDate
+
+
+1793 Line $('#selMetTendency').val(data['metTendency'].toFixed(1));
+
+ASUS 젠북 플립 UX362FA
+ASUS ZenBook Flip UX362FA
+
+
+10:34:33,141 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 50) WFLYUT0021: Registered web context: /MDA
+
+
+전송 :: 
+  searchList1
+  sdtResultList.do
+  callShellScript1
+  createFile1.do
+  callShellScript2
+  gailShellScript2.do
+
+저장 ::
+  searchList1_rmwOnly
+
+  callShellScript1_rmwOnly
+
+
+$("#iptMetNum").on('keypress', function(e){
+    if(e.which == 13 || e.which == 9){ // sckim 2019.08.23
+        if(isNaN($("#iptMetNum").val())) {
+            alert("잘못된 입력입니다 - MET 지수 : " + $("#iptMetNum").val());
+        } else {
+            ciNum24 = $("#iptMetNum").val();
+            $("#selMetTendency option:eq(4)").prop("selected", true); // sckim 2019.08.22
+        }
+    }
+});
+    
+
+// 강도지수 - MET 지수 콤보박스 변경
+$("#selMetTendency").change(function(){
+    var metT = parseFloat($("#selMetTendency").val());
+    var parseFloatCiNum24 = parseFloat(ciNum24);
+
+    var metSum = 0;
+    if(isNaN(parseFloatCiNum24)) {
+        metSum = (metT).toFixed(1);
+    } else {
+        metSum = (metT + parseFloatCiNum24).toFixed(1);
+    }
+
+    $("#iptMetNum").val(metSum);
+    setCiNum('MET', $("#iptMetNum").val());
+});
+
+
+아콘 SA 9009 키캡
+
+Lenovo ThinkVision M14 USB-C MOBILE MONITOR
+주연테크 캐리뷰G V15FPG
+알파스캔 i1601 USB C 시력보호 휴대용
+
+
+http://www.thetimeparadox.com/zimbardo-time-perspective-inventory/

@@ -1,0 +1,330 @@
+----------------------------------------------------------------------------------------------------
+# 위성영상 조회 관련 소스파일 정보
+----------------------------------------------------------------------------------------------------
+
+1. \ROOT_TYP\TYPHOON\ko\weather\typhoon_02.jsp
+2. \ROOT_TYP\TYPHOON\common\map_inc.jsp
+
+3. \ROOT_TYP\TYPHOON\share\js\typhoon\typhoon.js
+        -> mapManager.setSateliteSources()
+
+4. \ROOT_TYP\TYPHOON\satellite\satelliteImageListForItem.jsp
+        -> TyphoonHelper.getInstance().queryExistsSatImage()
+
+5. \ROOT_TYP\WEB-INF\src\kr\co\kitv\typ\TyphoonHelper.java
+        -> queryExistsSatImage()
+	----------------------------------------------------------------------------------------------------
+	public String queryExistsSatImage(String[] tms) {
+		 
+	//		/home/typhoon/webapps/ROOT_TYP/TYPHOON/typdata/satdata
+	//		String img_dir ="/n0010"+File.separator+"webapps"+File.separator+"ROOT_TYP"+File.separator+"TYPHOON"+File.separator+"typdata"+File.separator+"satdata";
+	//		String img_dir ="/home"+File.separator+"typhoon"+File.separator+"webapps"+File.separator+"ROOT_TYP"+File.separator+"TYPHOON"+File.separator+"typdata"+File.separator+"satdata";
+		String img_dir ="D:"+File.separator+"ETAPS_WEB"+File.separator+"workspace"+File.separator+"ROOT_TYP"+File.separator+"ROOT_TYP"+File.separator+"TYPHOON"+File.separator+"typdata"+File.separator+"satdata";
+	//		File root = new File(Config.IMG_DIR + File.separator + "typ" + File.separator + "sat");
+		File root = new File(img_dir);
+		
+		String strFormat = "{\"fileName\":\"http://%s/TYPHOON/typdata/satdata/%s\",\"tm\":\"%s\",\"centerIndex\":\"%s\"}";
+		System.out.println("strFormat == " + strFormat);
+		StringBuilder sb = new StringBuilder();
+		
+		
+		System.out.println(img_dir);
+		int cnt = 0;
+		System.out.println("TyphoonConfig.TYP_DOMAIN = " + TyphoonConfig.TYP_DOMAIN);
+		System.out.println("tms.length = " + tms.length);
+		for(int i = 0 ; i < tms.length ; i++){
+			
+			String centerTm = tms[i];
+			
+			if(centerTm.length()<1){
+				continue;
+			}
+			Calendar tmCal = Calendar.getInstance();
+			Date tmDate = StringUtils.parseDate(centerTm.substring(0,10),"yyyyMMddHH");	 
+			
+			tmCal.setTime(tmDate);
+			tmCal.set(Calendar.MINUTE, -15); 
+			tmDate = tmCal.getTime();
+			
+			Date utcDate = new Date(tmDate.getTime() - 9 * 1000 * 60 * 60);	//utc
+			Calendar utcCal = Calendar.getInstance();
+			utcCal.setTime(utcDate); 
+			
+			String fileName = "coms_le1b_ir1_ch1_typn_" + typFileDateFormat.format(utcCal.getTime()) + ".png";
+			System.out.println("root == " + root);
+			System.out.println("fileName == " + fileName);
+			
+			File satImage = new File(root, fileName);
+			System.out.println("satImage.exists() = "+ satImage.exists());
+			System.out.println(satImage.getAbsolutePath());
+			System.out.println(satImage.getAbsoluteFile());
+			if(satImage.exists()) {
+				
+				if(cnt>0){
+					sb.append(",");
+				} 
+				
+				sb.append(String.format(strFormat
+										,TyphoonConfig.TYP_DOMAIN
+										,satImage.getName()
+										,typFileDateFormat.format(tmCal.getTime())
+										,i));
+				
+				cnt++;
+			}
+			
+		} 
+		
+		System.out.println("sb.toString() == " + sb.toString());
+		System.out.println(sb.toString());
+		return sb.toString();
+	}
+	----------------------------------------------------------------------------------------------------
+
+
+
+서비스 접속 장애가 발생하여 복구 중입니다.
+서비스 이용에 불편을 드려 죄송합니다.
+
+
+system failure
+
+\workspace\MDA\src\main\webapp\manual\ko\34.sdtanalysis.htm
+
+
+
+unable to configure web module for JavaServer Faces
+
+Update project configuration from pom.xml
+
+Failed while installing JAX-RS (REST Web Services) 2.0.
+org.eclipse.core.internal.resources.ResourceException: Resource '/MDA/src/env/${env}/web/web.xml' does not exist.
+
+
+1 - X
+2 - O
+3 - X
+4 - X
+5 - X 
+6 - O
+
+제작사에서 몇개의 디자인 시안을 보내왔습니다. 
+
+1. http://board.raonweb.com/z_0531_int/
+2. http://board.raonweb.com/z_0517_bus/
+3. http://board.raonweb.com/z_0522_int/
+4. http://board.raonweb.com/z_0527_bus/
+5. http://board.raonweb.com/z_0491_bus/
+6. http://board.raonweb.com/z_0441_bus/
+
+희망가격에 맞추기위해서 템플릿중에 고르는것을 제안하였습니다.
+저는 이중에서 1, 3, 4번의 디자인 템플릿이 제일 괜찮은 것 같습니다. 
+
+
+제5호 태풍 다나스 관련 통계자료를 분석하던 중,
+현업시스템 통계모듈 > 예보평가 > 오차 > 기관별 예보오차(GTS) 에서 오류가 발견되어 메일 보내드립니다.
+
+태풍실황 예보 및 분석된 자료의 오차거리 계산에서 오류가 발생하였으며 자세한 내용은 첨부파일로 보내드립니다.
+
+
+gua.window.openPage("/sdt/gailListForExcel.do", {method: 2});
+gua.window.openPage("/sdt/sdtAnalysisResultForExcel.do", {method: 2});
+
+gua.window.openPopup(url, width, height, option);
+gua.window.openPopup("/sdt/sdtAnalysis.do", 1500, 970);
+gua.window.close();
+
+분석	ANALYSIS	ANALS
+
+
+sdt_analysis_help_1_csc.png
+sdt_analysis_help_2_pattern.png
+sdt_analysis_help_3_dt.png
+sdt_analysis_help_4_met.png
+sdt_analysis_help_5_pt.png
+sdt_analysis_help_6_t.png
+
+
+btnSdtAnalsHelpCsc
+btnSdtAnalsHelpPattern
+btnSdtAnalsHelpDt
+btnSdtAnalsHelpMet
+btnSdtAnalsHelpPt
+btnSdtAnalsHelpT
+
+
+sdtAnalsHelpTyp
+
+
+<!-- 태풍중심설정 - CSC -->
+<img id="help1Csc" src="../images/typhoon/sdt_anals_help_1_csc.png">
+
+<!-- 구름패턴, 이동속도 - Pattern -->
+<img id="help2Pattern" src="../images/typhoon/sdt_anals_help_2_pattern.png">
+
+<!-- 강도지수 - DT -->
+<img id="help3Dt" src="../images/typhoon/sdt_anals_help_3_dt.png">
+
+<!-- 강도지수 - MET -->
+<img id="help4Met" src="../images/typhoon/sdt_anals_help_4_met.png">
+
+<!-- 강도지수 - PT -->
+<img id="help5Pt" src="../images/typhoon/sdt_anals_help_5_pt.png">
+
+<!-- 강도지수 - T -->
+<img id="help6T" src="../images/typhoon/sdt_anals_help_6_t.png">
+
+
+<button type="button" title="CSC HELP" class="nmsc_sub def" id="btnSdtAnalsHelpCsc"><!-- <spring:message code="manual"/> -->?</button>
+<button type="button" title="PATTERN HELP" class="nmsc_sub def" id="btnSdtAnalsHelpPattern"><!-- <spring:message code="manual"/> -->?</button>
+<button type="button" title="DT HELP" class="nmsc_sub def" id="btnSdtAnalsHelpDt"><!-- <spring:message code="manual"/> -->?</button>
+<button type="button" title="MET HELP" class="nmsc_sub def" id="btnSdtAnalsHelpMet"><!-- <spring:message code="manual"/> -->?</button>
+<button type="button" title="PT HELP" class="nmsc_sub def" id="btnSdtAnalsHelpPt"><!-- <spring:message code="manual"/> -->?</button>
+<button type="button" title="T HELP" class="nmsc_sub def" id="btnSdtAnalsHelpT"><!-- <spring:message code="manual"/> -->?</button>
+
+
+<li id="sdtTab2"><spring:message code="typhoon.sdt.subtitle.radiusir"/></li><!-- 적외강풍반경 -->
+
+
+sdtAnalsHelpWin
+
+
+D:\ETAPS_WEB\workspace\ROOT_TYP\ROOT_TYP\TYPHOON\images\HELP\ico07.gif
+
+D:\ETAPS_WEB\workspace\ROOT_TYP\ROOT_TYP\TYPHOON\images\weather\typoon\gis\
+	red_td_low.png
+	red_td_low]z1.png
+	red_td_low]z2.png
+	red_td_low]z3.png
+	red_td_low]z4.png
+
+	red_td.png
+	red_td]z1.png
+	red_td]z2.png
+	red_td]z3.png
+	red_td]z4.png
+
+
+- 중심 아이콘 스타일 함수 ::
+typhoonContent.js - 1181 Line
+----------------------------------------------------------------------
+//중심 아이콘 스타일 리턴(태풍)
+ContentManager.getCenterIcon = function(info, isActive) {
+
+
+sb.toString() :: {"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906251750.png","tm":"201906260250","centerIndex":"0"},{"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906252350.png","tm":"201906260850","centerIndex":"1"},{"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906261150.png","tm":"201906262050","centerIndex":"2"},{"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906261750.png","tm":"201906270250","centerIndex":"3"},{"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906262350.png","tm":"201906270850","centerIndex":"4"},{"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906270550.png","tm":"201906271450","centerIndex":"5"},{"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906270850.png","tm":"201906271750","centerIndex":"6"},{"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906271150.png","tm":"201906272050","centerIndex":"7"},{"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906271750.png","tm":"201906280250","centerIndex":"8"},{"fileName":"http://192.168.0.51:8080/TYPHOON/typdata/satdata/gk2a_ami_l1b_typn_tp080lm_201906272350.png","tm":"201906280850","centerIndex":"9"}
+
+
+	
+	/**
+	 * 운영 환경
+	public static String TYP_DOMAIN = "typ.kma.go.kr"; 
+	public static String TYP_ROOT = "/n0010/webapps/ROOT_TYP/TYPHOON/";
+	public static String TYP_TYPDATA_PATH = "/n0010/webapps/ROOT_KMA/repositary/image/sat"; 
+	 */
+	
+	/**
+	 * 로컬 환경
+	public static String TYP_DOMAIN = "localhost:8088"; 
+	public static String TYP_ROOT = "D:\\ETAPS_WEB\\workspace\\ROOT_TYP\\TYPHOON";
+	public static String TYP_TYPDATA_PATH = "D:\\ETAPS_WEB\\workspace\\ROOT_TYP\\ROOT_TYP\\TYPHOON\\typdata";
+	 */
+
+	/**
+	 * 사용안함 - 운영 환경
+	public static String TYP_DOMAIN = "typ.kma.go.kr"; 
+	public static String TYP_ROOT = "/n0010/webapps/ROOT_TYP/TYPHOON/";
+	public static String TYP_TYPDATA_PATH = "/n0010/webapps/ROOT_TYP/TYPHOON/typdata/monitor";
+	 */
+	
+	/**
+	 * GI 개발서버 환경
+	public static String TYP_DOMAIN = "192.168.0.51:8080"; 
+	public static String TYP_ROOT = "/n0010/webapps/ROOT_TYP/TYPHOON/";
+	public static String TYP_TYPDATA_PATH = "/n0010/webapps/ROOT_KMA/repositary/image/sat";	
+	 */
+
+	public static String TYP_DOMAIN = "192.168.0.51:8080";
+	public static String TYP_ROOT = "D:\\ETAPS_WEB\\workspace\\ROOT_TYP\\TYPHOON";
+	public static String TYP_TYPDATA_PATH = "D:\\ETAPS_WEB\\workspace\\ROOT_TYP\\ROOT_TYP\\TYPHOON\\typdata";
+
+
+typhoon.js
+Line 52
+
+var mapManager = {
+		
+	config : {
+		map:'map'
+		,marker:'marker'
+		,popup : 'popup'
+		,selectbox : 'selectItems'
+		,graph : 'graph'
+		,detail : 'detail'
+	},
+	controls : {
+		noItemMsgControl : undefined	//태풍 또는 TD가 없는 경우, 메세지 표출 컨트롤
+	   ,tapControl : undefined			//탭 컨트롤
+	   ,playControl : undefined 		//위성영상 탭에서 플레이 컨트롤
+	   ,onlySelectedControl : undefined //선택한 태풍만 예보정보 보기 | 모든 태풍 예보정보 보기 컨트롤
+	   ,nowViewControl : undefined		//위성영상 탭에서 영상의 시간 표시 컨트롤
+	   ,loadingBarControl : undefined	//loading bar
+	},		
+	contentManager : undefined, 
+	graphManager : undefined, 
+	map : undefined, 			//지도 객체
+	projection : undefined, 
+	layers : {
+		base : undefined,		//지도 layer
+		satellite :	undefined,	//위성영상 layer
+		position : undefined,	//지점 layer
+		typhoon : undefined,	//태풍 layer
+		danger : undefined		//[2019-03-19] 위험반경 레이어 추가
+	}, 	
+	imageSources : [],			//천리안 위성이미지 소스 
+	extents : {
+		base : ol.proj.transformExtent([-40, -40, 180, 60], "EPSG:4326", "EPSG:111111"),	//적도0~북위60도 경도 100~180 [100, 0, 180, 60]
+		satellite :[-4396000, -3796000, 4396000, 3796000]									//위성 영상의 표출범위    
+	},
+	sourceParams : {
+		base : {LAYERS: 'typhoon:typhoon_kr', VERSION: '1.1.0'},
+		baseEn : {LAYERS: 'typhoon:typhoon_eng', VERSION: '1.1.0'},
+		satellite : {LAYERS: 'green map_2', VERSION: '1.1.0'}
+	},
+	minZoom : 3,
+	maxZoom : 7,
+	popup : undefined,	//마우스오버 팝업
+	marker : undefined,	//지점
+	overlays : []		//최근접예상 팝업
+};
+
+
+01. 클레버 타키온 USB PD 퀵차지3.0 고속멀티충전기 CTM-06
+    - 총출력 : 78W
+    - PD출력 : 60W
+    - 68 x 68 x 28 / 170g / 2 포트
+    - 36,700원
+
+02. 클레버 타키온 프로 PD 고속 멀티충전기 CTM-05
+    - 총출력 : 110W
+    - PD출력 : 60W
+    - 103 x 70 x 26 / 220g / 4 포트
+    - 43,500원
+
+03. 씽크웨이 CORE D653
+    - 총출력 : 73W(정격 65W)
+    - PD출력 : 45W
+    - 95 x 65 x 27 / 180g / 3 포트
+    - 32,900원
+
+04. 씽크웨이 CORE D754
+    - 총출력 : 90W(정격 75W)
+    - PD출력 : 60W
+    - 190 x 125 x 28 / 200g / 4 포트
+    - 37,900원
+
+05. 버바팀 퀵차지3.0 USB-PD 113W
+    - 총출력 : 113W
+    - PD출력 : 60W
+    - 113.5 x 100 x 20 / 000g / 4 포트
+    - 58,500원

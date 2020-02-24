@@ -1,0 +1,287 @@
+4. 태풍분석 기능
+	4.1 태풍관리
+	4.2 태풍전문검색
+	4.3 태풍경로영상
+	4.4 도시별거리정보
+	4.5 SDT분석
+	4.6 ADT분석
+	4.7 자동태풍중심분석
+	4.8 GTS 전문
+	4.9 GTS전문생산
+	4.10 종합분석
+	4.11 연직단면
+	4.12 기타분석도구
+	4.13 SDT재분석
+
+typhoon.send.ip
+typhoon.send.port
+
+typhoon.image.path.gk2a
+typhoon.verify.basic.path
+
+적외 강풍반경 검증 영상 기본 경로
+
+
+<!-- SDT 재분석 Shell Scripts 경로 -->
+<entry key="typhoon.shell.path.sdtre"><![CDATA[/vol01/SYSTEMS/MDA00/TYPHOON/TYP_PRODUCT_RE/SCRIPTS]]></entry>
+
+<!-- SDT 재분석 태풍 분석리스트 파일 생성 경로 -->
+<entry key="typhoon.list.path.sdtre"><![CDATA[/vol01/SYSTEMS/MDA00/TYPHOON/TYP_PRODUCT_RE/TYPLIST]]></entry>
+
+<!-- SDT 재분석 강풍반경 영상 기본 경로 -->
+<entry key="typhoon.image.path.gk2a.sdtre"><![CDATA[/vol01/SYSTEMS/MDA00/outgoing/typ/]]></entry>
+
+<!-- SDT 재분석 강풍반경 검증 영상 기본 경로 -->
+<entry key="typhoon.verify.basic.path.sdtre"><![CDATA[/vol01/SYSTEMS/MDA00/outgoing/typ/]]></entry>
+
+<!-- SDT 재분석 Outgoing 파일 경로 -->
+<entry key="typhoon.outgoing.path.sdtre"><![CDATA[/vol01/SYSTEMS/MDA00/outgoing/typ/]]></entry>
+
+<!-- SDT 재분석 강풍반경 검증 텍스트 파일 경로 -->
+<entry key="typhoon.text.path.sdtre"><![CDATA[/vol01/SYSTEMS/MDA00/outgoing/typ/]]></entry>
+
+
+지구본감시 SHEAR 고도 추가.
+지구본감시 SHEAR (Horiz.) 메뉴 추가.
+일별 시계열 감시 -> 시간-경도 단면도 이미지 크기 늘려야함.
+
+분석데이터 연동시스템 및 정보시스템(WEB)
+사용자 관리 기능
+판독영상 산출물(판독영상, 보고서) 검색 및 도시화
+
+
+분석자명 : analystNm
+분석자ID : analystId
+
+
+7573 Line
+function searchList1(type){
+}
+
+503 Line
+<select id="selectSdtReList" resultType="Sdt" parameterType="Sdt">
+
+1058 Line
+$('#transTxt').click(function(){
+
+4646 Line
+function checkAnalystId() {
+}
+
+// 분석자 ID, 사용자 ID 일치 확인
+if(checkAnalystId() == false) {
+    return;
+}
+
+<button type="button" class="nmsc nor" id="btnReProduction"><spring:message code="typhoon.recalculation"/></button><!-- 재산출 -->
+
+<button type="button" class="nmsc_ico" id="btnVerify"><spring:message code="typhoon.verify"/></button><!-- 검증 -->
+
+
+[2019-10-25 장근희] SDT 재분석 기능 변경.
+
+
+284 Line
+<!-- 탭 시작(SDT 재분석, 그래프분석, 적외강풍반경, 적외강풍반경 검증) -->
+    <ul class="nmsc_tab into9" id="sdtTabs">
+        <li class="on" id="sdtTab1"><spring:message code="typhoon.sdt.subtitle.sdtRe"/></li><!-- SDT 재분석 -->
+        <li id="sdtTab9"><spring:message code="typhoon.sdt.subtitle.graph"/></li><!-- 그래프분석 -->
+        <li id="sdtTab2"><spring:message code="typhoon.sdt.subtitle.radiusir"/></li><!-- 적외강풍반경 -->
+        <li id="sdtTab3"><spring:message code="typhoon.sdt.subtitle.radiusirverify"/></li><!-- 적외강풍반경 검증 -->
+        <!--<li id="sdtTab7"><spring:message code="typhoon.sdt.subtitle.radiusmw"/></li>--><!-- 마이크로파 강풍반경 -->
+        <!--<li id="sdtTab6"><spring:message code="typhoon.sdt.subtitle.mwtyp"/></li>--><!-- 마이크로파 태풍영상 -->
+    </ul>
+<!-- 탭 종료 -->
+
+
+778 Line
+<!-- 통계그래프 시작 -->
+<div id="sdtView9" style="display:none;">
+</div>
+
+
+9109 Line
+// 그래프 분석 태풍 발생년도
+function makeTypYearBoard(){
+}
+
+
+9129 Line
+// 그래프 분석 태풍명
+function makeTypListBoard(){
+}
+
+
+8469 Line
+// sckim 2019.08.27 begin for adding graph
+function searchListBoard(){
+}
+
+<div id="chartContainerBoard" style="height:330px"></div>
+
+<div id="gridContainerBoard">
+    <table id="gridListBoard"></table>
+</div>
+
+
+4144 Line
+// 그래프 분석 - 차트
+$('#chartContainerBoard').highcharts({
+});
+
+
+8469 Line
+// sckim 2019.08.27 begin for adding graph
+function searchListBoard(){
+    gua.msg.debug("searchListBoard() 시작");
+
+    var temp = "";
+    for(var j=0;j<tabBoardCheckArr.length;j++){
+        if(j == 0){
+            temp += tabBoardCheckArr[j];
+        }else{
+            temp += ",";
+            temp += tabBoardCheckArr[j];
+        }
+    }
+
+    if(!firstFlagBoard){
+        gua.msg.debug("발생년도 : " + $('#searchTypYearBoard').val());
+        gua.msg.debug("태풍번호 : " + $('#searchTypNameBoard').val());
+        gua.msg.debug("구분 : " + $('#searchTypeBoard').val());
+        gua.msg.debug("체크항목 : " + temp);
+    }
+
+
+    var sel = $('#searchTypNameBoard option:selected').text();
+    var temp = sel.split(' ');
+
+    gua.req.clearParam();
+    gua.req.addParam("typYear", $('#searchTypYearBoard').val());
+    gua.req.addParam("typId", $('#searchTypNameBoard').val());
+    gua.req.addParam("typName", temp[0]);
+    gua.req.addParam("itvType", $('#intervalTime').val());
+
+    if(firstFlagBoard){
+        gua.req.send("/board/statisticsDate.do", function(data, err) {
+            if (err) return;
+
+            $('#minDate').val(gua.date(data['minDate'],"YYYY-MM-DD HH:MI"));
+            $('#maxDate').val(gua.date(data['maxDate'],"YYYY-MM-DD HH:MI"));
+
+            var start = parseFloat(gua.date($('#minDate').val(), "yyyyMMddHHMI")+"00");
+            var end = parseFloat(gua.date($('#maxDate').val(), "yyyyMMddHHMI")+"00");
+            //gua.msg.debug("기간(1회성) : " + start + " ~ " + end);
+            gua.msg.debug("/board/statisticsDate.do 실행 완료");
+
+            firstFlagBoard = false;
+            searchListBoard();
+        });
+    }
+
+    gua.req.addParam("minDate", gua.date($('#minDate').val(), "yyyyMMddHHMI")+"00");
+    gua.req.addParam("maxDate", gua.date($('#maxDate').val(), "yyyyMMddHHMI")+"00");
+
+    gua.req.send("/board/statisticsList.do", function(data, err) {
+        if (err) return;
+
+        bindChartBoard(data);
+        $('#chartName').text("");
+        $('#gridListBoard').jqGrid('clearGridData');
+        searchDataBoard = [];
+        searchDataBoard = data;
+
+        gua.msg.debug("/board/statisticsList.do 실행 완료");
+    });
+
+    gua.msg.debug("searchListBoard() 끝");
+}
+
+<!-- 통계그래프 리스트 -->
+<select id="selectStatisticsList" resultType="Board" parameterType="Board">
+
+<select id="selectStatisticsDateList" resultType="Board" parameterType="Board">
+
+
+SDT_LAT 	sdtLat
+SDT_LON 	sdtLon
+SDT_CI 		sdtCi
+SDT_MSLP 	sdtMslp
+SDT_MWS 	sdtMws
+SDT_AVG3HRSPEED 	sdtAvg3hrSpeed
+SDT_AVG6HRSPEED		sdtAvg6hrSpeed
+
+
+SDTRE_LAT 	sdtreLat
+SDTRE_LON 	sdtreLon
+SDTRE_CI 	sdtreCi
+SDTRE_MSLP 	sdtreMslp
+SDTRE_MWS 	sdtreMws
+
+8546 Line
+// 그래프 분석 - 차트
+function bindChartBoard(data){
+}
+
+
+if($('#searchTypeBoard').val() == 'ci'){
+    temp = ciSeries(data);
+}else if($('#searchTypeBoard').val() == 'mslp'){
+    temp = mslpSeries(data);
+}else if($('#searchTypeBoard').val() == 'mws'){
+    temp = mwsSeries(data);
+}else if($('#searchTypeBoard').val() == 'dis'){
+    temp = disSeries(data);
+}
+
+
+X380 : 313.5 x 222.2 x 18.2 (mm) / 1.4kg
+X390 : 310.4 x 219 x 15.95 (mm) / 1.29kg
+
+
+// [2019-10-28 장근희] SDT 재분석 추가
+[2019-10-28 장근희] 그래프 분석에 SDT 재분석 추가
+
+//통계그래프 그리드 컬럼모델(강도지수)
+function ciModel(type){
+
+// 그래프 분석 - 그리드 생성
+function bindGridBoard(type, name, idx){
+
+SDT REANALYSIS
+
+selMetTendency
+
+/**
+ * [2019-08-29 장근희] "T지수"가 올바른 값인지 확인
+ */
+function checkIndexT(){
+
+/**
+ * [2019-08-29 장근희] T지수 결정 및 입력
+ */
+function setIndexT(){
+
+/**
+ * [2019-08-29 장근희] "CI지수" 결정 및 선택
+ */
+function setIndexCI(){
+
+getIndexTOldSdtRe
+
+[2019-10-29 장근희] SDT 재분석 기능 추가 변경.
+
+$("#pop_delete_id").on("click", function() {
+	var url ="/Statistics/popup/userDelete";
+	jsAjaxCall("POST", url, "form01", function(response, status) {
+		if (response.result != null) {
+			if (response.result == "success") {
+				alert(response.message);
+				linkPage(1);
+			}else{
+				alert(response.message);
+			}
+			
+		}
+	});
+});

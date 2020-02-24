@@ -1,0 +1,38 @@
+[tos@TOSDEV JAR]$ java -jar ./typhoonBatch.jar
+xmlfilename==/n0010/webapps/ROOT_KMA/repositary/xml/typ/td_typ_lst_2019.xml
+xmlfilename==/n0010/webapps/ROOT_KMA/repositary/xml/typ/td_typ_lst_2018.xml
+xmlfilename==/n0010/webapps/ROOT_KMA/repositary/xml/typ/typ_web_inf_2019.xml
+xmlfilename==/n0010/webapps/ROOT_KMA/repositary/xml/typ/typ_web_inf_2018.xml
+2019-03-20 16:43:28 ERROR AppService:100 - getCurrentData
+java.lang.NullPointerException
+        at com.kitv.batch.service.AppService.getActiveTypList(AppService.java:427)
+        at com.kitv.batch.service.AppService.getCurrentData(AppService.java:69)
+        at com.kitv.batch.TyphoonBatch.main(TyphoonBatch.java:28)
+tblFilename==/n0010/webapps/ROOT_TYP/TYPHOON/DAOU/RTKO63/RTKO63.tbl
+2019-03-20 16:43:28 INFO  TyApp:67 - /n0010/webapps/ROOT_TYP/TYPHOON/DAOU/RTKO63/null
+2019-03-20 16:43:28 INFO  TyApp:72 - The active typhoons are not exist.
+2019-03-20 16:43:28 INFO  TdApp:45 - /n0010/webapps/ROOT_TYP/TYPHOON/DAOU/RTKO64/null
+2019-03-20 16:43:28 INFO  TdApp:50 - The active TDs are not exist.
+
+
+/n0010/webapps/ROOT_TYP/repositary/xml/typ/typ_web_inf_2019.xml
+
+/data/TOS_SSW/tomcat/conf/server.xml
+
+Narcotics Control Information System 
+
+4월17일 수요일 09:30 ~ 12:00
+  - Weblogic 및 SafeNet 운영 관리 
+
+4월17일 수요일 13:00 ~ 17:30
+  - Network 및 OS 운영 관리 
+
+4월18일 목요일 09:30 ~ 12:00
+  - Oracle Database 운영 관리 
+
+4월18일 목요일 13:00 ~ 15:00
+  - Application 운영 관리 
+
+
+현지 기관의 마약통제 행정역량을 강화, 국민의 건강한 삶과 건전한 사회분위기 조성
+국경을 초월한 마약범죄에 대하여 국가 간 공동 대처 등 상호 협력 증진

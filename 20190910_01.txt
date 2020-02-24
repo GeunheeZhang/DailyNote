@@ -1,0 +1,273 @@
+cgiUrl
+
+// [2019-09-10 장근희] 'cgiUrl' 프로퍼티 추가
+
+${vo.cgiUrl}
+
+// [2019-09-10 장근희] 'cgiUrl' 프로퍼티 추가 및 사용방법 변경
+String cgiUrl = config.getCgiUrl();
+vo.setCgiUrl(cgiUrl);
+
+--------------------------------------------------------------------------------
+\WEB-INF\jsp\views\comis\typTrack.jsp
+\java\com\kitvalley\statistics\comis\web\ComisController.java
+
+\WEB-INF\jsp\views\forecastEval\errorIntensity.jsp
+\java\com\kitvalley\statistics\forecastEval\web\ForecastEvalController.java
+
+\WEB-INF\jsp\views\forecastEval\errorModelDis.jsp
+\java\com\kitvalley\statistics\forecastEval\web\ForecastEvalController.java
+
+\WEB-INF\jsp\views\ioData\curvePath.jsp
+\java\com\kitvalley\statistics\ioData\web\IoDataController.java
+
+\WEB-INF\jsp\views\ioData\insttPath.jsp
+\java\com\kitvalley\statistics\ioData\web\IoDataController.java
+
+\WEB-INF\jsp\views\ioData\tdInfo.jsp
+\java\com\kitvalley\statistics\ioData\web\IoDataController.java
+
+\WEB-INF\jsp\views\ioData\typInfo.jsp
+\java\com\kitvalley\statistics\ioData\web\IoDataController.java
+
+\WEB-INF\jsp\views\popup\feMdlStg.jsp
+\java\com\kitvalley\statistics\popup\web\PopupController.java
+
+\WEB-INF\jsp\views\popupComis\tdInfoComis.jsp
+\java\com\kitvalley\statistics\popupComis\web\PopupComisController.java
+
+\WEB-INF\jsp\views\popupComis\typ3HInfoComis.jsp
+\java\com\kitvalley\statistics\popupComis\web\PopupComisController.java
+
+\WEB-INF\jsp\views\popupComis\typFcstDraftComis.jsp
+\java\com\kitvalley\statistics\popupComis\web\PopupComisController.java
+
+\WEB-INF\jsp\views\popupComis\typInfoComis.jsp
+\java\com\kitvalley\statistics\popupComis\web\PopupComisController.java
+
+\WEB-INF\jsp\views\popupComis\typTrackComis.jsp
+\java\com\kitvalley\statistics\popupComis\web\PopupComisController.java
+
+\WEB-INF\jsp\views\watch\typGrowDiagram.jsp
+\java\com\kitvalley\statistics\watch\web\WatchController.java
+
+\WEB-INF\jsp\views\watch\typGuidance.jsp
+\java\com\kitvalley\statistics\watch\web\WatchController.java
+
+\WEB-INF\jsp\views\watch\windProb.jsp
+\java\com\kitvalley\statistics\watch\web\WatchController.java
+--------------------------------------------------------------------------------
+
+
+<!-- [2019-09-11 장근희] JSP에서 사용하기 위하여 Properties 설정 추가 -->
+<util:properties id="properties" location="classpath:/properties/statistics.properties"/>
+
+
+<spring:eval expression="@properties['cgiUrl']"/>
+<spring:eval expression='@properties[cgiUrl]'/>
+<spring:eval expression="@properties[cgiUrl]"/>
+
+<input type="text" name="cgiUrl" id="cgiUrl" value="<spring:eval expression='@properties[cgiUrl]'/>"/>
+
+$("#cgiUrl2").val("<spring:eval expression='@properties[cgiUrl]'/>");
+
+
+'<spring:message code="cgiUrl"/>'
+
+<div id="auto_reload"><!-- 자동업데이트(Auto Reload) -->
+	<p>
+		<span id="">자동 업데이트</span>
+		<span>&nbsp;:</span>
+		<input type="radio" name="auto-reload-time" id="auto-reload-time-10" value="10">10분
+		<input type="radio" name="auto-reload-time" id="auto-reload-time-30" value="30" checked="checked">30분
+		<input type="radio" name="auto-reload-time" id="auto-reload-time-60" value="60">60분
+	</p>		
+</div>
+
+
+giens / typhoon@2019
+
+
+000
+006
+012
+018
+024
+030
+036
+042
+048
+054
+060
+066
+072
+078
+084
+090
+096
+102
+108
+114
+120
+
+
+analsDateTime
+frcstTime
+
+frcstTimeStdrArr
+
+// 예측시간 콤보박스 값 셋팅
+setFrcstTime(frcstTimeStdrArr[slideIndex1 - 1]);
+
+<img id='img" + frcstTime + "' class='slideImgs' style='display:none; width:600px;' src='" + imgPath + "' data='" + tmDate + "_" + frcstTime + "'/>
+
+
+제목 : GK2A 15주차 주간업무보고
+
+서혁민 이사님,
+ 
+어제 김승철 책임님이 저희 회사에 오셔서 GK2A 위성자료 맵핑 관련하여 회의를 하였습니다.
+현재 센터에서 사용하는 태풍 및 구름분석시스템에 올해 과제로 GK2A 위성자료를 표출해야 되는데
+매핑 문제 등등을 얘기 하였는데요.
+더불어 SDT 재분석 얘기도 하였구요. 
+ 
+정리하자면 , SDT 재분석 기능을 사용자별로 재분석할 수 있도록 재분석 테이블에 UserID 컬럼을 추가하고
+강풍.폭풍반경 이미지는 로컬자체공간에 저장하기로 했구요. 파일명에 UserID가 들어가게 하기로 했습니다.
+또한 재분석기능은 급한 기능이 아니라 사업기간내에 일정에 맞춰 개발하기로 했습니다.
+UI는 현 SDT 창에 있는 레이아웃 그대로 SDT 재분석 창을 구성하기로 했구요.
+ 
+관련하여 다른 문의사항 있으시면 연락주세요.
+ 
+홍성은 드림
+
+
+권한 별 성능 제한 (Domain Shading(?) 기법 적용)
+
+
+--------------------------------------------------
+SDT 분석
+	SDT분석결과
+	ADT 분석결과
+	GTS 전문
+	자동태풍중심 분석결과(ARCHER1)
+	자동태풍중심 분석결과(ARCHER2)
+--------------------------------------------------
+
+--------------------------------------------------
+SDT 재분석
+	SDT재분석결과
+	ADT 분석결과
+	GTS 전문
+	자동태풍중심 분석결과(ARCHER1)
+	자동태풍중심 분석결과(ARCHER2)
+--------------------------------------------------
+
+변경사항이 저장되지 않을 수 있습니다.
+
+SDT분석과 SDT재분석은 동시에 사용할 수 없습니다.
+
+장부장 태풍센터에서 연락와서 그런데,,,
+날씨누리 태풍 찾아보기 에서 영향태풍만 선택하고 검색하면 17호 타파가 안나온다고 하네.
+
+태풍명 입력하고 영향태풍 선택하면 나오는데
+
+sdtTabs -> subTabs
+
+4167
+
+// [2019-09-25 장근희] 도움말 팝업창 오픈
+function openHelpWin(params, width, height) {
+    if(sdtAnalsHelpWin == null) {
+        sdtAnalsHelpWin = gua.window.openPopup("/sdt/sdtAnalsHelp.do?" + params, 800, 830);
+    } else {
+        sdtAnalsHelpWin.location.href = "/mda/sdt/sdtAnalsHelp.do?" + params;
+        sdtAnalsHelpWin.resizeTo(800, 900);
+        sdtAnalsHelpWin.focus();
+    }
+}
+
+// [2019-09-25 장근희] 도움말 팝업창 객체 제거
+function clearHelpWin() {
+    var winTimer = window.setInterval(function(){
+        if(sdtAnalsHelpWin != null && sdtAnalsHelpWin.closed !== false){
+            sdtAnalsHelpWin = null;
+            window.clearInterval(winTimer);
+        }
+    }, 200);
+}
+
+
+ADT 분석결과 - KADT 적외
+ADT 분석결과 - KADT NRT
+ADT 분석결과 - KADT PMW
+
+자동태풍중심 분석결과(ARCHER2)
+
+
+http://www.ciokorea.com/news/131994
+http://www.ciokorea.com/news/131967
+http://www.itworld.co.kr/news/132066
+
+
+17:01:43,376 INFO  [stdout] (default task-120) ### The error may exist in egovframework/sqlmap/mappers/KadtArcher_SQL.xml
+
+17:01:43,376 INFO  [stdout] (default task-120) ### The error may involve gk2a.mda.typhoon.service.dao.KadtArcherDao.selectArcherList-Inline
+
+17:01:43,376 INFO  [stdout] (default task-120) ### The error occurred while setting parameters
+
+17:01:43,376 INFO  [stdout] (default task-120) ### SQL: SELECT TYP_ARCHER2_SEQ,             TYP_ID,             TYP_NAME,             ANALY_DT,             PMW_SCAN_DT,             SENSOR_TYPE,             DECODE(SENSOR_TYPE, 'HIMA8_CH13', 6, 'HIMA8_CH07', 5, 'GCOMW1_AMSR2-37', 4, 'GCOMW1_AMSR2-89', 3, 'GPM_GMI-37', 2, 'GPM_GMI-85', 1) AS TYPE_NUM,             TO_CHAR(CENTER_LAT, 'FM9990.00') AS CENTER_LAT,             TO_CHAR(CENTER_LON, 'FM9990.00') AS CENTER_LON,             TO_CHAR(TARGET_LAT, 'FM9990.00') AS TARGET_LAT,             TO_CHAR(TARGET_LON, 'FM9990.00') AS TARGET_LON,             TO_CHAR(RING_RADIUS_DEG, 'FM9990.0') AS RING_RADIUS_DEG,             REG_DATE,             UPD_DATE         FROM TYP_ARCHER2         WHERE TO_CHAR(ANALY_DT, 'YYYY') = ?         AND TYP_ID = ?         ORDER BY ANALY_DT, TYPE_NUM DESC
+
+17:01:43,376 INFO  [stdout] (default task-120) ### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+17:01:43,376 INFO  [stdout] (default task-120) 
+17:01:43,376 INFO  [stdout] (default task-120) ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+
+
+SELECT 
+	TYP_ARCHER2_SEQ,             
+	TYP_ID,             
+	TYP_NAME,             
+	ANALY_DT,             
+	PMW_SCAN_DT,             
+	SENSOR_TYPE,             
+	DECODE(SENSOR_TYPE, 'HIMA8_CH13', 6, 'HIMA8_CH07', 5, 'GCOMW1_AMSR2-37', 4, 'GCOMW1_AMSR2-89', 3, 'GPM_GMI-37', 2, 'GPM_GMI-85', 1) AS TYPE_NUM,             
+	TO_CHAR(CENTER_LAT, 'FM9990.00') AS CENTER_LAT,             
+	TO_CHAR(CENTER_LON, 'FM9990.00') AS CENTER_LON,             
+	TO_CHAR(TARGET_LAT, 'FM9990.00') AS TARGET_LAT,             
+	TO_CHAR(TARGET_LON, 'FM9990.00') AS TARGET_LON,             
+	TO_CHAR(RING_RADIUS_DEG, 'FM9990.0') AS RING_RADIUS_DEG,             
+	REG_DATE,             
+	UPD_DATE         
+FROM 
+	TYP_ARCHER2         
+WHERE 
+	TO_CHAR(ANALY_DT, 'YYYY') = ?         
+	AND TYP_ID = ?         
+ORDER BY ANALY_DT, TYPE_NUM DESC
+
+
+jjanga6445
+
+[2019-10-01 장근희] SDT재분석 
+
+
+en
+	731 typhoon.sdt.reanalyresult=SDT Reanalysis Result
+	780 typhoon.sdt.subtitle.sdtRe=SDT Reanalysis
+
+ko
+	744 <entry key="typhoon.sdt.reanalyresult"><![CDATA[SDT재분석결과]]></entry>
+	792 <entry key="typhoon.sdt.subtitle.sdtRe"><![CDATA[SDT 재분석]]></entry>
+
+
+SELECT
+    COUNT(*)
+FROM
+    TYP_SDT_REANALY
+    --TYP_SDT
+;
+
+
+TYP_SDT_REANALY.TYP_SDT_REANALY_SEQ (NUMBER)
+TYP_SDT_REANALY.USER_ID (VARCHAR2 20)
+

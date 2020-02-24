@@ -1,0 +1,101 @@
+K150v ID / PW
+
+Genweb2
+	VM : genweb2 / asdf1234
+	MC : admin / asdf1234
+
+DNC
+	VM : dnc / idreamit
+	MC : admin /asdf1234
+
+
+
+1. TOS 서버(70번)에 tos 계정으로 접속
+2. /home/tos/tospkg/src/cgi 폴더 전체를 백업
+3. /home/tos/tospkg/src 이동후 아래 명령어 수행
+   > tar xvfz cgi.20190729.tar.gz
+4. /home/tos/tospkg/src/cgi 로 이동한 후 아래 명령어 수행
+   > make clean
+   > make all
+   > ls -al /app/tos/cgi-bin/ 수행한 후 실행파일이 생성됐는지 확인
+
+
+
+1. \ROOT_TYP\TYPHOON\ko\weather\typhoon_02.jsp
+2. \ROOT_TYP\TYPHOON\common\map_inc.jsp
+
+3. \ROOT_TYP\TYPHOON\share\js\typhoon\typhoon.js
+        -> mapManager.setSateliteSources()
+
+4. \ROOT_TYP\TYPHOON\satellite\satelliteImageListForItem.jsp
+        -> TyphoonHelper.getInstance().queryExistsSatImage()
+
+5. \ROOT_TYP\WEB-INF\src\kr\co\kitv\typ\TyphoonHelper.java
+        -> queryExistsSatImage()
+	----------------------------------------------------------------------------------------------------
+	public String queryExistsSatImage(String[] tms) {
+		 
+	//		/home/typhoon/webapps/ROOT_TYP/TYPHOON/typdata/satdata
+	//		String img_dir ="/n0010"+File.separator+"webapps"+File.separator+"ROOT_TYP"+File.separator+"TYPHOON"+File.separator+"typdata"+File.separator+"satdata";
+	//		String img_dir ="/home"+File.separator+"typhoon"+File.separator+"webapps"+File.separator+"ROOT_TYP"+File.separator+"TYPHOON"+File.separator+"typdata"+File.separator+"satdata";
+		String img_dir ="D:"+File.separator+"ETAPS_WEB"+File.separator+"workspace"+File.separator+"ROOT_TYP"+File.separator+"ROOT_TYP"+File.separator+"TYPHOON"+File.separator+"typdata"+File.separator+"satdata";
+	//		File root = new File(Config.IMG_DIR + File.separator + "typ" + File.separator + "sat");
+		File root = new File(img_dir);
+		
+		String strFormat = "{\"fileName\":\"http://%s/TYPHOON/typdata/satdata/%s\",\"tm\":\"%s\",\"centerIndex\":\"%s\"}";
+		System.out.println("strFormat == " + strFormat);
+		StringBuilder sb = new StringBuilder();
+		
+		
+		System.out.println(img_dir);
+		int cnt = 0;
+		System.out.println("TyphoonConfig.TYP_DOMAIN = " + TyphoonConfig.TYP_DOMAIN);
+		System.out.println("tms.length = " + tms.length);
+		for(int i = 0 ; i < tms.length ; i++){
+			
+			String centerTm = tms[i];
+			
+			if(centerTm.length()<1){
+				continue;
+			}
+			Calendar tmCal = Calendar.getInstance();
+			Date tmDate = StringUtils.parseDate(centerTm.substring(0,10),"yyyyMMddHH");	 
+			
+			tmCal.setTime(tmDate);
+			tmCal.set(Calendar.MINUTE, -15); 
+			tmDate = tmCal.getTime();
+			
+			Date utcDate = new Date(tmDate.getTime() - 9 * 1000 * 60 * 60);	//utc
+			Calendar utcCal = Calendar.getInstance();
+			utcCal.setTime(utcDate); 
+			
+			String fileName = "coms_le1b_ir1_ch1_typn_" + typFileDateFormat.format(utcCal.getTime()) + ".png";
+			System.out.println("root == " + root);
+			System.out.println("fileName == " + fileName);
+			
+			File satImage = new File(root, fileName);
+			System.out.println("satImage.exists() = "+ satImage.exists());
+			System.out.println(satImage.getAbsolutePath());
+			System.out.println(satImage.getAbsoluteFile());
+			if(satImage.exists()) {
+				
+				if(cnt>0){
+					sb.append(",");
+				} 
+				
+				sb.append(String.format(strFormat
+										,TyphoonConfig.TYP_DOMAIN
+										,satImage.getName()
+										,typFileDateFormat.format(tmCal.getTime())
+										,i));
+				
+				cnt++;
+			}
+			
+		} 
+		
+		System.out.println("sb.toString() == " + sb.toString());
+		System.out.println(sb.toString());
+		return sb.toString();
+	}
+	----------------------------------------------------------------------------------------------------

@@ -1,0 +1,336 @@
+1. 사업관리 및 품질보증활동
+==============================================================================================================
+(1) 프로젝트 지원 관련 요구사항으로서 진행 중인 항목들을 완료하여야 하며, 계획 대비 미작성 산출물을 완료하여야 함.
+(2) 시스템 이행 및 운영에 대한 현황을 파악한 결과, 시스템 테스트 및 실질적인 사용교육에 대한 방안이 미흡함. DNC 지청을 위한 효과적인 교육 콘텐츠(예, 교육동영상) 제공과 지원체제(헬프데스크, 운영인력 등)의 보완이 필요함.
+
+
+(바) 프로젝트 지원과 관련한 비기능 요구사항으로서 진행 중인 항목들을 완료하여야 함.
+    [도표 Ⅲ-1-1-8] 프로젝트 지원 부문 과업이행 미완료 내역
+(사) 주요 잔여 공정 타스크들을 완료하여야 함.
+    [도표 Ⅲ-1-1-9] 주요 잔여 공정 현황
+(아) 마약통제청(DNC)의 정상 작동하지 않고 있는 마약감식장비의 고장 수리를 완료하여야 함. 
+    (2019.02.25 방글라데시 반출 승인 완료 반출 대기 중).
+(자) 사업수행계획서에 명시된 산출물 계획 대비 미완료 산출물의 작성을 완료하여야함. 대상 산출물은 아래와 같음.
+    - 데이터이행 전략계획서
+    - 시스템테스트 계획서
+    - 시스템테스트 결과서
+    - 인수테스트 계획서
+    - 데이터이행 결과서
+(차) 향후 운영단계에서 장비 등의 하자보수 및 유지보수를 위한 연락처 및 처리 절차 등의 방안이 마련되어야 함(하자 및 유지보수 계획서).
+==============================================================================================================
+
+2. 응용시스템
+==============================================================================================================
+(1) 개발된 소스를 운영환경에 적용하여 개발환경에서 검증하였던 기능이 정상적으로 동작하는지 검증이 필요함.
+(2) 기능 구현 현황을 점검한 결과, 발견된 기능오류의 보완이 필요하고, 확정되지 않은 모바일앱용 제공 컨텐츠는 협의를 통해 확정하여야 함.
+(3) 개발 산출물을 점검한 결과 공식 산출물은 작성이 완료되었음.
+
+
+(나) 운영 환경 및 개발환경에 소스를 이관하고 기능이 정상 동작하는지 확인하여야함.
+(다) 기능 오류 사항 및 보안 취약한 사항에 대해 수정 보완이 필요함.
+(라) 확정되지 않은 모바일 컨텐츠에 대해 협의를 완료하여야 하며 플레이스토어, 앱스토어에 모바일 앱을 등록하여야 함.
+==============================================================================================================
+
+3. 데이터베이스
+==============================================================================================================
+(1) 데이터 이관이 완료되지 않았고 DB관련 산출물도 현행화되지 않은 상태로, 조속히 데이터 이관을 완료하고 산출물을 현행화 하여야 함.
+
+
+(마) 구축 DB와 산출물간 불일치 확인되므로 산출물 현행화 계획을 수립하고 현행화 완료 필요함.
+(바) 데이터 이관에 대한 협의 진행 중으로 조속한 완료 및 데이터 이관 필요함.
+==============================================================================================================
+
+4. 시스템 아키텍처 및 보안
+==============================================================================================================
+(1) 운영 시스템 구축이 완료되지 않은 상태로 조속히 운영 시스템을 구축하고 성능 테스트를 수행하여야 함.
+
+
+(라) 운영 시스템에 개발 결과를 설치 완료하여야 함.
+(마) 운영시스템에서 성능테스트를 수행하여 목표 성능 달성 여부를 확인하고 필요 시 보완하여야 함.
+(바) 스마트폰 10대 납품 수행 계획을 확정하고 진행하여야 함.
+==============================================================================================================
+
+
+
+1. 성능시험 대상 및 개요
+
+2. 성능시험 방법
+  1) 단위 기능 테스트 케이스 현황	 2
+  2) 통합 테스트 시나리오 현황	 2
+
+3. 성능시험 결과
+  1) 단위 기능 테스트 결과	 3
+  2) 결함내역	 3
+  3) 특이사항	 3
+
+4. 통합 테스트 결과
+  1) 통합 테스트 결과	 4
+  2) 결함내역	 4
+  3) 특이사항	 4
+
+5. 성능시험 종합 의견
+
+
+201904240900
+
+http://103.48.18.198:7002/dnc
+
+
+Operation Management System	3
+Narcotics Case Management	6
+Narcotics Sample Analysis Management	4
+Narcotics License Management	7
+Common Part	2
+
+
+
+Operation Management System	3
+2.40 0.60 0.40
+
+Narcotics Case Management	6	
+0.65 0.46 0.60 0.80 0.31 1.10
+
+Narcotics Sample Analysis Management	4	
+0.67 0.18 0.50 0.43
+
+Narcotics License Management	7	
+0.15 0.46 0.15 0.47 0.31 0.15 0.15
+
+Common Part	2	
+1.79 1.10
+
+
+1. 성능시험 대상 및 개요 --- 3
+
+2. 성능시험 방법 및 케이스 현황 --- 3
+   1) 성능시험 방법
+   2) 성능시험 케이스 현황
+
+3. 성능시험 결과 --- 4
+   1) 성능시험 결과 1 --- 
+
+
+Pranab Sarker<sarker.pranab@genweb2.com>
+
+/n0010/webapps/ROOT_TYP/TYPHOON/JAR/log/shel-daily.log
+
+/Statistics-1.0.0/WEB-INF/classes/messages
+/Statistics/WEB-INF/classes/messages
+
+예보평가 - 모델별 예보오차(산포도)
+
+MT10665025
+
+COMS LC187
+
+라이트컴 KH100B
+
+맥스틸 OFFI MT-100
+
+태풍 배치 쉘스크립트 실행 경로 :: 
+/n0010/webapps/ROOT_TYP/TYPHOON/APPS/MakeTypRadius
+
+빈펄 리조트 & 스파 호이안
+  - Three-Bedroom Villa - Breakfast Only
+
+빈펄 리조트 & 골프 남 호이안
+  - Three-Bedroom Villa - Breakfast Only
+
+푸라마 리조트 다낭
+  - 3 베드룸 풀 빌라 (3 Bedroom Pool Villa)
+
+10 x 6
+Information Register
+Crime Detection
+Crime Investigation
+Criminal Prosecution
+
+
+Barishal
+Chittagong
+Dhaka
+Khulna
+Mymensingh
+Rajshahi
+Rangpur
+Sylhet
+
+빈펄 리조트 앤 골프 남 호이안 (풀빌라) 3 Bedroom Pool Villa
+푸라마(Furama) 리조트 다낭 3 Bedroom Pool Villa
+
+2019.05.31 오전 11:20 (베트남항공 VN431)
+2019.06.05 오전 00:05 (베트남항공 VN430)
+
+
+
+예약대표자 한글/영문여권이름/생년월일 
+성인/아동 인원수 (아동 만나이 필수기재)
+정확한 일정과 호텔룸타입을
+
+예문)
+도깨비 DO KKAE BI (생년월일830220) 
+성인 2 아동 2 ( 9세 7세 )
+10월 4일 4박 빈펄 디럭스룸 
+예약가능한가요? 
+예약자 e-mail :
+예약자 전화번호 : 
+
+안녕하세요. 리조트 예약문의 드립니다.
+-----------------------------------
+예약자 : 장근희 / ZHANG GEUN HEE (생년월일 : 1974.05.10)
+인원 : 성인 4, 아동 2 (8세, 2세)
+일정 1 : 5월31일(IN) ~ 6월2일(OUT) 2박 : 빈펄 리조트 남 호이안(3 Bedroom Pool Villa)
+일정 2 : 6월2일(IN) ~ 6월4일(OUT) 2박 : 빈펄리조트 앤 스파 다낭(3 Bedroom Villa)
+예약자 Email : jjanga3733@naver.com
+예약자 전화번호 : 010-3914-6445
+-----------------------------------
+
+안녕하세요. 리조트 예약문의 드립니다.
+
+
+아래와같이 예약하고 싶습니다.
+-----------------------------------
+예약자 : 장근희 / ZHANG GEUN HEE (생년월일 : 1974.05.10)
+인원 : 성인 4, 아동 2 (8세, 2세)
+일정 1 : 5월31일(IN) ~ 6월2일(OUT) 2박 : 빈펄 리조트 앤 스파 호이안(3 Bedroom Villa)
+일정 2 : 6월2일(IN) ~ 6월4일(OUT) 2박 : 빈펄 리조트 앤 스파 다낭(3 Bedroom Villa)
+예약자 Email : jjanga3733@naver.com
+예약자 전화번호 : 010-3914-6445
+-----------------------------------
+
+"Ⅴ. 붙임(Page 18)" 
+
+REQ-LMS-278
+REQ-LMS-282
+REQ-LMS-283
+
+안녕하세요. 장근희 입니다.
+
+점검제외 항목에 대한 시정조치 확인 부탁드립니다.
+첨부한 감리보고서의 "Ⅴ. 붙임(Page 18)"에 보
+
+VINPEARL HOI AN RESORT & VILLAS
+  - Cua Dai Street, Hoi An District, Quang Nam Province, Viet Nam
+
+VINPEARL RESORT & SPA DA NANG
+  - Hoa Hai, Ngu Hanh Son District , Da Nang City, Viet Nam
+
+웹헬퍼 : http://webhelper.co.kr/
+  - 김태홍T_아이스
+
+and please discuss the DNC feedback with Mr. Kamrul.  
+He will check the feedback with you.
+
+
+http://typ.kma.go.kr/TYPHOON/index.jsp
+
+구현단계 감리보고서 21~23 Page
+
+
+NH농협은행 302-1243-4590-21
+예금주 이태진(도깨비트래블)
+
+NH농협은행 302-1239-6297-11
+예금주 이태진(도캐비트래블)
+
+
+
+the TABLE: "TOS"."TOS_TRAN_ADT","TOS"."TOS_TRAN_AEXT","TOS"."TOS_TRAN_AFILE","TOS"."TOS_TRAN_AIMG","TOS"."TOS_TRAN_ATR","TOS"."TOS_TRAN_ATR_BAK","TOS"."TOS_TRAN_CASE","TOS"."TOS_TRAN_CD","TOS"."TOS_TRAN_CONT_CLS","TOS"."TOS_TRAN_CONT_CPT","TOS"."TOS_TRAN_CONT_VRS","TOS"."TOS_TRAN_EVAL","TOS"."TOS_TRAN_EVID","TOS"."TOS_TRAN_FCST_EVID","TOS"."TOS_TRAN_FCST_EVID_DETAIL","TOS"."TOS_TRAN_FCST_EVID_IMG","TOS"."TOS_TRAN_FCST_EVID_INT","TOS"."TOS_TRAN_FILE","TOS"."TOS_TRAN_FTR","TOS"."TOS_TRAN_INF","TOS"."TOS_TRAN_QUIZ","TOS"."TOS_TRAN_QUIZ_EXAM","TOS"."TOS_TRAN_SDT": Fri May 24 10:33:50 KST 2019
+
+Export national character set: UTF-16
+    exporting table: "TOS"."TOS_TRAN_ADT"
+    exporting table: "TOS"."TOS_TRAN_AEXT"
+    exporting table: "TOS"."TOS_TRAN_AFILE"
+    exporting table: "TOS"."TOS_TRAN_AIMG"
+    exporting table: "TOS"."TOS_TRAN_ATR"
+    exporting table: "TOS"."TOS_TRAN_ATR_BAK"
+    exporting table: "TOS"."TOS_TRAN_CASE"
+    exporting table: "TOS"."TOS_TRAN_CD"
+    exporting table: "TOS"."TOS_TRAN_CONT_CLS"
+    exporting table: "TOS"."TOS_TRAN_CONT_CPT"
+    exporting table: "TOS"."TOS_TRAN_CONT_VRS"
+    exporting table: "TOS"."TOS_TRAN_EVAL"
+    exporting table: "TOS"."TOS_TRAN_EVID"
+    exporting table: "TOS"."TOS_TRAN_FCST_EVID"
+    exporting table: "TOS"."TOS_TRAN_FCST_EVID_DETAIL"
+    exporting table: "TOS"."TOS_TRAN_FCST_EVID_IMG"
+    exporting table: "TOS"."TOS_TRAN_FCST_EVID_INT"
+    exporting table: "TOS"."TOS_TRAN_FILE"
+    exporting table: "TOS"."TOS_TRAN_FTR"
+    exporting table: "TOS"."TOS_TRAN_INF"
+    exporting table: "TOS"."TOS_TRAN_QUIZ"
+    exporting table: "TOS"."TOS_TRAN_QUIZ_EXAM"
+    exporting table: "TOS"."TOS_TRAN_SDT"
+
+      [0] TOS.TOS_TRAN_ADT                                     no rows exported.
+      [0] TOS.TOS_TRAN_AEXT                                    no rows exported.
+      [0] TOS.TOS_TRAN_AFILE                                   no rows exported.
+      [0] TOS.TOS_TRAN_AIMG                                    no rows exported.
+      [0] TOS.TOS_TRAN_ATR                                      5 rows exported.
+      [0] TOS.TOS_TRAN_ATR_BAK                                  8 rows exported.
+      [0] TOS.TOS_TRAN_CASE                                   103 rows exported.
+      [0] TOS.TOS_TRAN_CD                                      no rows exported.
+      [0] TOS.TOS_TRAN_CONT_CLS                                92 rows exported.
+      [0] TOS.TOS_TRAN_CONT_CPT                                10 rows exported.
+      [0] TOS.TOS_TRAN_CONT_VRS                                40 rows exported.
+      [0] TOS.TOS_TRAN_EVAL                                    no rows exported.
+      [0] TOS.TOS_TRAN_EVID                                     1 rows exported.
+      [0] TOS.TOS_TRAN_FCST_EVID                               no rows exported.
+      [0] TOS.TOS_TRAN_FCST_EVID_DETAIL                         4 rows exported.
+      [0] TOS.TOS_TRAN_FCST_EVID_IMG                           53 rows exported.
+      [0] TOS.TOS_TRAN_FCST_EVID_INT                           24 rows exported.
+      [0] TOS.TOS_TRAN_FILE                                     4 rows exported.
+      [0] TOS.TOS_TRAN_FTR                                     81 rows exported.
+      [0] TOS.TOS_TRAN_INF                                     no rows exported.
+      [0] TOS.TOS_TRAN_QUIZ                                    no rows exported.
+      [0] TOS.TOS_TRAN_QUIZ_EXAM                               no rows exported.
+      [0] TOS.TOS_TRAN_SDT                                     no rows exported.
+
+
+모듈명
+모듈설명
+작업처리 주기
+산출물 형태(이미지, 텍스트 등)
+산출물 크기
+
+
+코어2듀어
+
+■step1. 투어 신청서 작성 
+■step2. 예약금 입금 
+              (신청서 끝부분, 투어 계좌 확인! / 각 투어 해당되는 성인, 아동은 각 1만원씩)
+■step3. 확인 요청 연락 보내기 goblin119(도깨비캡틴_투어담당) 
+              (성함+카페닉네임+연락처/ 계좌이체 하신 성함 그대로 보내주셔야 확인 가능!)
+
+
+28 + 34 = 62
+62 X 4 = 248
+
+48856 
+49600 
+
+1. 삶의 의미
+2. 양자역학과 상대성이론
+3. 외환시장 
+
+
+산출물 작성 ::
+	1. 데이터이행 전략계획서
+	2. 시스템테스트 계획서
+	3. 시스템테스트 결과서
+	4. 인수테스트 계획서
+	5. 데이터이행 결과서
+	6. 하자보수 및 유지보수계획서
+
+백업 스토리지
+
+앱스토어 앱 등록
+
+시범 운영
+
+백업 설정 마무리
+
+
+http://blog.naver.com/PostView.nhn?blogId=mcoaching&logNo=221453919568&parentCategoryNo=&categoryNo=29&viewDate=&isShowPopularPosts=true&from=search
+
+02-757-8920

@@ -1,0 +1,49 @@
+초청연수 강의 일정 및 내용
+--------------------------------------------------
+4월 17일
+강의 : 강의4
+시간 : 09:30 ~ 12:00
+주제 : Network 및 OS 운영 관리
+강사 : 장근희
+내용 : 
+  - DNC, BCC 시스템 아키텍처
+  - DNC, BCC 네트워크 구조
+  - DNC, BCC 시스템 접근방법 및 운영방법
+  - OS(Windows 10) 기본 사용방법 
+  - 브라우저(Google Chrome or Microsoft Edge) 기본 사용방법
+  - NCIS 시스템 접근방법 및 기본사용방법
+--------------------------------------------------
+4월 18일
+강의 : 강의5
+시간 : 10:00 ~ 12:00
+주제 : Safenet 및 Weblogic 운영 관리
+강사 : 손태림
+내용 : 
+  - Safenet(DB 암호화 장비) 설명
+  - Safenet 운영방법
+  - Weblogic(WAS) 설명
+  - Weblogic 운영방법
+------------------------------
+강의 : 강의6
+시간 : 13:30 ~ 14:30
+주제 : Oracle Database 운영 관리
+강사 : 장근희
+내용 : 
+  - Oracle Database 설명
+  - Oracle Database 운영방법
+  - 기본적인 SQL 사용방법
+--------------------------------------------------
+
+
+- 태블릿 거치대 : 
+https://smartstore.naver.com/theflux/products/2015194851?NaPm=ct%3Djt80aje3%7Cci%3Dcheckout%7Ctr%3Dslsl_myc%7Ctrx%3D%7Chk%3D95bfbd81290da1595be37ed73b7fb6d350bd357c
+
+- 노트북 거치대 : 
+https://smartstore.naver.com/theflux/products/2012275888?NaPm=ct%3Djt80pb6m%7Cci%3Dcheckout%7Ctr%3Dslsl_myc%7Ctrx%3D%7Chk%3D14f5e2bdcb03f9d03c4a2b94ffaf81d653341b18
+
+- 모니터 받침대 : 사이즈 - 소
+https://search.shopping.naver.com/detail/detail.nhn?nv_mid=8466217736&cat_id=50001590&frm=NVSHPAG&query=%EB%AA%A8%EB%8B%88%ED%84%B0+%EB%B0%9B%EC%B9%A8%EB%8C%80&NaPm=ct%3Djt810kdk%7Cci%3D33aecb9bab49d0886ca3c5b6c56b3e180b535d54%7Ctr%3Dslsl%7Csn%3D95694%7Chk%3D2dde47f902aee4b56e3d57ce15c8e6d400ad1717
+
+
+WAS_A : 172.22.8.198
+WAS_B : 172.22.8.199

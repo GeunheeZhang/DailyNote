@@ -1,0 +1,110 @@
+
+1. 권한에 따라 메뉴에 접근 가능한가?
+2. 메뉴 클릭 시, 화면은 정상적으로 보여지는가?
+3. 화면 오픈 시, 조회  조건으로 자동 조회되는가?
+4. 조회 조건 입력 또는 변경 시, 자동 조회되는가?
+5. 조회는 정상적으로 이뤄지는가?
+6. 화면에 오타는 없는가?
+7. 입력불가 항목은 정상적으로 표현되는가?
+8. 입력항목란에 글자수와 타입은 체크하는가?
+9. 입력항목과 그리드 데이터의 정렬은 정상인가?
+10. 날짜 기간 입력항목의 정합성은 체크하는가?
+11. 시간 입력항목의 정합성은 체크하는가?
+12. Focus가 위치한 컴포넌트에 대해 Enter키가 정상적으로 동작하는가?
+13. 저장버튼 클릭 시, 저장 여부를 확인하는가?
+14. 저장버튼 클릭 시, 필수 값을 체크하는가?
+15. 신규 건에 대한 저장은 정상적으로 이뤄지는가?(DB확인)
+16. 수정 건에 대한 저장은 정상적으로 이뤄지는가?(DB확인)
+17. 개인정보 저장은 암호화되어 저장되는가?
+18. 저장 시 발생하는 리턴메세지는 보여주는가?(Procedure 메시지)
+19. 삭제버튼 클릭 시, 삭제 여부를 확인하는가?
+20. 삭제버튼 클릭 시, 삭제 불가 여부를 체크하여 알려주는가?
+21. 삭제버튼 클릭 시, 그리드에서 행은 삭제되는가?
+22. 삭제는 정상적으로 이뤄지는가?(DB확인)
+23. 삭제 시 발생하는 리턴메세지는 보여주는가?(Procedure 메시지)
+24. 엑셀다운로드 버튼 클릭 시, 엑셀서식은 잘 받아지는가?
+25. 엑셀 업로드는 정상적으로 동작하는가?
+26. 첨부파일 업로드는 정상적으로 이뤄지는가?(서버 확인)
+27. 첨부파일 삭제는 정상적으로 이뤄지는가?(서버 확인, DB확인)
+28. 첨부파일 정보 저장은 정상적으로 이뤄지는가?(DB확인)
+
+X:\300. 프로젝트 문서\2019년_태풍현업시스템 고도화(III) 용역사업 조달계약 요청\17.최종산출물\최종\4. 사용자_관리자 매뉴얼\태풍현업시스템고도화_관리자지침서(통합)_v1.0.hwp
+
+관리자지침서에 통계모듈쪽 업데이트 점해주고, 통계/훈련 모듈쪽에 설치하는 방법 점 추가해줘,,,올해 사업에 있는내용이라서,,,
+
+태풍현업시스템고도화_사용자매뉴얼_201911_v1.0.pptx 사용자 매뉴얼도
+
+BMD (Bangladesh Meteorology Department)
+
+확인해야 할 로그파일은 “catalina.out”, “localhost.log”, “localhost_access_log.txt” 등의 순서로 확인한다.
+
+로그 파일들을 확인하여 이상 발견 시 이에 대한 적절한 조치를 취한다.
+
+영향태풍(ASOS 극값
+
+C/S 기반의 장점 :: 
+1. 인터넷 환경 및 속도에 많은 영향을 받지않는다.
+	- 방글라데시는 인터넷 환경이 매우 열악하다.
+	- 웹 기반은 인터넷 환경에 많은 영향을 받는다.
+	- 기상 관계자 일부 인원만이 사용할 시스템이기 때문에 보안 및 자원관리 차원에서 웹기반보다는 C/S 기반이 유리하다. 
+
+2. 이미 국내에서 검증된 기술이다.
+	- 국내 많은 기관에서 현재 사용되고 있는 기술이어서 이미 검증이 완료되었고 많은 노하우가 쌓여있다.
+	- 웹 기반은 현재 현업에서 사용된 적이 없어 검증되지 않은 기술이다.
+
+3. 기술 이전에 유리하다.
+	- 기상쪽에서 웹이 본격적으로 사용된지 얼마 되지않아 방글라데시에서는 무척 생소할 수도 있다.
+	- 기술 이전을 위해서는 이미 완숙된 기술이 유리하다. 
+
+
+https://www.leopold.co.kr/Shop/Item.php?ItId=1538554146
+
+
+/**
+ * GK-2A Project.
+ *
+ * Developed 2016 by Electronics and Telecommunications Research Institute.
+ * 218 Gajeong-ro, Yuseong-gu, Daejeon, 34129, KOREA
+ * All rights reserved.
+ *
+ * This software is the confidential information of ETRI Initiative. You shall not disclose such
+ * Confidential Information and shall use it only in accordance with the terms of the license
+ * agreement you entered into with ETRI.
+ */ 
+
+<!--
+  * GK-2A Project.
+  *
+  * Developed 2016 by Electronics and Telecommunications Research Institute.
+  * 218 Gajeong-ro, Yuseong-gu, Daejeon, 34129, KOREA
+  * All rights reserved.
+  *
+  * This software is the confidential information of ETRI Initiative. You shall not disclose such
+  * Confidential Information and shall use it only in accordance with the terms of the license
+  * agreement you entered into with ETRI.
+-->
+
+
+/**
+ *
+ * Archer
+ * @author 장근희(jjanga@gi-ens.co.kr)
+ * @since 2017.05.01
+ *
+ */
+
+[20191211] Copyright 추가
+
+[20191212 장근희] 주석 추가
+
+
+감시 - 일반감시 - 바람시어(SHEAR)-연직
+  - 2019년 10월 22일 이전 자료는 고도 정보가 없어서 현재 로직으로는 이전 자료 조회가 안됨.
+  - 2019년 10월 22일 이전 자료는 검색정보중에 고도를 제외하고 조회하도록 수정이 필요함.
+  - Code : 1013
+
+
+일별시계열 ::
+  호버뮬러다이어그램 해면기압(MSLP)(3001)
+  호버뮬러다이어그램 지위고도(HGT)(3002)
+  호버뮬러다이어그램 시간-경도 단면도(3004)

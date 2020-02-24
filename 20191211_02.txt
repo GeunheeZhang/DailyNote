@@ -1,0 +1,96 @@
+======================================================
+***  Here is preHandle
+*** URI : /Statistics/ioData/ioDataSet
+6546338 16:28:22.664 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Rendering view [org.springframework.web.servlet.view.tiles3.TilesView: name '/ioData/ioDataSet'; URL [/ioData/ioDataSet]] in DispatcherServlet with name 'dispatcher'
+6546338 16:28:22.664 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'ioDataVo' of type [com.kitvalley.statistics.ioData.service.vo.dto.IoDataVo] to request in view with name '/ioData/ioDataSet'
+6546338 16:28:22.664 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'org.springframework.validation.BindingResult.ioDataVo' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name '/ioData/ioDataSet'
+6546338 16:28:22.664 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'vo' of type [com.kitvalley.statistics.ioData.service.vo.dto.IoDataVo] to request in view with name '/ioData/ioDataSet'
+6546338 16:28:22.664 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'org.springframework.validation.BindingResult.vo' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name '/ioData/ioDataSet'
+6546338 16:28:22.664 [DEBUG] org.apache.tiles.impl.BasicTilesContainer - Render request received for definition '/ioData/ioDataSet'
+6546340 16:28:22.666 [DEBUG] org.springframework.context.support.ReloadableResourceBundleMessageSource - Re-caching properties for filename [classpath:/messages/message_ko_kr] - file hasn't been modified
+6546344 16:28:22.670 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Successfully completed request
+6546575 16:28:22.901 [DEBUG] org.springframework.web.servlet.DispatcherServlet - DispatcherServlet with name 'dispatcher' processing POST request for [/Statistics/common/typList]
+6546575 16:28:22.901 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Looking up handler method for path /common/typList
+6546575 16:28:22.901 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Returning handler method [public final java.util.Map<java.lang.String, java.lang.Object> com.kitvalley.statistics.common.web.CommonController.typList(com.kitvalley.statistics.common.service.vo.dto.CommonVo,org.springframework.ui.ModelMap) throws java.lang.Exception]
+6546575 16:28:22.901 [DEBUG] org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'commonController'
+======================================================
+***  Here is preHandle
+*** URI : /Statistics/common/typList
+6546576 16:28:22.902 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.kitvalley.statistics.typinfo.service.impl.TypInfoServiceImpl.getYearTypList]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+6546576 16:28:22.902 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] for JDBC transaction
+6546576 16:28:22.902 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] to manual commit
+6546576 16:28:22.902 [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+6546577 16:28:22.903 [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5436cdfc]
+6546577 16:28:22.903 [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] will be managed by Spring
+6546577 16:28:22.903 [DEBUG] com.kitvalley.statistics.typinfo.service.dao.TypInfoMapper.getYearTypList - ==>  Preparing: SELECT YY, SEQ, NAME_KO, NAME_EN, EFFECT FROM TOS_LIST WHERE 1 = 1 AND YY = ? AND TC_TYPE = ? ORDER BY SEQ DESC
+6546577 16:28:22.903 [DEBUG] com.kitvalley.statistics.typinfo.service.dao.TypInfoMapper.getYearTypList - ==> Parameters: 2019(String), 2(String)
+6546589 16:28:22.915 [DEBUG] com.kitvalley.statistics.typinfo.service.dao.TypInfoMapper.getYearTypList - <==      Total: 28
+6546589 16:28:22.915 [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5436cdfc]
+6546590 16:28:22.916 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5436cdfc]
+6546590 16:28:22.916 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5436cdfc]
+6546590 16:28:22.916 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5436cdfc]
+6546590 16:28:22.916 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+6546590 16:28:22.916 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630]
+6546600 16:28:22.926 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] after transaction
+6546600 16:28:22.926 [DEBUG] org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+6546601 16:28:22.927 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Written [{typList=[{YY=2019, SEQ=28, EFFECT=4, NAME_EN=KAMMURI, NAME_KO=간무리}, {YY=2019, SEQ=27, EFFECT=4, NAME_EN=FUNG-WONG, NAME_KO=풍웡}, {YY=2019, SEQ=26, EFFECT=4, NAME_EN=KALMAEGI, NAME_KO=갈매기}, {YY=2019, SEQ=25, EFFECT=4, NAME_EN=FENGSHEN, NAME_KO=펑선}, {YY=2019, SEQ=24, EFFECT=4, NAME_EN=NAKRI, NAME_KO=나크리}, {YY=2019, SEQ=23, EFFECT=4, NAME_EN=HALONG, NAME_KO=할롱}, {YY=2019, SEQ=22, EFFECT=4, NAME_EN=MATMO, NAME_KO=마트모}, {YY=2019, SEQ=21, EFFECT=4, NAME_EN=BUALOI, NAME_KO=부알로이}, {YY=2019, SEQ=20, EFFECT=4, NAME_EN=NEOGURI, NAME_KO=너구리}, {YY=2019, SEQ=19, EFFECT=4, NAME_EN=HAGIBIS, NAME_KO=하기비스}, {YY=2019, SEQ=18, EFFECT=1, NAME_EN=MITAG, NAME_KO=미탁}, {YY=2019, SEQ=17, EFFECT=2, NAME_EN=TAPAH, NAME_KO=타파}, {YY=2019, SEQ=16, EFFECT=4, NAME_EN=PEIPAH, NAME_KO=페이파}, {YY=2019, SEQ=15, EFFECT=4, NAME_EN=FAXAI, NAME_KO=파사이}, {YY=2019, SEQ=14, EFFECT=4, NAME_EN=KAJIKI, NAME_KO=가지키}, {YY=2019, SEQ=13, EFFECT=2, NAME_EN=LINGLING, NAME_KO=링링}, {YY=2019, SEQ=12, EFFECT=4, NAME_EN=PODUL, NAME_KO=버들}, {YY=2019, SEQ=11, EFFECT=4, NAME_EN=BAILU, NAME_KO=바이루}, {YY=2019, SEQ=10, EFFECT=2, NAME_EN=KROSA, NAME_KO=크로사}, {YY=2019, SEQ=9, EFFECT=2, NAME_EN=LEKIMA, NAME_KO=레끼마}, {YY=2019, SEQ=8, EFFECT=1, NAME_EN=FRANCISCO, NAME_KO=프란시스코}, {YY=2019, SEQ=7, EFFECT=4, NAME_EN=WIPHA, NAME_KO=위파}, {YY=2019, SEQ=6, EFFECT=4, NAME_EN=NARI, NAME_KO=나리}, {YY=2019, SEQ=5, EFFECT=2, NAME_EN=DANAS, NAME_KO=다나스}, {YY=2019, SEQ=4, EFFECT=4, NAME_EN=MUN, NAME_KO=문}, {YY=2019, SEQ=3, EFFECT=4, NAME_EN=SEPAT, NAME_KO=스팟}, {YY=2019, SEQ=2, EFFECT=4, NAME_EN=WUTIP, NAME_KO=우딥}, {YY=2019, SEQ=1, EFFECT=4, NAME_EN=PABUK, NAME_KO=파북}], result=success}] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@3e65caf1]
+6546602 16:28:22.928 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+6546602 16:28:22.928 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Successfully completed request
+6546617 16:28:22.943 [DEBUG] org.springframework.web.servlet.DispatcherServlet - DispatcherServlet with name 'dispatcher' processing POST request for [/Statistics/ioData/typSTEN]
+6546617 16:28:22.943 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Looking up handler method for path /ioData/typSTEN
+6546617 16:28:22.943 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Returning handler method [public java.util.Map<java.lang.String, java.lang.Object> com.kitvalley.statistics.ioData.web.IoDataController.getTypSTEN(com.kitvalley.statistics.ioData.service.vo.dto.IoDataVo,org.springframework.ui.ModelMap,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception]
+6546618 16:28:22.944 [DEBUG] org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'ioDataController'
+======================================================
+***  Here is preHandle
+*** URI : /Statistics/ioData/typSTEN
+6546619 16:28:22.945 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.kitvalley.statistics.typinfo.service.impl.TypInfoServiceImpl.getTypSTEN]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+6546619 16:28:22.945 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] for JDBC transaction
+6546619 16:28:22.945 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] to manual commit
+6546619 16:28:22.945 [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+6546619 16:28:22.945 [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2dfece63]
+6546619 16:28:22.945 [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] will be managed by Spring
+6546619 16:28:22.945 [DEBUG] com.kitvalley.statistics.typinfo.service.dao.TypInfoMapper.getTypSTEN - ==>  Preparing: SELECT TO_CHAR(TM_ST, 'YYYY MM DD HH24 MI') AS TM_ST, TO_CHAR(TM_ED, 'YYYY MM DD HH24 MI') AS TM_ED FROM TOS_LIST WHERE YY = ? AND SEQ = ? AND TC_TYPE = ?
+6546619 16:28:22.945 [DEBUG] com.kitvalley.statistics.typinfo.service.dao.TypInfoMapper.getTypSTEN - ==> Parameters: 2019(String), 28(String), 2(String)
+6546630 16:28:22.956 [DEBUG] com.kitvalley.statistics.typinfo.service.dao.TypInfoMapper.getTypSTEN - <==      Total: 1
+6546630 16:28:22.956 [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2dfece63]
+6546630 16:28:22.956 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2dfece63]
+6546630 16:28:22.956 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2dfece63]
+6546630 16:28:22.956 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2dfece63]
+6546631 16:28:22.957 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+6546631 16:28:22.957 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630]
+6546641 16:28:22.967 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] after transaction
+6546641 16:28:22.967 [DEBUG] org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+6546642 16:28:22.968 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Written [{result=success, list=[{TM_ST=2019 11 26 00 00, TM_ED=2019 12 05 18 00}]}] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@3e65caf1]
+6546642 16:28:22.968 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+6546642 16:28:22.968 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Successfully completed request
+6546705 16:28:23.031 [DEBUG] org.springframework.web.servlet.DispatcherServlet - DispatcherServlet with name 'dispatcher' processing POST request for [/Statistics/ioData/obsData]
+6546705 16:28:23.031 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Looking up handler method for path /ioData/obsData
+6546705 16:28:23.031 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Returning handler method [public java.util.Map<java.lang.String, java.lang.Object> com.kitvalley.statistics.ioData.web.IoDataController.obsData(com.kitvalley.statistics.ioData.service.vo.dto.IoDataVo,org.springframework.ui.ModelMap,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception]
+6546705 16:28:23.031 [DEBUG] org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'ioDataController'
+======================================================
+***  Here is preHandle
+*** URI : /Statistics/ioData/obsData
+6546707 16:28:23.033 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.kitvalley.statistics.ioData.service.impl.IoDataServiceImpl.getObsData]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+6546707 16:28:23.033 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] for JDBC transaction
+6546708 16:28:23.034 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] to manual commit
+6546708 16:28:23.034 [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+6546708 16:28:23.034 [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f35bf0d]
+6546708 16:28:23.034 [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] will be managed by Spring
+6546709 16:28:23.035 [DEBUG] com.kitvalley.statistics.ioData.service.dao.IoDataMapper.getObsData - ==>  Preparing: SELECT MON_TYPE, TO_CHAR(TM, 'YYYY MM DD HH24 MI') AS TM FROM TOS_SYS_MON WHERE YY = ? AND TC_TYPE = ? AND SEQ = ? AND MON_TYPE LIKE '2%' AND TO_CHAR(TM, 'YYYYMMDD') LIKE ? ORDER BY TM, MON_TYPE
+6546709 16:28:23.035 [DEBUG] com.kitvalley.statistics.ioData.service.dao.IoDataMapper.getObsData - ==> Parameters: 2019(String), 2(String), 28(String), 20191126(String)
+6546719 16:28:23.045 [DEBUG] com.kitvalley.statistics.ioData.service.dao.IoDataMapper.getObsData - <==      Total: 0
+6546720 16:28:23.046 [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f35bf0d]
+6546720 16:28:23.046 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f35bf0d]
+6546720 16:28:23.046 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f35bf0d]
+6546720 16:28:23.046 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f35bf0d]
+6546720 16:28:23.046 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+6546720 16:28:23.046 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630]
+6546730 16:28:23.056 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] after transaction
+6546730 16:28:23.056 [DEBUG] org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+6546731 16:28:23.057 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Written [{result=success, list=[]}] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@3e65caf1]
+6546731 16:28:23.057 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+6546731 16:28:23.057 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Successfully completed request
+6554138 16:28:30.464 [DEBUG] org.springframework.web.servlet.DispatcherServlet - DispatcherServlet with name 'dispatcher' processing POST request for [/Statistics/popupComis/typInfoComis]
+6554138 16:28:30.464 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Looking up handler method for path /popupComis/typInfoComis
+6554138 16:28:30.464 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Returning handler method [public java.lang.String com.kitvalley.statistics.popupComis.web.PopupComisController.typInfo(com.kitvalley.statistics.popupComis.service.vo.dto.PopupComisVo,org.springframework.ui.ModelMap,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception]
+6554138 16:28:30.464 [DEBUG] org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'popupComisController'

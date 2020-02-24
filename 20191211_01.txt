@@ -1,0 +1,248 @@
+======================================================
+***  Here is preHandle
+*** URI : /MANAGE/system/systemView
+197057 14:42:29.512 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.kitvalley.manage.systemAdmin.service.impl.SystemAdminServiceImpl.getTosSysInfoList]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+197057 14:42:29.512 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] for JDBC transaction
+197057 14:42:29.512 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] to manual commit
+197057 14:42:29.512 [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+197057 14:42:29.512 [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@399bd627]
+197057 14:42:29.512 [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] will be managed by Spring
+197057 14:42:29.512 [DEBUG] com.kitvalley.manage.systemAdmin.service.dao.SystemAdminMapper.getTosSysInfoList - ==>  Preparing: SELECT * FROM( SELECT ROWNUM RNUM, SYS_CODE, SYS_NAME, STATE, REG_DATE FROM TOS_SYS_INFO WHERE STATE = ? ORDER BY REG_DATE DESC ) WHERE RNUM BETWEEN ?+1 AND ?
+197058 14:42:29.513 [DEBUG] com.kitvalley.manage.systemAdmin.service.dao.SystemAdminMapper.getTosSysInfoList - ==> Parameters: Y(String), 0(Integer), 10(Integer)
+197075 14:42:29.530 [DEBUG] com.kitvalley.manage.systemAdmin.service.dao.SystemAdminMapper.getTosSysInfoList - <==      Total: 8
+197076 14:42:29.531 [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@399bd627]
+197076 14:42:29.531 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@399bd627]
+197076 14:42:29.531 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@399bd627]
+197076 14:42:29.531 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@399bd627]
+197076 14:42:29.531 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+197076 14:42:29.531 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630]
+197086 14:42:29.541 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] after transaction
+197087 14:42:29.542 [DEBUG] org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+197087 14:42:29.542 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.kitvalley.manage.systemAdmin.service.impl.SystemAdminServiceImpl.getTosSysInfoCount]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+197087 14:42:29.542 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] for JDBC transaction
+197087 14:42:29.542 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] to manual commit
+197087 14:42:29.542 [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+197087 14:42:29.542 [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c3a2efb]
+197088 14:42:29.543 [DEBUG] org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] will be managed by Spring
+197088 14:42:29.543 [DEBUG] com.kitvalley.manage.systemAdmin.service.dao.SystemAdminMapper.getTosSysInfoCount - ==>  Preparing: SELECT COUNT(*) COUNT FROM TOS_SYS_INFO WHERE STATE = ? ORDER BY SYS_CODE DESC
+197088 14:42:29.543 [DEBUG] com.kitvalley.manage.systemAdmin.service.dao.SystemAdminMapper.getTosSysInfoCount - ==> Parameters: Y(String)
+197100 14:42:29.555 [DEBUG] com.kitvalley.manage.systemAdmin.service.dao.SystemAdminMapper.getTosSysInfoCount - <==      Total: 1
+197100 14:42:29.555 [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c3a2efb]
+197100 14:42:29.555 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c3a2efb]
+197100 14:42:29.555 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c3a2efb]
+197100 14:42:29.555 [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c3a2efb]
+197100 14:42:29.555 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+197101 14:42:29.556 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630]
+197111 14:42:29.566 [DEBUG] org.springframework.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [jdbc:tibero:thin:@172.20.133.29:8629:COMIS, UserName=KMATYP, Tibero Tibero_5.0.85723_JDBC_1.6_release_20140630] after transaction
+197111 14:42:29.566 [DEBUG] org.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+197112 14:42:29.567 [DEBUG] org.springframework.beans.factory.support.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name '/system/systemView'
+197113 14:42:29.568 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Rendering view [org.springframework.web.servlet.view.tiles3.TilesView: name '/system/systemView'; URL [/system/systemView]] in DispatcherServlet with name 'dispatcher'
+197113 14:42:29.568 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'systemAdminVo' of type [com.kitvalley.manage.systemAdmin.service.vo.dto.SystemAdminVo] to request in view with name '/system/systemView'
+197113 14:42:29.568 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'org.springframework.validation.BindingResult.systemAdminVo' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name '/system/systemView'
+197113 14:42:29.568 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'paginationInfo' of type [egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo] to request in view with name '/system/systemView'
+197113 14:42:29.568 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'list' of type [java.util.ArrayList] to request in view with name '/system/systemView'
+197113 14:42:29.568 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'vo' of type [com.kitvalley.manage.systemAdmin.service.vo.dto.SystemAdminVo] to request in view with name '/system/systemView'
+197113 14:42:29.568 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'org.springframework.validation.BindingResult.paginationInfo' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name '/system/systemView'
+197113 14:42:29.568 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'org.springframework.validation.BindingResult.vo' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name '/system/systemView'
+197114 14:42:29.569 [DEBUG] org.apache.tiles.impl.BasicTilesContainer - Render request received for definition '/system/systemView'
+197127 14:42:29.582 [DEBUG] org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'paginationManager'
+197128 14:42:29.583 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Successfully completed request
+200259 14:42:32.714 [DEBUG] org.springframework.web.servlet.DispatcherServlet - DispatcherServlet with name 'dispatcher' processing GET request for [/MANAGE/popup/systemInsertView]
+200259 14:42:32.714 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Looking up handler method for path /popup/systemInsertView
+200260 14:42:32.715 [DEBUG] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Returning handler method [public final java.lang.String com.kitvalley.manage.popup.web.PopupController.systemInsertView(com.kitvalley.manage.popup.service.vo.dto.PopupVo,org.springframework.ui.ModelMap) throws java.lang.Exception]
+200260 14:42:32.715 [DEBUG] org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'popupController'
+200260 14:42:32.715 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Last-Modified value for [/MANAGE/popup/systemInsertView] is: -1
+======================================================
+***  Here is preHandle
+*** URI : /MANAGE/popup/systemInsertView
+200266 14:42:32.721 [DEBUG] org.springframework.beans.factory.support.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name '/popup/systemInsertView'
+200266 14:42:32.721 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Rendering view [org.springframework.web.servlet.view.tiles3.TilesView: name '/popup/systemInsertView'; URL [/popup/systemInsertView]] in DispatcherServlet with name 'dispatcher'
+200266 14:42:32.721 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'popupVo' of type [com.kitvalley.manage.popup.service.vo.dto.PopupVo] to request in view with name '/popup/systemInsertView'
+200266 14:42:32.721 [DEBUG] org.springframework.web.servlet.view.tiles3.TilesView - Added model object 'org.springframework.validation.BindingResult.popupVo' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name '/popup/systemInsertView'
+200266 14:42:32.721 [DEBUG] org.apache.tiles.impl.BasicTilesContainer - Render request received for definition '/popup/systemInsertView'
+200415 14:42:32.870 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Error rendering view [org.springframework.web.servlet.view.tiles3.TilesView: name '/popup/systemInsertView'; URL [/popup/systemInsertView]] in DispatcherServlet with name 'dispatcher'
+org.apache.tiles.request.render.CannotRenderException: java.io.IOException: JSPException including path '/WEB-INF/jsp/views/popup/systemInsertView.jsp'.
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:238) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:221) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.renderer.DefinitionRenderer.render(DefinitionRenderer.java:59) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.springframework.web.servlet.view.tiles3.TilesView.renderMergedOutputModel(TilesView.java:145) ~[spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:264) ~[spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1201) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:986) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:933) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:851) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:953) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:844) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:624) [servlet-api.jar:na]
+        at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:829) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:731) [servlet-api.jar:na]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat7-websocket.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88) [spring-web-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:106) [spring-web-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:218) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122) [catalina.jar:7.0.73]
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:505) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169) [catalina.jar:7.0.73]
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103) [catalina.jar:7.0.73]
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:958) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116) [catalina.jar:7.0.73]
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:452) [catalina.jar:7.0.73]
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1087) [tomcat-coyote.jar:7.0.73]
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637) [tomcat-coyote.jar:7.0.73]
+        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318) [tomcat-coyote.jar:7.0.73]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_79]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_79]
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-coyote.jar:7.0.73]
+        at java.lang.Thread.run(Thread.java:745) [na:1.7.0_79]
+Caused by: java.io.IOException: java.io.IOException: JSPException including path '/WEB-INF/jsp/views/popup/systemInsertView.jsp'.
+        at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:467) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339) ~[jasper.jar:7.0.73]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:731) [servlet-api.jar:na]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat7-websocket.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:485) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:410) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:337) ~[catalina.jar:7.0.73]
+        at org.apache.tiles.request.servlet.ServletRequest.forward(ServletRequest.java:265) ~[tiles-request-servlet-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.servlet.ServletRequest.doForward(ServletRequest.java:228) ~[tiles-request-servlet-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.AbstractClientRequest.dispatch(AbstractClientRequest.java:57) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:397) ~[tiles-core-3.0.5.jar:3.0.5]
+        ... 38 common frames omitted
+Caused by: java.io.IOException: JSPException including path '/WEB-INF/jsp/views/popup/systemInsertView.jsp'.
+        at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:63) ~[tiles-request-servlet-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.jsp.JspRequest.doInclude(JspRequest.java:125) ~[tiles-request-jsp-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.AbstractViewRequest.dispatch(AbstractViewRequest.java:47) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.render.ChainedDelegateRenderer.render(ChainedDelegateRenderer.java:68) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.template.InsertAttributeModel.renderAttribute(InsertAttributeModel.java:188) ~[tiles-template-3.0.5.jar:3.0.5]
+        at org.apache.tiles.template.InsertAttributeModel.execute(InsertAttributeModel.java:132) ~[tiles-template-3.0.5.jar:3.0.5]
+        at org.apache.tiles.jsp.taglib.InsertAttributeTag.doTag(InsertAttributeTag.java:299) ~[tiles-jsp-3.0.5.jar:3.0.5]
+        at org.apache.jsp.WEB_002dINF.jsp.frames.layout_005fpopup_jsp._jspx_meth_tiles_005finsertAttribute_005f1(layout_005fpopup_jsp.java:145) ~[na:na]
+        at org.apache.jsp.WEB_002dINF.jsp.frames.layout_005fpopup_jsp._jspService(layout_005fpopup_jsp.java:95) ~[na:na]
+        at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) ~[jasper.jar:7.0.73]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:731) [servlet-api.jar:na]
+        at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:439) ~[jasper.jar:7.0.73]
+        ... 56 common frames omitted
+Caused by: javax.servlet.ServletException: File &quot;/WEB-INF/jsp/views/popup/systemInsertView.jsp&quot; not found
+        at org.apache.jasper.servlet.JspServlet.handleMissingResource(JspServlet.java:417) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:397) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339) ~[jasper.jar:7.0.73]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:731) [servlet-api.jar:na]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:603) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:542) ~[catalina.jar:7.0.73]
+        at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:897) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.runtime.PageContextImpl.doInclude(PageContextImpl.java:688) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.runtime.PageContextImpl.include(PageContextImpl.java:682) ~[jasper.jar:7.0.73]
+        at org.apache.tiles.request.jsp.JspRequest.doInclude(JspRequest.java:123) ~[tiles-request-jsp-1.0.6.jar:1.0.6]
+        ... 68 common frames omitted
+200418 14:42:32.873 [DEBUG] org.springframework.web.servlet.DispatcherServlet - Could not complete request
+org.apache.tiles.request.render.CannotRenderException: java.io.IOException: JSPException including path '/WEB-INF/jsp/views/popup/systemInsertView.jsp'.
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:238) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:221) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.renderer.DefinitionRenderer.render(DefinitionRenderer.java:59) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.springframework.web.servlet.view.tiles3.TilesView.renderMergedOutputModel(TilesView.java:145) ~[spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:264) ~[spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1201) ~[spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:986) ~[spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:933) ~[spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:851) ~[spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:953) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:844) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:624) [servlet-api.jar:na]
+        at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:829) [spring-webmvc-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:731) [servlet-api.jar:na]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat7-websocket.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88) [spring-web-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:106) [spring-web-3.2.9.RELEASE.jar:3.2.9.RELEASE]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:218) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122) [catalina.jar:7.0.73]
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:505) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169) [catalina.jar:7.0.73]
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103) [catalina.jar:7.0.73]
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:958) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116) [catalina.jar:7.0.73]
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:452) [catalina.jar:7.0.73]
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1087) [tomcat-coyote.jar:7.0.73]
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637) [tomcat-coyote.jar:7.0.73]
+        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318) [tomcat-coyote.jar:7.0.73]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_79]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_79]
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-coyote.jar:7.0.73]
+        at java.lang.Thread.run(Thread.java:745) [na:1.7.0_79]
+Caused by: java.io.IOException: java.io.IOException: JSPException including path '/WEB-INF/jsp/views/popup/systemInsertView.jsp'.
+        at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:467) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339) ~[jasper.jar:7.0.73]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:731) [servlet-api.jar:na]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat7-websocket.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:485) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:410) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:337) ~[catalina.jar:7.0.73]
+        at org.apache.tiles.request.servlet.ServletRequest.forward(ServletRequest.java:265) ~[tiles-request-servlet-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.servlet.ServletRequest.doForward(ServletRequest.java:228) ~[tiles-request-servlet-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.AbstractClientRequest.dispatch(AbstractClientRequest.java:57) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:397) ~[tiles-core-3.0.5.jar:3.0.5]
+        ... 38 common frames omitted
+Caused by: java.io.IOException: JSPException including path '/WEB-INF/jsp/views/popup/systemInsertView.jsp'.
+        at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:63) ~[tiles-request-servlet-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.jsp.JspRequest.doInclude(JspRequest.java:125) ~[tiles-request-jsp-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.AbstractViewRequest.dispatch(AbstractViewRequest.java:47) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.request.render.ChainedDelegateRenderer.render(ChainedDelegateRenderer.java:68) ~[tiles-request-api-1.0.6.jar:1.0.6]
+        at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259) ~[tiles-core-3.0.5.jar:3.0.5]
+        at org.apache.tiles.template.InsertAttributeModel.renderAttribute(InsertAttributeModel.java:188) ~[tiles-template-3.0.5.jar:3.0.5]
+        at org.apache.tiles.template.InsertAttributeModel.execute(InsertAttributeModel.java:132) ~[tiles-template-3.0.5.jar:3.0.5]
+        at org.apache.tiles.jsp.taglib.InsertAttributeTag.doTag(InsertAttributeTag.java:299) ~[tiles-jsp-3.0.5.jar:3.0.5]
+        at org.apache.jsp.WEB_002dINF.jsp.frames.layout_005fpopup_jsp._jspx_meth_tiles_005finsertAttribute_005f1(layout_005fpopup_jsp.java:145) ~[na:na]
+        at org.apache.jsp.WEB_002dINF.jsp.frames.layout_005fpopup_jsp._jspService(layout_005fpopup_jsp.java:95) ~[na:na]
+        at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) ~[jasper.jar:7.0.73]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:731) [servlet-api.jar:na]
+        at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:439) ~[jasper.jar:7.0.73]
+        ... 56 common frames omitted
+Caused by: javax.servlet.ServletException: File &quot;/WEB-INF/jsp/views/popup/systemInsertView.jsp&quot; not found
+        at org.apache.jasper.servlet.JspServlet.handleMissingResource(JspServlet.java:417) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:397) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339) ~[jasper.jar:7.0.73]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:731) [servlet-api.jar:na]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208) [catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:603) ~[catalina.jar:7.0.73]
+        at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:542) ~[catalina.jar:7.0.73]
+        at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:897) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.runtime.PageContextImpl.doInclude(PageContextImpl.java:688) ~[jasper.jar:7.0.73]
+        at org.apache.jasper.runtime.PageContextImpl.include(PageContextImpl.java:682) ~[jasper.jar:7.0.73]
+        at org.apache.tiles.request.jsp.JspRequest.doInclude(JspRequest.java:123) ~[tiles-request-jsp-1.0.6.jar:1.0.6]
+        ... 68 common frames omitted

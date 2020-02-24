@@ -1,0 +1,403 @@
+======================================================================
+typReAnalysis.js(7674) makeTransFile() ::
+--------------------------------------------------
+/sdt/transFile.do
+SdtControl.saveFile()
+"D:\gts\TYP_ANL_SDT_1819_201905080100.dat" 파일 생성
+--------------------------------------------------
+/sdt/sender.do
+SdtControl.sender()
+"D:\gts\TYP_ANL_SDT_1819_201905080100.dat" 파일 서버로 전송
+--------------------------------------------------
+======================================================================
+
+======================================================================
+typReAnalysis.js(7733) callShellScript1() ::
+--------------------------------------------------
+/etc/createFile1SdtRe.do
+EtcControl.createFile1SdtRe()
+"D:\List\ZACTIVE_TYNAME.LIST"
+"D:\List\TY1819_SOULIK.txt"
+--------------------------------------------------
+======================================================================
+
+======================================================================
+typReAnalysis.js(7771) callShellScript1_rmwOnly() ::
+--------------------------------------------------
+/etc/createFile1SdtRe.do
+EtcControl.createFile1SdtRe()
+"D:\List\ZACTIVE_TYNAME.LIST"
+"D:\List\TY1819_SOULIK.txt"
+--------------------------------------------------
+======================================================================
+
+======================================================================
+- SDT 재분석 강풍반경 쉘스크립트2
+typReAnalysis.js(7805) callShellScript2() ::
+--------------------------------------------------
+/sdtRe/gailShellScript2SdtRe.do
+SdtReControl.gailShellScript2SdtReJson()
+call_make_typ_product.bash
+--------------------------------------------------
+======================================================================
+
+======================================================================
+- SDT 재분석 강풍반경 쉘스크립트2 (RMW only)
+typReAnalysis.js(7837) callShellScript2_rmwOnly() ::
+--------------------------------------------------
+/sdtRe/gailShellScript2SdtRe_rmwOnly.do
+SdtReControl.gailShellScript2SdtRe_rmwOnlyJson()
+call_make_typ_product_rmwOnly.bash
+--------------------------------------------------
+======================================================================
+
+======================================================================
+- SDT 재분석 강풍반경 쉘스크립트3
+typReAnalysis.js(7893) callShellScript3() ::
+--------------------------------------------------
+/sdtRe/gailShellScript3SdtRe.do
+SdtReControl.gailShellScript3SdtReJson()
+call_make_typ_rmw.bash
+--------------------------------------------------
+======================================================================
+
+======================================================================
+- SDT 재분석 강풍,폭풍반경 검증 쉘스크립트
+typReAnalysis.js(7915) callShellScript6() ::
+--------------------------------------------------
+/sdtRe/gailShellScript6SdtRe.do
+SdtReControl.gailShellScript6SdtReJson()
+call_make_typ_rmw_verify.bash
+--------------------------------------------------
+======================================================================
+
+
+
+typhoon.sdtre.shell.path
+[2019-10-14 장근희] SDT 재분석 Shell Script 경로 추가
+[2019-10-15 장근희] SDT 재분석 추가
+
+
+
+typReAnalysis.js
+7571 Line
+======================================================================
+//SDT분석결과 목록 조회
+function searchList1(type){
+    gua.msg.debug("SDT분석결과 검색 : " + type);
+    gua.req.clearParam();
+    gua.req.addParam("dbType", "1");
+    gua.req.addParam("analyDate", $('#typYear').val());
+    gua.req.addParam("typId", $('#typId').val());
+
+    gua.req.send("/sdt/sdtResultList.do", function(data, err) {
+        if (err) return;
+        bindGrid1(data);
+        searchDatas1 = data;
+        changeTSelect();
+
+        /**
+         * 2018-04-16
+         * 범위선택으로 인한 기존 결과표출 삭제
+         */
+        window.opener.typ_removeDrawPath("SDT");
+
+        if(type == "new"){
+            clearInput();
+        }else if(type == "insert"){
+            if(searchDatas1.length > 0){
+                $('#typSdtSeq').val(searchDatas1[0].typSdtSeq);
+            }
+
+            makeTransFile();
+            callShellScript1();
+
+        }else if(type == "update"){
+
+            makeTransFile();
+            callShellScript1();
+
+        }else if(type == "delete"){
+            clearInput();
+        }
+    });
+}
+======================================================================
+
+typReAnalysis.js
+7672 Line
+======================================================================
+// SDT 분석결과 파일 생성
+function makeTransFile(){
+    var year = $('#typYear').val();
+    var typId = $('#typId').val();
+    var analyDate = $('#utcTime').text();
+    var utc = gua.date(analyDate, 'YYYYMMDDHHMISS').toString();
+    var kst = gua.date(analyDate, 'YYYYMMDDHHMISS').addHour(9).toString();
+    var lat = parseFloat($('#iptLat').val()).toFixed(1);
+    var lon = parseFloat($('#iptLon').val()).toFixed(1);
+    var ci = $('#selCiNum').val();
+    var mslp = $('#iptMslp').val();
+    var mws = $('#iptMws').val();
+    var stat70rad = fnStat70rad();
+
+    var fileName = "TYP_ANL_SDT_" + typId + "_" + utc.substr(0,12) + ".dat";
+    var content = encodeURIComponent(year + "#" + typId + "#" + kst + "#" + utc + "#" + lat + "#" + lon + "#" + ci + "#" + mslp + "#" + mws + "#" + stat70rad + "#=");
+
+    var yyyymmddhhmm = utc.substr(0,12);
+
+    $.ajax({
+        url: '../sdt/transFile.do',
+        data: "fileName=" + fileName + "&content=" + content,
+        success: function(data){
+            if(data['status']){
+                gua.msg.debug(data['fileName'] + " 분석결과 파일 생성");
+                sendNotify(fileName, yyyymmddhhmm);
+            }else{
+                gua.msg.debug("파일 생성 오류");
+            }
+        }
+    });
+
+    //sender 작업
+    function sendNotify(fileName, yyyymmddhhmm){
+        gua.msg.debug("sdtL3Type : " + sdtL3Type);
+
+        $.ajax({
+            url: '../sdt/sender.do',
+            data: "fileName="+fileName+"&yyyymmddhhmm="+yyyymmddhhmm+"&type="+sdtL3Type,
+            success: function(data){
+            }
+        });
+    }
+}
+======================================================================
+
+typReAnalysis.js
+7728 Line
+======================================================================
+//쉘 스크립트 1
+function callShellScript1(){
+    /**
+    * 2017-12-05 수정
+    * 쉘스크립트 대체
+    */
+    var name = "TY"+$('#typId').val()+"_"+$('#typName').val()+".txt";
+    var status = $('#typStatus').val();
+
+    var temp = reverseArr(searchDatas1);
+    var data = JSON.stringify(temp);
+
+    var params = {};
+    params[gua.c.CSRF_NAME] = gua.c.CSRF_TOKEN;
+    var recursiveEncoded = $.param(params);
+
+    $.ajax({
+          url: '../etc/createFile1.do?' + recursiveEncoded,
+          type: 'POST',
+          data: "name=" + name + "&status=" + status + "&data=" + data,
+          dataType: 'json',
+          success: function(data){
+              if(data['status']){
+                  gua.msg.debug("파일 생성 성공(callShellScript1 완료)");
+                  callShellScript2();
+              }else{
+                  gua.msg.debug("파일 생성 오류");
+              }
+          }
+    });
+
+}
+======================================================================
+
+typReAnalysis.js
+7770 Line
+======================================================================
+//쉘 스크립트 1 RMW only
+function callShellScript1_rmwOnly(){
+    /**
+    * 2017-12-05 수정
+    * 쉘스크립트 대체
+    */
+    var name = "TY"+$('#typId').val()+"_"+$('#typName').val()+".txt";
+    var status = $('#typStatus').val();
+
+    var temp = reverseArr(searchDatas1);
+    var data = JSON.stringify(temp);
+
+    var params = {};
+    params[gua.c.CSRF_NAME] = gua.c.CSRF_TOKEN;
+    var recursiveEncoded = $.param(params);
+
+    $.ajax({
+          url: '../etc/createFile1.do?' + recursiveEncoded,
+          type: 'POST',
+          data: "name=" + name + "&status=" + status + "&data=" + data,
+          dataType: 'json',
+          success: function(data){
+              if(data['status']){
+                  gua.msg.debug("파일 생성 성공(callShellScript1 완료)");
+                  callShellScript2_rmwOnly();
+              }else{
+                  gua.msg.debug("파일 생성 오류");
+              }
+          }
+    });
+
+}
+======================================================================
+
+typReAnalysis.js
+7881 Line
+======================================================================
+// 쉘 스크립트3 (적외 강풍반경 재산출)
+function callShellScript3(){
+    gua.msg.debug("callShellScript3() 시작");
+
+    var fullTime =  gua.date($('#fullTime').val(), "YYYYMMDDHHMI");
+    var typName = "TY"+$('#typId').val()+"_"+$('#typName').val();
+
+    var analyDate = gua.date($('#utcTime').text(), "YYYYMMDD.HH");
+
+    var rad15 = $('#rad15').val();
+    var rad25 = $('#rad25').val();
+    var cmlDist = $('#cmlDist').val();
+
+    gua.req.clearParam();
+    gua.req.addParam("fullTime", $.trim(fullTime));
+    gua.req.addParam("typName", $.trim(typName));
+    gua.req.addParam("analyDate", $.trim(analyDate));
+    gua.req.addParam("rad15", $.trim(rad15));
+    gua.req.addParam("rad25", $.trim(rad25));
+    gua.req.addParam("cmlDist", $.trim(cmlDist));
+    gua.req.addParam("cfgName", $.trim(cfgName));
+    gua.req.addParam("userId", $.trim(userId));
+
+    gua.req.send("/sdtRe/gailShellScript3.do", function(data, err) {
+        if (err) return;
+        if(data['status']){
+            gua.msg.debug("callShellScript3 완료");
+            $('#btnSearchGail').trigger('click');
+        }
+    });
+}
+======================================================================
+
+typReAnalysis.js
+7881 Line
+======================================================================
+// 쉘 스크립트3 (적외 강풍반경 재산출)
+function callShellScript3(){
+    gua.msg.debug("callShellScript3() 시작");
+
+    var fullTime =  gua.date($('#fullTime').val(), "YYYYMMDDHHMI");
+    var typName = "TY"+$('#typId').val()+"_"+$('#typName').val();
+
+    var analyDate = gua.date($('#utcTime').text(), "YYYYMMDD.HH");
+
+    var rad15 = $('#rad15').val();
+    var rad25 = $('#rad25').val();
+    var cmlDist = $('#cmlDist').val();
+
+    gua.req.clearParam();
+    gua.req.addParam("fullTime", $.trim(fullTime));
+    gua.req.addParam("typName", $.trim(typName));
+    gua.req.addParam("analyDate", $.trim(analyDate));
+    gua.req.addParam("rad15", $.trim(rad15));
+    gua.req.addParam("rad25", $.trim(rad25));
+    gua.req.addParam("cmlDist", $.trim(cmlDist));
+    gua.req.addParam("cfgName", $.trim(cfgName));
+    gua.req.addParam("userId", $.trim(userId));
+
+    gua.req.send("/sdtRe/gailShellScript3.do", function(data, err) {
+        if (err) return;
+        if(data['status']){
+            gua.msg.debug("callShellScript3 완료");
+            $('#btnSearchGail').trigger('click');
+        }
+    });
+}
+======================================================================
+
+
+
+typReAnalysis.js
+5423 Line
+======================================================================
+// SDT 재분석 강풍, 폭풍반경 이미지 셋팅
+function setGailResult() {
+
+}
+======================================================================
+
+typReAnalysis.js
+7202 Line
+======================================================================
+// SDT 재분석 강풍, 폭풍반경 검증 이미지 셋팅
+function setStormResult() {
+
+}
+======================================================================
+
+typReAnalysis.js
+1367 Line
+======================================================================
+// 적외 강풍반경 - "적용" 버튼 클릭
+$('#btnApply').click(function(){
+    gua.msg.debug("적용");
+
+    ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
+    var img = document.getElementById("img1");
+    ctx1.drawImage(img,0,0);
+    ctx1.drawImage(canvas2,0,0);
+    ctx1.drawImage(canvas3,0,0);
+
+    // "전송" 버튼 클릭
+    $('#transTxt').trigger('click');
+});
+======================================================================
+
+typReAnalysis.js
+1053 Line
+======================================================================
+// 적외 강풍반경 - "전송" 버튼 클릭
+$('#transTxt').click(function(){
+
+    // 사용자그리기 이미지 생성 (컬러 or 흑백)
+    createImage(data, fileName, type);
+        -> /etc/createFileSdtRe.do
+
+    // 태풍 적외 강풍반경 영상전송 요청 이벤트
+    callSender(fileName, type);
+        -> /etc/senderRadSdtRe.do
+
+    // 사용자그리기 파일 생성
+    createTxt();
+        -> /etc/transFileSdtRe.do
+
+    // 강풍반경 정보 업데이트 (TYP_RAD_REANALY)
+    updateTxt();
+        -> /sdtRe/saveRadSdtRe.do
+
+
+});
+======================================================================
+
+typReAnalysis.js
+6549 Line
+======================================================================
+//사용자 그리기 체크박스 변경
+function changeUserDraw(flag){
+
+}
+======================================================================
+
+typReAnalysis.js
+1484 Line
+======================================================================
+// SDT 재분석 강풍반경 검증
+$('#btnVerify').click(function(){
+    callShellScript6();
+});
+======================================================================
+

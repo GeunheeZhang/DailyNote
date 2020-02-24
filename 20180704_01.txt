@@ -1,0 +1,128 @@
+1. 'Office Organogram' 중복.
+2. 'Notice Board', 'Help' BPR ID 불일치
+3. 'Operation management system - Admin' 분류 조정.
+4. 같은 분류 요구사항이 ID가 다른 이유(REQ-OMS, REQ-BCM)
+5. 'Case Investigation' 의미는?
+6. 'Case Statistics' BPR ID 매핑 2.4.1, 2.4.2, 2.4.3
+7. 'Management of Narcotics Sample Analysis Receipt' BPR ID 매핑 3.1.1, 3.1.2
+8. 'Narcotics Sample Analysis Statistics Management' BPR ID 매핑 3.4.1, 3.4.2, 3.4.3
+9. 'Verification of Narcotics License Application Document' BPR ID 매핑 4.2.1, 4.2.2
+10. 'Narcotics License Statistics', 'Lisence Usage Details', 'License Notification' BPR ID 매핑 4.5.1, 4.5.2, 4.5.3
+11. 'Hospital Management System(Patient Record Management)'은 BPR ID 매핑 불필요.
+12. 기능 요구사항 : 597
+13. 화면 : 000
+
+
+
+
+1. Narcotics Case Management
+	1.1 Management of receipt of Narcotics Case
+	1.2 Narcotics Case investigation Management
+	1.3 Criminal prosecution
+	1.4 Narcotics Case statistics Management
+	1.5 Narcotics Case Notification
+
+2. Operation management system
+	2.1 Geolocation
+	2.2 Office Organogram
+	2.3 User Management
+	2.4 Law/Section
+	2.5 Drug List
+	2.6 Seize Item
+	2.7 Raw Material
+	2.8 Measurement Unit
+	2.9 Role
+	2.11 Notice Board
+	2.12 Help
+	2.13 Hospital Management
+	2.14 Other Agency's
+
+3. Narcotics License Management
+	3.1 Receipt of Narcotics License Application
+	3.2 Verification of Narcotics License Application Document
+	3.3 Narcotics License approval and rejection
+	3.4 Issue of Narcotics License
+	3.5 Narcotics License Statistics
+	3.6 License Usage Details
+	3.7 License Notification
+
+4. Narcotics Sample analysis management
+	4.1 Management of Narcotics Sample Analysis Receipt
+	4.2 Narcotics Sample analysis Management
+	4.3 Notification of Narcotics Sample Analysis Results
+	4.4 Narcotics Sample Analysis Statistics Management
+
+5. Other Agency’s Narcotics Statistics Management
+	5.1 Generation of Other Agency’s Narcotics Statistics
+	5.2 Inquiry Other Agency’s Narcotics Statistics
+	5.3 Print Other Agency’s Narcotics Statistics
+	5.4 Other Agency Statistics Notification 
+
+6. Hospital Management System
+	6.1 Administration
+	6.2 Writing a Patient Record book
+
+7. Mobile Services / Mobile App Production
+	7.1 Create a separate mobile app
+	7.2 Arrested Narcotics Person List
+	7.3 Arrested Narcotics Person Card
+	7.4 Inquire for Wanted (fugitive)
+	7.5 Description of DNC
+	7.6 Drug Control Laws and Rules
+	7.7 DNC Phonebook
+	7.8 Drug Rehab center
+	7.9 Miscellaneous
+	7.10 About Us
+	7.11 Build
+
+8. Main Page Layout
+	9.1 Home Page
+	9.2 User Profile Page
+
+
+다음 표는 프로젝트의 전체 개발 일정을 정의합니다.
+
+1. Analysis/Design
+    :: Mar/01/2018 - Jun/30/2018
+2. Implementation
+    :: Jul/01/2018 - Nov/10/2018
+3. Integration Test
+    :: Nov/11/2018 - Nov/15/2018
+4. Modification/Supplement
+    :: Nov/16/2018 - Nov/30/2018
+5. Install (Deployment)
+    :: Dec/01/2018 - Dec/15/2018
+    :: Actual Operating Environment
+6. Performance Test
+    :: Dec/16/2018 - Dec/31/2018
+    :: Actual Operating Environment
+6. Test Operation
+    :: Jan/01/2019 - Jan/31/2019
+7. Education/Training
+    :: Feb/01/2019 - Feb/28/2019
+
+
+
+
+1. 내일 (10월9일) 오전 11시 Genweb2에서 회의.
+1. Tomorrow (October 9) at 11 am on the meeting at Genweb2.
+
+2. 회의 주제는 파견기간 일정에 대한 협의.
+2. Meeting topics are discussed on the business trip schedule.
+
+3. 다음주 서버 설치 지원 (2명).
+3. Next week server installation support (2 Persons).
+
+4. SPO IT 전문가 화요일(10월9일), 수요일(10월10일) Genweb2 방문 예정.
+4. SPO IT Professionals scheduled to visit Genweb2 on Tuesday (October 9th) and Wednesday (October 10th).
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,147 @@
+
+// 사용자 ID
+userId = $('#typUserName').val();
+
+mda00user01
+
+
+<ul class="nmsc_tab into9" id="sdtTabs">
+    <li class="on" id="sdtTab1"><spring:message code="typhoon.sdt.subtitle.sdtRe"/></li><!-- SDT 재분석 -->
+    <li id="sdtTab9"><spring:message code="typhoon.sdt.subtitle.graph"/></li><!-- 그래프분석 -->
+    <li id="sdtTab2"><spring:message code="typhoon.sdt.subtitle.radiusir"/></li><!-- 적외강풍반경 -->
+    <li id="sdtTab3"><spring:message code="typhoon.sdt.subtitle.radiusirverify"/></li><!-- 적외강풍반경 검증 -->
+    <li id="sdtTab7"><spring:message code="typhoon.sdt.subtitle.radiusmw"/></li><!-- 마이크로파 강풍반경 -->
+    <li id="sdtTab6"><spring:message code="typhoon.sdt.subtitle.mwtyp"/></li><!-- 마이크로파 태풍영상 -->
+</ul>
+
+
+<!-- SDT 재분석 버튼 그룹 -->
+<div class="btnWrap">
+    <button type="button" class="nmsc imp" id="btnSdtTrans"><spring:message code="typhoon.transmit"/></button><!-- 전송 및 저장 버튼 -->
+    <button type="button" class="nmsc imp" id="btnSdtSave"><spring:message code="typhoon.save"/></button><!-- 저장 버튼 -->
+    <button type="button" class="nmsc def" id="btnRangeDrawPath1"><spring:message code="typhoon.draw.route"/></button><!-- 결과표출 버튼 -->
+    <button type="button" class="nmsc def" id="removePath1"><spring:message code="typhoon.remove.route"/></button><!--  결과삭제 버튼 -->
+    <button type="button" class="nmsc def" id="excelDown1"><spring:message code="typhoon.save.excel"/></button><!-- 엑셀저장 버튼 -->
+    <button type="button" class="nmsc def" onclick="closePop()"><spring:message code="typhoon.close"/></button><!-- 닫기 버튼 -->
+</div>
+
+
+501 Line
+// 전송 버튼 클릭
+$('#btnSdtTrans').click(function(){
+    sdtL3Type = "SDT_Report";
+    saveSdt();
+    -> searchList1(saveType)
+        -> makeTransFile()
+        -> callShellScript1()
+
+// 저장 버튼 클릭
+$('#btnSdtSave').click(function(){
+    sdtL3Type = "SDT_Report_SaveOnly";
+    saveSdt_rmwOnly();
+});
+    -> searchList1_rmwOnly(saveType)
+        -> makeTransFile()
+        -> callShellScript1_rmwOnly()
+
+// SDT 재분석결과 삭제
+  -> searchList1("delete")
+
+// 결과표출 버튼 클릭
+$('#btnRangeDrawPath1').click(function(){
+    1728 Line
+});
+
+// 결과표출 삭제 버튼 클릭
+$('#removePath1').click(function(){
+    gua.msg.debug("SDT 결과삭제");
+    window.opener.typ_removeDrawPath("SDT");
+});
+
+// 엑셀저장 버튼 클릭
+$('#excelDown1').click(function(){
+    gua.msg.debug("SDT 엑셀저장");
+
+    gua.window.clearParam();
+    gua.window.addParam("dbType", "1");
+    gua.window.addParam("analyDate", $('#typYear').val());
+    gua.window.addParam("typId", $('#typId').val());
+    gua.window.openPage("/sdt/sdtAnalysisResultForExcel.do", {method: 2});
+});
+
+
+
+<ul class="nmsc_tab into9" id="sdtTabs">
+    <li class="on" id="sdtTab1"><spring:message code="typhoon.sdt.subtitle.sdtRe"/></li><!-- SDT 재분석 -->
+    <li id="sdtTab9"><spring:message code="typhoon.sdt.subtitle.graph"/></li><!-- 그래프분석 -->
+    <!--<li id="sdtTab5"><spring:message code="typhoon.sdt.subtitle.route"/></li>--><!-- 위성경로영상 -->
+    <!--<li id="sdtTab8"><spring:message code="typhoon.sdt.subtitle.routeGif"/></li>--><!-- 위성경로동영상 -->
+    <li id="sdtTab2"><spring:message code="typhoon.sdt.subtitle.radiusir"/></li><!-- 적외강풍반경 -->
+    <li id="sdtTab3"><spring:message code="typhoon.sdt.subtitle.radiusirverify"/></li><!-- 적외강풍반경 검증 -->
+    <li id="sdtTab7"><spring:message code="typhoon.sdt.subtitle.radiusmw"/></li><!-- 마이크로파 강풍반경 -->
+    <li id="sdtTab6"><spring:message code="typhoon.sdt.subtitle.mwtyp"/></li><!-- 마이크로파 태풍영상 -->
+    <!--<li id="sdtTab4"><spring:message code="typhoon.sdt.subtitle.gts"/></li>--><!-- GTS전문생성 -->
+</ul>
+
+
+KADT 적외 - TYP_KADT
+KADT NRT - TYP_KADT_NRT
+KADT PMW - TYP_PMW2
+
+
+<!-- 적외 강풍반경 이미지 1 -->
+<div style="position:relative;border:solid;">
+    <img id="img1" style="width:500px;height:500px">
+    <canvas id="canvas1" width="500" height="500" style="position:absolute;top:0px;left:0;"></canvas>
+</div>
+
+<!-- 적외 강풍반경 이미지 2 -->
+<div style="position:relative;border:solid;">
+    <img id="img2" style="width:500px;height:500px">
+    <canvas id="canvas2" width="500" height="500" style="position:absolute;top:0px;left:0;z-index:2;"></canvas>
+    <canvas id="canvas3" width="500" height="500" style="position:absolute;top:0px;left:0;z-index:1;"></canvas>
+    <canvas id="canvas4" width="500" height="500" style="position:absolute;top:0px;left:0;z-index:0;"></canvas>
+</div>
+
+<!-- 적외 강풍반경 -->
+<p class="btnRight">
+    <button type="button" class="nmsc_ico" id="transTxt" style="display:none;"><spring:message code="typhoon.transmit"/></button><!-- 전송 -->
+    <button type="button" class="nmsc_ico" id="btnImgDownload1"><spring:message code="typhoon.downimg.color"/></button><!-- 영상다운로드(컬러) -->
+    <button type="button" class="nmsc_ico" id="btnImgDownload2"><spring:message code="typhoon.downimg.black"/></button><!-- 영상다운로드(흑백) -->
+    <button type="button" class="nmsc imp" id="btnSearchGail"><spring:message code="search"/></button><!-- 검색 -->
+    <button type="button" class="nmsc nor" id="btnReProduction"><spring:message code="typhoon.recalculation"/></button><!-- 재산출 -->
+    <button type="button" class="nmsc def" onclick="closePop()"><spring:message code="typhoon.close"/></button><!-- 닫기 -->
+</p>
+
+D:/vol01/SYSTEMS/MDA00/outgoing/typ/
+
+
+태풍 파일 생성 - SDT 재분석 전송 및 저장
+/vol01/SYSTEMS/MDA00/TYPHOON/TYP_PRODUCT_RE/TYPLIST
+
+강풍반경 이미지 및 검증이미지 - 강풍반경 이미지 및 검증이미지
+/vol01/SYSTEMS/MDA00/outgoing/typ/[userid]
+
+
+2016-09-28 21:00, 1618_CHABA
+
+<entry key="typhoon.image.path.gk2a.sdtre"><![CDATA[D:/vol01/SYSTEMS/MDA00/outgoing/typ/]]></entry>
+<entry key="typhoon.verify.basic.path.sdtre"><![CDATA[D:/vol01/SYSTEMS/MDA00/outgoing/typ/]]></entry>
+
+gua.msg.debug("Hidden Parameter - imageBasicPath : " + $('#imageBasicPath').val());
+gua.msg.debug("Hidden Parameter - verifyBasicPath : " + $('#verifyBasicPath').val());
+
+
+selectSdtReanalyList -> selectSdtReList
+sdtReanalyResultList.do -> sdtReResultList.do
+saveSdtReanaly.do -> saveSdtRe.do
+deleteSdtReanaly.do -> deleteSdtRe.do
+
+gailShellScript2.do -> gailShellScript2SdtRe.do
+gailListSdtReanaly.do -> gailListSdtRe.do
+gailShellScript3.do -> gailShellScript3SdtRe.do
+saveRad.do -> saveRadSdtRe.do
+
+[2019-10-18 장근희] SDT 재분석 기능 추가.
+
+[2019-10-18 장근희] Beta Properties 추가

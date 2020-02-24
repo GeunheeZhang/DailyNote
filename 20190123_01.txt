@@ -1,0 +1,401 @@
+전문가 파견 공통 요구사항
+
+전문가는 제시된 등급, 인원에 맞추어 투입하는 것을 권장하며, 각 단계별로 상위 급수의 전문가 또는 추가적인 인원 및 기간의 투입은 제안사에서 자율적으로 결정 가능함
+
+분야 및 업무내용별로 모든 전문가가 제안요청서 내용과 동일한 시기에 파견될 필요는 없으며, 사업 일정을 고려하여 자유롭게 제안할 수 있으나 제안서 상에 파견 타당성 등에 대해 설명하여야 함
+
+단계별 인력구성 방안을 수립하고 분야별 추진 업무 내용을 정의
+
+BPR 컨설팅 전문가 파견 요구사항
+
+BPR 컨설팅 세부사항
+
+Ÿ 환경분석
+- 마약통제 제도 및 업무현황 분석
+- 마약통제청 일반현황 및 주요업무 파악
+- 마약통제 업무 프로세스 분석
+- 정보화 현황 및 IT 인프라 분석
+Ÿ 개선모델 수립
+- 개선사항 도출 및 주요 요구사항 분석
+- 최적화된 시스템 구축 모델 수립
+- 업무절차 개선 방안 및 추진 전략 수립
+- 중간보고
+Ÿ 이행계획 수립
+- 추진전략, 사업일정, 사업예산 수립
+Ÿ BPR 결과 보고서
+
+시스템 구축 전문가 파견 요구사항
+
+시스템 구축 및 기자재 설치
+- 시스템 요구분석/설계/개발/교육 및 테스트/안정화 지원 단계별로 파견
+- 구현/테스트 완료 후 전환 및 안정화를 위한 단계별 수행절차와 역할 등을 포함한 계획 수립 및 시행
+- 시스템 운영능력 강화를 위한 기술이전
+- IT 기자재 설치를 위한 환경조사/설치 및 교육
+
+마약통제정보검색 시스템 요구사항
+
+- DNC 본부 및 5개 Zonal Office, 25개 Regional Office, 109개 Circle Office에서 마약 수사관들이 Web을 통하여 마약 통제 프로그램에 접속하여 정보 조회, 입력 가능
+- Police, RAB, Custom, Coast Guard 등 유관 기관들의 관련 담당자들도 적절한 인증 절차를 거쳐 마약 통제 프로그램에 접속하여 정보를 조회 할 수 있도록 구축
+- Mobile(Android, Apple) 환경에서 사용 할 수 있도록 Mobile User Interface를 제공하여 언제 어디서나 시스템 접속 및 마약 통제 업무를 제공할 수 있도록 지원
+- 마약 사범 관리, 마약 환자 관리, 마약 원료 관리, 사건 관리 등과 이에 대한 각종 통계 및 레포팅 데이터를 제공하는 통합 프로그램 개발 지원
+- 한국의 대검찰청에서 사용하고 있는 마약통제 관리시스템을 근간으로 구축하고 방글라데시 마약통제청(DNC) 요구 사항인 마약 환자 관리, 주류관리 등을 추가
+- 마약통제청이 보유 중인 마약 관련 데이터를 신규 시스템으로 통합 하는 데이터 이관 작업 지원
+- 각 시스템별로 요구하는 기능의 구성은 분석/설계 결과에 따라 변경될 수 있으나, 반드시 수원기관과의 협의 하에 진행되어야 함
+
+서브 시스템 요구사항
+마약사범관리 세부기능 정의
+
+서브 시스템 요구사항
+마약류 원료 물질 시스템 구축 범위 정의
+
+Workgroup Server 구조와 제공 기능에 대한 사항 기술
+
+Ÿ H/W 요구사항
+- Intel Xeon 2.4Ghz 6Core
+- 32GB DRAM
+- 2TB SATA 10K Hard disk
+- 10/100/1000Mbps Ethernet 4Port over - Hot-Plug Power Supply
+- Including Commercial Linux Enterprise OS
+- Including the Hypervisor S/W for Virtual Machine operation
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ H/W 요구사항
+- 10/100/1000Mbps Ethernet 24port or more
+- 10G SFP+ 4Port or more
+- 128Gbps Switching Capacity
+- IPv4 Routing support: Static Routing RIP
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ H/W 요구사항
+- 3000VA/2400Watt, 230VAC/60Hz Input/Output - Hot-Swappable Battery
+- LCD Display
+- Extended Battery Cabinet, Backup time 100minute
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ H/W 요구사항
+- Height 2M(42U) or more
+- Power Distribution Unit outlet 8port or more
+- Standard Server mountable cabinet rack
+- 서버와 동일 제조사 제품
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+
+Ÿ H/W 요구사항
+- Intel i5 3.3Ghz Quad Core
+- 4GB DRAM
+- 500GB SATA Hard disk or more
+- 10/100/1000Mbps Ethernet 1Port
+- 22inch LED Monitor
+- Windows10 Pro English Version
+- Vaccine License for PC(3year Subscription) 
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ H/W 요구사항
+- Portable type mobile router - Compatible with local 3G network
+- Concurrent user: 10 or more
+- Network Type: HSPA+, HSUPA, HSDPA support - 2.4Ghz Wireless Frequency support 
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ H/W 요구사항
+- 1000VA capacity / 500Watt - 220~240VAC Input/output - Input/output Frequency: 50~60Hz
+- UPS Shut-down Pre Alert
+- Lightening and Surge protection function(TVSS)
+- RoHS R6 level compliance
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ H/W 요구사항
+- 500DPI Optical Sensor 
+- USB2.0 Connecting support 
+- USB power supplying support 
+- Compatible with Windows OS
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ H/W 요구사항
+- DSLR Architecture & Function
+- Resolution: 2000M pixel or over - Video Shooting: Full HD
+- HDMI Port - SDXC Memory card: 128GB or more
+- Additional Items: Telephoto Lenz(EF75-300MM F4-5.6), Flash, Extra Battery, Portable Bag
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ H/W 요구사항
+- HDR-PJ540
+- Full-HD (1080p, 60 Frame) - Total Pixel : 920M / CMOS
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ H/W 요구사항
+- Printing Type: Laser Printing
+- Printing Speed: Color/Mono 33ppm or above
+- Resolution: 1200x1200dpi or above
+- Memory: 1GB or above
+Ÿ 서비스 및 기타 지원 요구사항
+- 2년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ S/W 요구사항
+- 상용 Web S/W License 제공: 2CPU*8core 2copy, 1CPU*6core 1copy
+- 멀티프로세싱, 멀티스레드, 멀티 커널 기반 S/W 구조 지원
+- 표준 지원: HTTP1.0/1.1, Java Servlet2.5, JSP2.1, JSP standard tag library, Java server face1.2
+- 개발 환경 지원: Java SE5.0, 6, Netbean 6.0 IDE, In-processing java runtime environment, JSP component pre-compiling, JDBC connection
+- 자바 웹 서비스 개발 패키지 제공
+- Internet open standard protocol과 개발 언어 지원
+- Dynamic log rotation 기능 지원
+- Session clustering 기능 지원
+- GUI 응답 시간, 플러그인 별 성능, CPU, Memory에 대한 성능 모니터링 기능 지원
+- 가성 서버 또는 가상 서버 클래스 당 대역폭 제어 기능 제공
+Ÿ 서비스 및 기타 지원 요구사항
+- 1년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+※ 대외 무상원조 협력사업 특성상 상호 호환성 및 현지 유지관리 측면 고려
+
+Ÿ S/W 요구 사양
+- 상용 WAS S/W License 제공: 2CPU*8core 2copy, 1CPU*6core 1copy
+- 표준 지원: Java EE6 Full Platform/EJB3.1, Web socket1.0 support 
+- 웹 서비스 표준 지원: SOAP, XML, JAX-RPC, UDDI, WSDL, JAX-WS2.2, JAXB2.2, WS-security, JAX-RS2.0
+- 웹 기반 관리 툴 제공
+- 다양한 형태의 OS platform 지원: MS, Linux, Unix - RAC database 11g and 12c를 위한 Active grid link 지원
+- Database 12c와의 통합 지원: Multi-tenant, Application Continuity, Resident connection pool 
+Ÿ 서비스 및 기타 지원 요구사항
+- 1년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+※ 대외 무상원조 협력사업 특성상 상호 호환성 및 현지 유지관리 측면 고려
+
+Ÿ S/W 요구사항
+- 서비스 용 : 2CPU Processor License 2copy(H/W Appliance type) - 테스트 용 : 1CPU 1copy
+- 다양한 형태의 OS 지원:Window, Linux, AIX, HP-UX
+- Oracle Real Application Clusters 기능 적용 가능
+- On-line을 통한 백업과 복구 기능 지원
+- 자동 workload 관리 기능 지원
+- 자동 저장 공간 관리 기능
+- 어플라이언스 형태의 H/W 번들 제공: intel Xeon 2.2 10core*2, 128GB memory, 3.2TB SSD, 480GB SATA SSD
+Ÿ 서비스 및 기타 지원 요구사항
+- 1년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+※ 대외 무상원조 협력사업 특성상 상호 호환성 및 현지 유지관리 측면 고려
+
+Ÿ S/W 요구사항
+- Wizard 방식을 통한 손쉬운 HA/DR provisioning 지원
+- HA/DR 지원: 가상 서버 간, 물리 서버 간, 가상서버와 물리적 서버 간 HA/DR 지원
+- 웹 기반 통합 관리 툴 지원
+- 다양한 OS platform 지원: Window, Linux, Oracle Linux - Self-recovery and Service fail-over 기능 지원
+- 다양한 스토리지 환경 지원: 낸드 플래쉬, SAN, NAS, iSCSI
+- 가상 IP 및 호스트 네임 페일 오버 지원
+- 블록 레벨의 복제 지원(Sync, Async, semi-Async) - 복제 거리 제한 없음
+- 고 가용의 리포트 제공
+- 공유 스토리지 환경에서 "spilt brain" 방지를 위한 IO fencing 기능지원
+Ÿ 서비스 및 기타 지원 요구사항
+- 1년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+※ 대외 무상원조 협력사업 특성상 상호 호환성 및 현지 유지관리 측면 고려
+
+Ÿ S/W 요구사항
+- 다양한 백업환경지원 (DAS, NAS, SAN , Network 등) - 백업 및 복구 시 병렬처리 기능제공
+- 백업대상서버들에 대한 스케쥴러 기반의 자동화된 백업기능제공
+- 운영 중인 DBMS에 대한 온라인 중 백업기능 지원
+- SAN환경의 고속백업지원및 SAN상의 Tape드라이버 공유기능 제공
+- 백업 수행 시 업무 네트웍 속도를 고려한 대역폭 조절(확장/축소)기능 지원
+- 방화벽 환경 하에서 소수의 특정 포트만을 열어 백업수행 가능
+- 관리와 확장성을 고려한 3Tier이상의 멀티티어 아키텍쳐 지원
+- 백업 대상Client에 대한 원격지 자동설치 및 업데이트 기능 제공
+- 단일GUI를 통한 효율적인 백업환경 통합관리 지원
+- 백업 DR 구성을 위한 솔루션 간 복제 시 자동으로 복제본에 대한 백업catalog 정보를 import하는 기능 제공
+Ÿ 서비스 및 기타 지원 요구사항
+- 1년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+Ÿ S/W 요구 사양
+- 암호Key의 물리적 분리를 위한 HSM기반 Key관리시스템 지원
+- 국제인증 FIPS 140-2 Level 1 이상 획득 제품
+- 물리적 보안(Physical security) 기능 지원
+- Key 관리시스템 독립적 이중화 구성 지원
+- Multi-Clustering 지원: 별도 L4 장비 없이 Cluster 기능 제공
+- API를 통한 간편한 정책 제공 (Active-Active, Active-Standby) - 키 관리 시스템의 자동 실시간 동기화 Sync 지원
+- CA(Certificate Authority) 기능 제공-인증서 기반 API와 SSL 암호화 통신 지원
+- Key관리시스템 접근 정책 Multi-Factor 인증 지원 :ID/Password 및 인증서 기반 Multi-Factor 인증
+- KMIP(키 관리 상호운용성 프로토콜) 지원
+- Key의 주기적인 변경 관리 기능 제공
+- 프로그램 수정 없이 점진적 Key Rotation, Data re-keying
+- 국제표준 암호화 알고리즘 지원
+: AES, DES, 3DES, RSA, HMAC-SHA1, HMAC-SHA256, HMAC-SHA384, HMAC-SHA512, RC4 등
+- 다양한 인터페이스 제공
+: ICAPI/KMIP, JCE/KMIP, MSCAPI, .NET, PKCS#11 등
+- 다양한 애플리케이션 서버 지원
+: Apache Tomcat, IBM WebSphere, Jboss, Microsoft IIS, Oracle WebLogic, SAP NetWeaver, Sun ONE 등
+- 다양한 데이터베이스 지원
+: Oracle, MS-SQL, DB2, MySQL
+Ÿ 서비스 및 기타 지원 요구사항
+- 1년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+※ 대외 무상원조 협력사업 특성상 상호 호환성 및 현지 유지관리 측면 고려
+
+Ÿ 시스템에서 추출한 결과 값을 표나 그래프 등을 사용한 보고서 양식으로 출력
+Ÿ 서비스 및 기타 지원 요구사항
+- 1년 이상 무상 하자보수 지원
+- 영문 또는 현지어 매뉴얼 제공
+
+국제공항, 항만 등이 위치하여 마약류 유통의 관문인 다카, 치타공 Zonal Office 2개소에 마약감식장비를 각각 1대씩 총 2대를 지원, 마약류 통제역량 실질적 강화
+
+1. Agilent 7890B GC for MS with
+1) Agilent 7890 Series GC mainframe
+2) Split/Splitless capillary Inlet with EPC
+3) Interface for 5977A MSD
+4) LAN Communication interface and LAN cable
+
+2. 5977A Extr. MSD EI Turbo Pump system
+1) 5977A Extr. MSD Turbo EI Bundle
+2) Select MassHunter Familiarization
+3) Oil free - pump substitution
+
+3. Ion Gauge Controller
+4. Site Preparation Package
+5. 7693A Autoinjector
+6. 7693A Tray, 150 Vial
+7. Installation and Familiarization
+
+1. Install Kit for GCs w/out Has Purifiers 
+2. Gas Clean Filter GC-MS
+3. Long Life Inlet Septa 11mm 100PK
+4. Capillary column nut for MSD
+5. Ferrule Vespel/Graphite 250u 10/PK
+6. Viton O-ring for high temperature, 10/pk
+7. Filament, high temperature EI for GCMS
+8. DB-5MS 30m, 0.25mm, 0.25u
+9. Ferrule Graphite 320um 0.5mm id 10/PK
+# 0.4mm; 200, 250um ferrules 10/PK
+# Column nut 2/PK
+# Liner, splitless, tapr, glswool deactivated
+
+미얀마와 인접하여 마약류 밀수입의 온상이 되는 테크나프, 최근 야바(YABA) 밀거래가 급증하고 있는 치타공, 콕스바잘, 다카 국제공항 및 최근 헤로인 밀수입이 급증하고 있는 라즈샤히 지역에 우선 지원
+
+- 탐지원리 : IMS(Ion Mobility Spectrometry)
+- 분석시간 : 10초 이내
+- 전원 : 110~240V AC, 12V DC
+- 탐지물질 : 탐지마약 종류를 사용자 요구사항에 맞춰
+- 설정 : 가능
+- 무게 : 3.2 KG(배터리 포함) 이하
+- 크기 : 37cm x 11cm x 13cm 이하
+- 기타 : 2년간 사용할 수 있는 소모품, 예비품목 제시
+
+다카 및 치타공 Zonal Office 2곳에 설치 할 GC/MS 운영 최적화 및 감식관의 실험안전을 위한 배기, 전력, 항온항습, 시약보관장 등 기타 부대장비 및 실험실 리모델링 지원
+
+- Fume Hood : 1800*800*2300
+- Side Table : 1500*900*800
+- Table : 1800*900*800
+- Arm Hood : 75/300
+- 배기시약장 : 1200*500*2050
+- 의자 : 팔걸이형
+- 냉난방기 : 24py
+- 배기덕트 : 35cmm*40mmAq*2HP 250A DUCT(배기 Fan 포함)
+- 전기 작업 : AVR(20kw), UPS(20kw) 등
+- 냉장고 : 600ℓ
+- 칸막이 판넬 : 50T 우레탄
+
+- 방글라데시 마약통제청에서 지정한 장소에 실험실 구축
+­  : 다카(가로x세로x높이) : 5M X 7M X 3.3M ­
+  : 치타공(가로x세로x높이) : 다카 실험실과 사이즈 유사
+- 실험실 구축 공사는 설계도면을 작성한 후 공사 전에 대검찰청 및 마약통제청(DNC)과 협의 후 추진
+- 벽체 공사 - 사면 벽체작업 & 창호 및 출입문설치(양계 문) 
+- 천정 공사
+­  : 실험기구의 민감성을 감안할 때 우레탄 판넬 또는 ESP 판넬을 사용해서 시공
+- 바닥 공사 - 전도성 타일공사
+- 전기 공사
+­  : 배선공사, 분전반 및 배전반 설치공사, AVR 및 UPS 설치, 전열기구 설치, 냉난방기 설치 등 내역을 제시
+- 덕트 공사
+­  : 실험실 후드 및 장비, 실험공간에서 발생되는 공기의 급기와 배기시스템을 설계하여 제시하고, 부합되는 자재 및 설비를 도입하여 쾌적한 실험실 환경을 제공
+- 실험실 후드 공사
+­  : Fume Hood 및 Arm Hood 설치 공사 내역을 제시
+※ 덕트 및 실험실 후드 공사는 실험기구 배치를 확인 후 시공
+
+- 운송조건: FCA(Free Carrier) 조건
+- 납품장소: KOICA 지정 장소까지 포장 및 운송
+- 포장방법: 종이박스(Carton BOX) 포장/검수완료 후 운송 업체에서 우든 포장(방진, 방수, 무진동 포장 감안)
+
+○ 기자재 운송, 검수, 설치, 품질관리 계획
+○ 물품운송(KOICA가 운송업체 별도 선정 후 수행)
+- 운송조건: FCA(Free Carrier) 조건
+- 납품장소: KOICA 지정 장소까지 포장 및 운송
+- 포장방법: 종이박스(Carton BOX) 포장/검수완료 후 운송 업체에서 우든 포장(방진, 방수, 무진동 포장 감안)
+○ 계약체결업체는 “전략물자 수출입고시(산업통상자원부 고시 제2017-24호)“에 따른 수출 허가 신청 및 절차를 준수하여 KOICA에서 지정하는 한국 내의 지정 장소(검수장소)까지 공급 물품을 운송하여야 하며, 이에 수반되는 운송료를 부담하여야 함. 
+※세부사항은 대외 무상협력 공여물품 검수요령 참조
+
+- Shipping 마크 및 기증마크 부착
+  ※마크 디자인은 KOICA 및 대검찰청과 협의
+- 각 제품 표면에 인쇄함을 원칙으로 하며 인쇄 불가 시 스티커 부착
+- Shipping 마크 및 기증마크 크기는 제품의 크기에 따라 조정 가능
+- 인쇄비는 견적 시 물품가격에 포함
+
+검수는 KOICA 전담업체를 통해 실시(필요시 조달팀 또는 사업부서 담당자 입회), 물품인도 7일전 검수일정을 KOICA에 통보
+
+모든 장비는 선적 전 1회, 설치 완료 후 1회 포함 총 2회 시험하여 이상이 없을 시 최종 검수를 완료한 것으로 고려함
+
+계약 업체 측의 귀책사유로 인해 재검수를 실시하는 경우, 비용은 계약업체 부담
+
+다음과 같은 사유는 물품검수 불합격에 해당하므로 유의할 것
+- 공급계약서와 수량, 규격, 마킹, 포장 등의 사양 불일치
+- 대검찰청 사전 승인 없이 제조사 및 모델 변경
+- 계약상대자의 사전 검수 미실시
+- 검수 중 검수관이 사양에 대한 질의 시 답변을 못하거나 입증을 못하는 경우
+- 검수에 필요한 자료 및 영어 사용설명서가 부족하거나 없는 경우
+- 기증문구 또는 Shipping 마크 인쇄불량 및 미 부착
+- 검수 보조에 필요한 노무를 미제공한 경우
+- 제시한 사양의 미반영 및 공급자의 귀책사유로 인해 검수를 계속할 수 없을 때
+
+최종 검수 후 이상발견 기자재는 즉시 수리 또는 신규 동일 제품으로 교체하여 재 설치함
+
+현지검수가 필요한 경우, 기자재 지원 후 발주처 지정 검수 업체의 현지 파견을 통해 수행함
+
+Ÿ 계약 업체는 물품의 최종 도착지에 도착한 즉시 설치, 교육 기술자를 현지에 파견하며, 파견자 인적 사항, 출장 일정 및 현지 활동 계획등을 설치 계획서에 포함하여 대검찰청에 제출토록 함
+
+Ÿ 계약업체는 설치에 필요한 공구, 재료 등을 설치기술자가 사전에 준비 확보토록 하며, 현지 작업 전 총괄책임자 입회하에 도착물품의 이상 유무를 확인하고 만일 도착 물품이 분실 또는 파손되었을 경우에는 지체 없이 총괄책임자에 통보하도록 함
+
+Ÿ 계약 업체는 파견 기술자가 설치, 시운전을 완료한 때에는 동 사실을 총괄책임자에 통보하고 수원 기관 입회하에 관계국 책임자로부터 “모든 물품이 이상 없이 설치되고 시운전 결과 정상적으로 작동되었음”을 확인할 수 있는 설치, 운영 교육 확인서를 총괄책임자에 제출해야 함
+
+Ÿ 기자재 설치 및 성능 검사는 계약 기간 중 응용 시스템 이행 단계내에 완료 후 종합 시험을 시행해야 하며, 설치 시운전을 통하여 이상 없이 정상 작동하여야 함
+
+Ÿ 계약업체는 기자재 설치 완료 후 “기자재 설치 및 운용 교육 결과보고서”를 총괄책임자에게 제출하도록 함
+
+
+Ÿ 시스템 장비 제공에 관한 과업의 범위는 구매, 국내 운송, 납품, 설치, 사용자 교육, 사후관리를 포함함
+  : 투찰 시 현장설치를 위한 모든 제반비용(기타 네트워크 Line 작업 비용, 랜선 비용 등)을 포함할 것
+
+Ÿ 품질상의 이유로 수원국 측의 이의제기 및 제품교환 요구가 있을 경우 이에 응하여야 함
+
+Ÿ 모든 기자재는 선적 전 1회 이상 반드시 검수를 완료하여야 함
+
+Ÿ 사업자로 선정된 업체는 납품 전 KOICA와 협업하여 전략물자 신고 및 허가를 득하여야 함
+
+Ÿ 제시된 사양을 정확하게 반영하되, 상이한 품목이 있을 시 동급이 상의 대체 기자재와 대체 사유를 명시하고, 품질을 보증할 수 있는 상세사양을 제시함
+
+Ÿ 장비 일체의 제품별 사용자 매뉴얼(설치 매뉴얼 포함)은 영어로 제공하여 향후 현지 유지관리가 원활한 제품으로 선정하여 제안하여야 함
+  : 별도의 매뉴얼이 없을 시 책자 형태로 제본하여 납품
+
+Ÿ 사양서와 투찰내역서에서 수량 등이 상이한 경우, 투찰내역서를 우선함
+
+Ÿ 사양 해석이 필요한 경우, 사양에 표시되지 않는 사항, 기타 경미한 사항 등에 대해서는 발주처의 의견에 따름
+
+Ÿ 모든 공급 장비의 전원은 현지 환경에 정확하게 부합되는 제품(전압/주파수 등)이 선정되도록 할 것
+
+Ÿ 관련된 S/W 등은 매뉴얼과 함께 정식 버전을 제공할 것
+
+
+/home/weblogic/koica_source_code/koica/dnc/web/target/
+
+"양오석"<osyang@kca21.com>;
+"최명수"<cms2580@kca21.com>

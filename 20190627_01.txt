@@ -1,0 +1,18 @@
+com.gaia3d.image.COMSL2RGBImage
+
+TYP_LIST_SEQ = 373
+TYP_RAD_SEQ = 1814
+PRODUCT_CD = 3
+STORAGE_PATH = /vol01/SYSTEMS/MDA00/outgoing/typ/
+PRODUCT_FILE = gk2a_ascat_trmwverify_MALAKAS_201609151200.png
+
+TYP_LIST_SEQ = 373
+TYP_RAD_SEQ = 1814
+PRODUCT_CD = 5
+STORAGE_PATH = /vol01/SYSTEMS/MDA00/outgoing/typ/
+PRODUCT_FILE = gk2a_ascat_trmwverify_MALAKAS_201609151200.txt
+
+
+[2019-07-02 장근희] ETRI 김승철 책임 추가
+
+[2019-07-02 장근희] 산출물 경로 조회방식 변경

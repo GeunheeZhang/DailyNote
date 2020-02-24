@@ -1,0 +1,114 @@
+Oracle DB에 DB User 생성이 안된다고 합니다.
+확인 부탁드리겠습니다.
+
+
+
+[oracle@ODA-A admin]$ lsnrctl start LISTENER_KOICA
+
+LSNRCTL for Linux: Version 11.2.0.4.0 - Production on 15-JAN-2019 10:44:13
+s
+Copyright (c) 1991, 2013, Oracle.  All rights reserved.
+
+Starting /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/tnslsnr: please wait...
+
+TNSLSNR for Linux: Version 11.2.0.4.0 - Production
+System parameter file is /u01/app/oracle/product/11.2.0.4/dbhome_1/network/admin/listener.ora
+Log messages written to /u01/app/oracle/product/11.2.0.4/dbhome_1/log/diag/tnslsnr/ODA-A/listener_koica/alert/log.xml
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=172.22.101.51)(PORT=1521)))
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.22.101.51)(PORT=1521)))
+
+
+
+
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER_KOICA
+Version                   TNSLSNR for Linux: Version 11.2.0.4.0 - Production
+Start Date                15-JAN-2019 10:44:13
+Uptime                    0 days 0 hr. 2 min. 7 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /u01/app/oracle/product/11.2.0.4/dbhome_1/network/admin/listener.ora
+Listener Log File         /u01/app/oracle/product/11.2.0.4/dbhome_1/log/diag/tnslsnr/ODA-A/listener_koica/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=172.22.101.51)(PORT=1521)))
+Services Summary...
+Service "KOICA" has 1 instance(s).
+  Instance "KOICA", status UNKNOWN, has 1 handler(s) for this service...
+The command completed successfully
+
+
+
+[oracle@ODA-A admin]$ sqlplus / as sysdba
+
+SQL*Plus: Release 11.2.0.4.0 Production on Tue Jan 15 10:46:33 2019
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+With the Real Application Clusters option
+
+
+SQL> create user kcs identified by kcs1234# ;   
+
+User created.
+
+SQL> grant connect, resource to kcs ;
+
+Grant succeeded.
+
+
+
+
+
+
+
+
+
+
+[oracle@ODA-A admin]$ sqlplus kcs/kcs1234#@koica
+
+SQL*Plus: Release 11.2.0.4.0 Production on Tue Jan 15 10:58:34 2019
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+With the Real Application Clusters option
+
+SQL> select host_name, instance_name, status from v$instance;
+
+HOST_NAME
+----------------------------------------------------------------
+INSTANCE_NAME	 STATUS
+---------------- ------------
+ODA-A
+KOICA		 OPEN
+
+
+SQL> exit
+
+
+
+
+
+
+#### TNS INFO
+KOICA =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 172.22.101.51)(PORT = 1521))
+      )
+    (CONNECT_DATA =
+      (SERVICE_NAME = KOICA)
+    )
+  )
+
+
+
+
